@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Chrome Backspace Issue</title>
+  </head>
+  <body>
+    <div id="container">Loading...</div>
+
+    <script src="../../lib/react.js"></script>
+    <script src="../../lib/react-dom.js"></script>
+    <script src="../../babel.js"></script>
+
+    <script type="text/babel">
+      var Inputs = React.createClass({
+
+        getInitialState() {
+          return {
+            number: 3.14,
+            checked: true
+          };
+        },
+
+        handleNumberChange(event) {
+          let value = event.target.value
+          let next = value == '' ? '' : parseFloat(event.target.value, 10) || 0;
+
+          this.setState({ number: next })
+        },
+
+        handleCheck(event) {
+          this.setState({ checked: event.target.checked })
+        },
+
+        render() {
+          return (
+            <div>
+              <p>Controlled</p>
+              <div>
+                <input type="number" value={ this.state.number } onChange={ this.handleNumberChange } /> -> { this.state.number }
+              </div>
+              <div>
+                <input type="checkbox" checked={ this.state.checked } onChange={ this.handleCheck } /> -> { this.state.checked.toString() }
+              </div>
+
+              <hr />
+
+              <p>Uncontrolled</p>
+              <div>
+                <input type="number" defaultValue="3.14" />
+              </div>
+              <div>
+                <input type="checkbox" defaultChecked />
+              </div>
+            </div>
+          )
+        }
+      })
+
+      ReactDOM.render(<Inputs />, document.getElementById('container'))
+    </script>
+  </body>
+</html>
