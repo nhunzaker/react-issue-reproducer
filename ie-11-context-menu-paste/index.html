@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IE Paste Issue</title>
+    <style>
+      body {
+        padding: 0 20px;
+      }
+
+      hr {
+        border-width: 1px 0 0;
+        margin: 40px 0;
+      }
+
+      div {
+        padding: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">Loading...</div>
+
+    <script src="../../build/react.js"></script>
+    <script src="../../build/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+
+    <script type="text/babel">
+      var Hello = function () {
+        return (
+          <div>
+            <input placeholder={ Math.random() } onChange={() => alert(React.version)} />
+            <textarea placeholder={ Math.random() } onChange={() => alert(React.version)} />
+          </div>
+        )
+      }
+
+      setInterval(function() {
+        ReactDOM.render(<Hello />, document.getElementById('container'));
+      }, 1000)
+    </script>
+  </body>
+</html>
