@@ -1,12 +1,4 @@
 body {
-  padding: 0 20px;
-}
-
-hr {
-  border-width: 1px 0 0;
-  margin: 40px 0;
-}
-
-div {
-  padding: 5px 0;
+  padding: 20px;
+  font-family: sans-serif;
 }
