@@ -22,6 +22,7 @@ serve: all
 	@ php -S "localhost:$(PORT)"
 
 test: all
+	@ echo Testing against $(shell grep -oh "\w*React v.*" lib/react.js)
 	@ node_modules/.bin/wdio wdio.conf.js
 
 selenium:
