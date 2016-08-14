@@ -5,7 +5,8 @@ browser issues. This repo tries to fix that.
 
 ## Setup
 
-Prepare yourself for the least ergonomic workflow ever...
+After running `npm install`, prepare yourself for the least ergonomic
+workflow ever...
 
 Are you ready? Okay. Clone and build React as a sibling folder within the parent directory:
 
