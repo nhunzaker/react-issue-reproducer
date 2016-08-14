@@ -5,7 +5,9 @@ browser issues. This repo tries to fix that.
 
 ## Setup
 
-Clone and build React as a sibling folder within the parent directory:
+Prepare yourself for the least ergonomic workflow ever...
+
+Are you ready? Okay. Clone and build React as a sibling folder within the parent directory:
 
 ```
 git clone git@github.com:facebook/react.git
@@ -14,26 +16,28 @@ npm install
 npm run build
 ```
 
-Then run this project using Make:
+This is useful for switching out another branch and building a
+potential fix. Otherwise, the repo has React 15.3.0 checked in.
 
-```
-make
-```
-
-Or host a server:
+Host a server:
 
 ```
 make serve
 ```
 
-To run tests, after hosting the server, spin up another shell and run selenium:
+In another pane/tab, spin up selenium:
 
 ```
 make selenium
 ```
 
-Now execute your tests in another shell using:
+And in the last pane/tab, execute your tests:
 
 ```
 make test
 ```
+
+## Caveats
+
+I haven't setup Sauce/BrowserStack integration. This only tests
+against Firefox. I would love to get this setup against many browsers.
