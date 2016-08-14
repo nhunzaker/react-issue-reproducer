@@ -1,0 +1,29 @@
+{
+  "name": "react-issue-reproducer",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "wdio-sauce-service": "0.2.4",
+    "webdriverio": "4.2.3"
+  },
+  "devDependencies": {
+    "wdio-mocha-framework": "0.4.0"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nhunzaker/react-issue-reproducer.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nhunzaker/react-issue-reproducer/issues"
+  },
+  "homepage": "https://github.com/nhunzaker/react-issue-reproducer"
+}
