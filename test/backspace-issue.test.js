@@ -2,7 +2,7 @@ var assert = require('assert')
 
 describe('backspace issue', function() {
 
-  it('should not eliminate decimal places on controlled input', function () {
+  it('should not eliminate decimal places on controlled number input', function () {
     browser.url('/cases/input')
     browser.setValue('#controlled', '3.')
     browser.getValue('#controlled')
@@ -10,7 +10,7 @@ describe('backspace issue', function() {
     assert.equal(browser.getValue('#controlled'), '3.')
   })
 
-  it('should not eliminate decimal places on uncontrolled input', function () {
+  it('should not eliminate decimal places on uncontrolled number input', function () {
     browser.url('/cases/input')
     browser.setValue('#uncontrolled', '3.')
     browser.getValue('#uncontrolled')
@@ -18,7 +18,7 @@ describe('backspace issue', function() {
     assert.equal(browser.getValue('#uncontrolled'), '3.')
   })
 
-  it ('does not override similar values on controlled inputs', function () {
+  it ('does not override similar values on controlled number', function () {
     browser.url('/cases/input')
     browser.setValue('#controlled', '30')
     browser.getValue('#controlled', '3e10')

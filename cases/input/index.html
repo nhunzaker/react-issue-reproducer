@@ -31,16 +31,13 @@
         render() {
           return (
             <div>
-              <p>Controlled</p>
-              <input id="controlled" type="text" value={ this.state.number } onChange={ this.handleNumberChange } /> -> { this.state.number }
+              <p>Controlled Number</p>
+              <input id="controlled" type="number" value={ this.state.number } onChange={ this.handleNumberChange } /> -> { this.state.number }
 
               <hr />
 
-              <p>Uncontrolled</p>
-              <input id="uncontrolled" type="text" defaultValue="3.14" />
-
               <p>Uncontrolled Number</p>
-              <input id="uncontrolled_number" type="number" defaultValue="3.14" />
+              <input id="uncontrolled" type="number" defaultValue="3.14" />
             </div>
           )
         }
