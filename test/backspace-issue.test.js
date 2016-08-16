@@ -26,4 +26,12 @@ describe('backspace issue', function() {
     assert.equal(browser.getValue('#controlled'), '30')
   })
 
+  it ('allows bad input on uncontrolled numbers', function () {
+    browser.url('/cases/input')
+    browser.setValue('#uncontrolled_number', '1e')
+    browser.getValue('#uncontrolled_number', '1e3')
+
+    assert.equal(browser.getValue('#uncontrolled_number'), '1e3')
+  })
+
 })
