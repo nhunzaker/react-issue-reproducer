@@ -4,12 +4,16 @@
     <meta charset="utf-8">
     <title>Disabled Interactive Elements</title>
     <style>
-      * {
-        padding: 10px 0;
-      }
-
       body {
         padding: 20px;
+      }
+
+      div {
+        padding: 5px 0;
+      }
+
+      p {
+        margin-bottom: 5px;
       }
     </style>
   </head>
@@ -22,44 +26,64 @@
 
     <script type="text/babel">
       function bombOut () {
-        throw new Error("This should never happen!");
+        alert('bad!')
       }
 
       function success () {
-        console.log('success!')
+        alert('good!')
       }
 
       function Elements () {
         return (
           <div>
             <div>
+              <p>This should not click:</p>
               <select onClick={ bombOut } disabled>
                 <option>Select</option>
               </select>
             </div>
 
             <div>
+              <p>This should not click:</p>
               <button onClick={ bombOut } disabled>Button</button>
             </div>
 
             <div>
+              <p>This should not click:</p>
               <textarea onClick={ bombOut } disabled value="Textarea" />
             </div>
 
             <div>
+              <p>This should not click:</p>
               <input onClick={ bombOut } disabled value="Input" />
             </div>
 
             <div onClick={ success }>
-              <button>Clicking me should bubble (see console)</button>
+              <p>Clicking an input should bubble</p>
+              <input value="Click me" />
             </div>
 
             <div onClick={ success }>
-              <div>Clicking me should bubble (see console)</div>
+              <p>Clicking an select should bubble</p>
+              <select><option>Select</option></select>
             </div>
 
             <div onClick={ success }>
-              Clicking a div should work (see console)
+              <p>Clicking an textarea should bubble</p>
+              <textarea value="Click me" />
+            </div>
+
+            <div onClick={ success }>
+              <p>Clicking a button should bubble</p>
+              <button>Click me</button>
+            </div>
+
+            <div onClick={ success }>
+              <div>Clicking a div should bubble</div>
+            </div>
+
+            <div onClick={ success }>
+              Clicking a div should work
             </div>
           </div>
         )
