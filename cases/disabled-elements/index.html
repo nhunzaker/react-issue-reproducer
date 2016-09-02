@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Disabled Interactive Elements</title>
+    <style>
+      * {
+        padding: 10px 0;
+      }
+
+      body {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">Loading...</div>
+
+    <script src="../../lib/react.js"></script>
+    <script src="../../lib/react-dom.js"></script>
+    <script src="../../lib/babel.js"></script>
+
+    <script type="text/babel">
+      function bombOut () {
+        throw new Error("This should never happen!");
+      }
+
+      function success () {
+        console.log('success!')
+      }
+
+      function Elements () {
+        return (
+          <div>
+            <div>
+              <select onClick={ bombOut } disabled>
+                <option>Select</option>
+              </select>
+            </div>
+
+            <div>
+              <button onClick={ bombOut } disabled>Button</button>
+            </div>
+
+            <div>
+              <textarea onClick={ bombOut } disabled value="Textarea" />
+            </div>
+
+            <div>
+              <input onClick={ bombOut } disabled value="Input" />
+            </div>
+
+            <div onClick={ success }>
+              <button>Clicking me should bubble (see console)</button>
+            </div>
+
+            <div onClick={ success }>
+              <div>Clicking me should bubble (see console)</div>
+            </div>
+
+            <div onClick={ success }>
+              Clicking a div should work (see console)
+            </div>
+          </div>
+        )
+      }
+
+      ReactDOM.render(<Elements />, document.getElementById('container'))
+    </script>
+  </body>
+</html>
