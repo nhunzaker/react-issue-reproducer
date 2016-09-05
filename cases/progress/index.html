@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Input Backspace Issue</title>
+  </head>
+  <body>
+    <div id="container">Loading...</div>
+
+    <script src="../../lib/react.js"></script>
+    <script src="../../lib/react-dom.js"></script>
+    <script src="../../lib/babel.js"></script>
+
+    <script type="text/babel">
+      requestAnimationFrame(function loop () {
+        var value = Math.abs(Math.cos(Date.now() / 1000))
+
+        ReactDOM.render(<progress value={value} max="1" />, container)
+
+        requestAnimationFrame(loop)
+      })
+    </script>
+  </body>
+</html>
