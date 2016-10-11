@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Range Inputs</title>
+  </head>
+  <body>
+    <div id="container">Loading...</div>
+
+    <script src="../../lib/react.js"></script>
+    <script src="../../lib/react-dom.js"></script>
+    <script src="../../lib/babel.js"></script>
+
+    <script type="text/babel">
+      function success () {
+        alert('good!')
+      }
+
+      function Elements () {
+        return (
+          <div onClick={success}>
+            <p>Clicking this paragraph should bubble</p>
+            <button>Clicking this button should bubble</button>
+          </div>
+        )
+      }
+
+      ReactDOM.render(<Elements />, document.getElementById('container'))
+    </script>
+  </body>
+</html>
