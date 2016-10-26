@@ -10,7 +10,6 @@
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule KeyEscapeUtils
  * 
  */
 
@@ -70,15 +69,14 @@ module.exports = KeyEscapeUtils;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule PooledClass
  * 
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(24);
+var _prodInvariant = _dereq_(23);
 
-var invariant = _dereq_(28);
+var invariant = _dereq_(27);
 
 /**
  * Static poolers. Several custom versions for each potential number of
@@ -186,7 +184,7 @@ var PooledClass = {
 };
 
 module.exports = PooledClass;
-},{"24":24,"28":28}],3:[function(_dereq_,module,exports){
+},{"23":23,"27":27}],3:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -195,24 +193,23 @@ module.exports = PooledClass;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule React
  */
 
 'use strict';
 
-var _assign = _dereq_(30);
+var _assign = _dereq_(29);
 
 var ReactChildren = _dereq_(4);
 var ReactComponent = _dereq_(6);
-var ReactPureComponent = _dereq_(17);
+var ReactPureComponent = _dereq_(16);
 var ReactClass = _dereq_(5);
 var ReactDOMFactories = _dereq_(9);
 var ReactElement = _dereq_(10);
 var ReactPropTypes = _dereq_(15);
-var ReactVersion = _dereq_(19);
+var ReactVersion = _dereq_(18);
 
-var onlyChild = _dereq_(23);
-var warning = _dereq_(29);
+var onlyChild = _dereq_(22);
+var warning = _dereq_(28);
 
 var createElement = ReactElement.createElement;
 var createFactory = ReactElement.createFactory;
@@ -276,7 +273,7 @@ var React = {
 };
 
 module.exports = React;
-},{"10":10,"12":12,"15":15,"17":17,"19":19,"23":23,"29":29,"30":30,"4":4,"5":5,"6":6,"9":9}],4:[function(_dereq_,module,exports){
+},{"10":10,"12":12,"15":15,"16":16,"18":18,"22":22,"28":28,"29":29,"4":4,"5":5,"6":6,"9":9}],4:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -285,7 +282,6 @@ module.exports = React;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactChildren
  */
 
 'use strict';
@@ -293,8 +289,8 @@ module.exports = React;
 var PooledClass = _dereq_(2);
 var ReactElement = _dereq_(10);
 
-var emptyFunction = _dereq_(26);
-var traverseAllChildren = _dereq_(25);
+var emptyFunction = _dereq_(25);
+var traverseAllChildren = _dereq_(24);
 
 var twoArgumentPooler = PooledClass.twoArgumentPooler;
 var fourArgumentPooler = PooledClass.fourArgumentPooler;
@@ -334,7 +330,7 @@ function forEachSingleChild(bookKeeping, child, name) {
 /**
  * Iterates through children that are typically specified as `props.children`.
  *
- * See https://facebook.github.io/react/docs/top-level-api.html#react.children.foreach
+ * See https://facebook.github.io/react/docs/react-api.html#react.children.foreach
  *
  * The provided forEachFunc(child, index) will be called for each
  * leaf child.
@@ -411,7 +407,7 @@ function mapIntoWithKeyPrefixInternal(children, array, prefix, func, context) {
 /**
  * Maps children that are typically specified as `props.children`.
  *
- * See https://facebook.github.io/react/docs/top-level-api.html#react.children.map
+ * See https://facebook.github.io/react/docs/react-api.html#react.children.map
  *
  * The provided mapFunction(child, key, index) will be called for each
  * leaf child.
@@ -438,7 +434,7 @@ function forEachSingleChildDummy(traverseContext, child, name) {
  * Count the number of children that are typically specified as
  * `props.children`.
  *
- * See https://facebook.github.io/react/docs/top-level-api.html#react.children.count
+ * See https://facebook.github.io/react/docs/react-api.html#react.children.count
  *
  * @param {?*} children Children tree container.
  * @return {number} The number of children.
@@ -451,7 +447,7 @@ function countChildren(children, context) {
  * Flatten a children object (typically specified as `props.children`) and
  * return an array with appropriately re-keyed children.
  *
- * See https://facebook.github.io/react/docs/top-level-api.html#react.children.toarray
+ * See https://facebook.github.io/react/docs/react-api.html#react.children.toarray
  */
 function toArray(children) {
   var result = [];
@@ -468,7 +464,7 @@ var ReactChildren = {
 };
 
 module.exports = ReactChildren;
-},{"10":10,"2":2,"25":25,"26":26}],5:[function(_dereq_,module,exports){
+},{"10":10,"2":2,"24":24,"25":25}],5:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -477,22 +473,21 @@ module.exports = ReactChildren;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactClass
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(24),
-    _assign = _dereq_(30);
+var _prodInvariant = _dereq_(23),
+    _assign = _dereq_(29);
 
 var ReactComponent = _dereq_(6);
 var ReactElement = _dereq_(10);
 var ReactPropTypeLocationNames = _dereq_(14);
 var ReactNoopUpdateQueue = _dereq_(13);
 
-var emptyObject = _dereq_(27);
-var invariant = _dereq_(28);
-var warning = _dereq_(29);
+var emptyObject = _dereq_(26);
+var invariant = _dereq_(27);
+var warning = _dereq_(28);
 
 var MIXINS_KEY = 'mixins';
 
@@ -1087,7 +1082,7 @@ var ReactClass = {
 
   /**
    * Creates a composite component class given a class specification.
-   * See https://facebook.github.io/react/docs/top-level-api.html#react.createclass
+   * See https://facebook.github.io/react/docs/react-api.html#createclass
    *
    * @param {object} spec Class specification (which must define `render`).
    * @return {function} Component constructor function.
@@ -1177,7 +1172,7 @@ var ReactClass = {
 };
 
 module.exports = ReactClass;
-},{"10":10,"13":13,"14":14,"24":24,"27":27,"28":28,"29":29,"30":30,"6":6}],6:[function(_dereq_,module,exports){
+},{"10":10,"13":13,"14":14,"23":23,"26":26,"27":27,"28":28,"29":29,"6":6}],6:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1186,19 +1181,18 @@ module.exports = ReactClass;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactComponent
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(24);
+var _prodInvariant = _dereq_(23);
 
 var ReactNoopUpdateQueue = _dereq_(13);
 
-var canDefineProperty = _dereq_(20);
-var emptyObject = _dereq_(27);
-var invariant = _dereq_(28);
-var warning = _dereq_(29);
+var canDefineProperty = _dereq_(19);
+var emptyObject = _dereq_(26);
+var invariant = _dereq_(27);
+var warning = _dereq_(28);
 
 /**
  * Base class helpers for the updating state of a component.
@@ -1296,7 +1290,7 @@ if ("development" !== 'production') {
 }
 
 module.exports = ReactComponent;
-},{"13":13,"20":20,"24":24,"27":27,"28":28,"29":29}],7:[function(_dereq_,module,exports){
+},{"13":13,"19":19,"23":23,"26":26,"27":27,"28":28}],7:[function(_dereq_,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -1306,17 +1300,16 @@ module.exports = ReactComponent;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * 
- * @providesModule ReactComponentTreeHook
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(24);
+var _prodInvariant = _dereq_(23);
 
 var ReactCurrentOwner = _dereq_(8);
 
-var invariant = _dereq_(28);
-var warning = _dereq_(29);
+var invariant = _dereq_(27);
+var warning = _dereq_(28);
 
 function isNative(fn) {
   // Based on isNative() from Lodash
@@ -1557,9 +1550,10 @@ var ReactComponentTreeHook = {
     }
 
     var currentOwner = ReactCurrentOwner.current;
-    var id = currentOwner && currentOwner._debugID;
-
-    info += ReactComponentTreeHook.getStackAddendumByID(id);
+    if (currentOwner && typeof currentOwner._debugID === 'number') {
+      var id = currentOwner && currentOwner._debugID;
+      info += ReactComponentTreeHook.getStackAddendumByID(id);
+    }
     return info;
   },
   getStackAddendumByID: function (id) {
@@ -1623,7 +1617,7 @@ var ReactComponentTreeHook = {
 };
 
 module.exports = ReactComponentTreeHook;
-},{"24":24,"28":28,"29":29,"8":8}],8:[function(_dereq_,module,exports){
+},{"23":23,"27":27,"28":28,"8":8}],8:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1632,7 +1626,6 @@ module.exports = ReactComponentTreeHook;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactCurrentOwner
  * 
  */
 
@@ -1664,7 +1657,6 @@ module.exports = ReactCurrentOwner;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOMFactories
  */
 
 'use strict';
@@ -1835,17 +1827,16 @@ module.exports = ReactDOMFactories;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactElement
  */
 
 'use strict';
 
-var _assign = _dereq_(30);
+var _assign = _dereq_(29);
 
 var ReactCurrentOwner = _dereq_(8);
 
-var warning = _dereq_(29);
-var canDefineProperty = _dereq_(20);
+var warning = _dereq_(28);
+var canDefineProperty = _dereq_(19);
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
 var REACT_ELEMENT_TYPE = _dereq_(11);
@@ -1995,7 +1986,7 @@ var ReactElement = function (type, key, ref, self, source, owner, props) {
 
 /**
  * Create and return a new ReactElement of the given type.
- * See https://facebook.github.io/react/docs/top-level-api.html#react.createelement
+ * See https://facebook.github.io/react/docs/react-api.html#createelement
  */
 ReactElement.createElement = function (type, config, children) {
   var propName;
@@ -2071,7 +2062,7 @@ ReactElement.createElement = function (type, config, children) {
 
 /**
  * Return a function that produces ReactElements of a given type.
- * See https://facebook.github.io/react/docs/top-level-api.html#react.createfactory
+ * See https://facebook.github.io/react/docs/react-api.html#createfactory
  */
 ReactElement.createFactory = function (type) {
   var factory = ReactElement.createElement.bind(null, type);
@@ -2092,7 +2083,7 @@ ReactElement.cloneAndReplaceKey = function (oldElement, newKey) {
 
 /**
  * Clone and return a new ReactElement using element as the starting point.
- * See https://facebook.github.io/react/docs/top-level-api.html#react.cloneelement
+ * See https://facebook.github.io/react/docs/react-api.html#cloneelement
  */
 ReactElement.cloneElement = function (element, config, children) {
   var propName;
@@ -2158,7 +2149,7 @@ ReactElement.cloneElement = function (element, config, children) {
 
 /**
  * Verifies the object is a ReactElement.
- * See https://facebook.github.io/react/docs/top-level-api.html#react.isvalidelement
+ * See https://facebook.github.io/react/docs/react-api.html#isvalidelement
  * @param {?object} object
  * @return {boolean} True if `object` is a valid component.
  * @final
@@ -2168,7 +2159,7 @@ ReactElement.isValidElement = function (object) {
 };
 
 module.exports = ReactElement;
-},{"11":11,"20":20,"29":29,"30":30,"8":8}],11:[function(_dereq_,module,exports){
+},{"11":11,"19":19,"28":28,"29":29,"8":8}],11:[function(_dereq_,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -2177,7 +2168,6 @@ module.exports = ReactElement;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactElementSymbol
  * 
  */
 
@@ -2198,7 +2188,6 @@ module.exports = REACT_ELEMENT_TYPE;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactElementValidator
  */
 
 /**
@@ -2214,11 +2203,11 @@ var ReactCurrentOwner = _dereq_(8);
 var ReactComponentTreeHook = _dereq_(7);
 var ReactElement = _dereq_(10);
 
-var checkReactTypeSpec = _dereq_(21);
+var checkReactTypeSpec = _dereq_(20);
 
-var canDefineProperty = _dereq_(20);
-var getIteratorFn = _dereq_(22);
-var warning = _dereq_(29);
+var canDefineProperty = _dereq_(19);
+var getIteratorFn = _dereq_(21);
+var warning = _dereq_(28);
 
 function getDeclarationErrorAddendum() {
   if (ReactCurrentOwner.current) {
@@ -2417,7 +2406,7 @@ var ReactElementValidator = {
 };
 
 module.exports = ReactElementValidator;
-},{"10":10,"20":20,"21":21,"22":22,"29":29,"7":7,"8":8}],13:[function(_dereq_,module,exports){
+},{"10":10,"19":19,"20":20,"21":21,"28":28,"7":7,"8":8}],13:[function(_dereq_,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -2426,12 +2415,11 @@ module.exports = ReactElementValidator;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactNoopUpdateQueue
  */
 
 'use strict';
 
-var warning = _dereq_(29);
+var warning = _dereq_(28);
 
 function warnNoop(publicInstance, callerName) {
   if ("development" !== 'production') {
@@ -2514,7 +2502,7 @@ var ReactNoopUpdateQueue = {
 };
 
 module.exports = ReactNoopUpdateQueue;
-},{"29":29}],14:[function(_dereq_,module,exports){
+},{"28":28}],14:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2524,7 +2512,6 @@ module.exports = ReactNoopUpdateQueue;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * 
- * @providesModule ReactPropTypeLocationNames
  */
 
 'use strict';
@@ -2549,18 +2536,19 @@ module.exports = ReactPropTypeLocationNames;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactPropTypes
  */
 
 'use strict';
 
+var _prodInvariant = _dereq_(23);
+
 var ReactElement = _dereq_(10);
 var ReactPropTypeLocationNames = _dereq_(14);
-var ReactPropTypesSecret = _dereq_(16);
 
-var emptyFunction = _dereq_(26);
-var getIteratorFn = _dereq_(22);
-var warning = _dereq_(29);
+var emptyFunction = _dereq_(25);
+var getIteratorFn = _dereq_(21);
+var invariant = _dereq_(27);
+var warning = _dereq_(28);
 
 /**
  * Collection of methods that allow declaration and validation of props that are
@@ -2611,25 +2599,56 @@ var warning = _dereq_(29);
 
 var ANONYMOUS = '<<anonymous>>';
 
-var ReactPropTypes = {
-  array: createPrimitiveTypeChecker('array'),
-  bool: createPrimitiveTypeChecker('boolean'),
-  func: createPrimitiveTypeChecker('function'),
-  number: createPrimitiveTypeChecker('number'),
-  object: createPrimitiveTypeChecker('object'),
-  string: createPrimitiveTypeChecker('string'),
-  symbol: createPrimitiveTypeChecker('symbol'),
+if ("development" !== 'production') {
+  // Keep in sync with production version below
+  var ReactPropTypes = {
+    array: createPrimitiveTypeChecker('array'),
+    bool: createPrimitiveTypeChecker('boolean'),
+    func: createPrimitiveTypeChecker('function'),
+    number: createPrimitiveTypeChecker('number'),
+    object: createPrimitiveTypeChecker('object'),
+    string: createPrimitiveTypeChecker('string'),
+    symbol: createPrimitiveTypeChecker('symbol'),
 
-  any: createAnyTypeChecker(),
-  arrayOf: createArrayOfTypeChecker,
-  element: createElementTypeChecker(),
-  instanceOf: createInstanceTypeChecker,
-  node: createNodeChecker(),
-  objectOf: createObjectOfTypeChecker,
-  oneOf: createEnumTypeChecker,
-  oneOfType: createUnionTypeChecker,
-  shape: createShapeTypeChecker
-};
+    any: createAnyTypeChecker(),
+    arrayOf: createArrayOfTypeChecker,
+    element: createElementTypeChecker(),
+    instanceOf: createInstanceTypeChecker,
+    node: createNodeChecker(),
+    objectOf: createObjectOfTypeChecker,
+    oneOf: createEnumTypeChecker,
+    oneOfType: createUnionTypeChecker,
+    shape: createShapeTypeChecker
+  };
+} else {
+  var productionTypeChecker = function () {
+    invariant(false, 'React.PropTypes type checking code is stripped in production.');
+  };
+  productionTypeChecker.isRequired = productionTypeChecker;
+  var getProductionTypeChecker = function () {
+    return productionTypeChecker;
+  };
+  // Keep in sync with development version above
+  var ReactPropTypes = {
+    array: productionTypeChecker,
+    bool: productionTypeChecker,
+    func: productionTypeChecker,
+    number: productionTypeChecker,
+    object: productionTypeChecker,
+    string: productionTypeChecker,
+    symbol: productionTypeChecker,
+
+    any: productionTypeChecker,
+    arrayOf: getProductionTypeChecker,
+    element: productionTypeChecker,
+    instanceOf: getProductionTypeChecker,
+    node: productionTypeChecker,
+    objectOf: getProductionTypeChecker,
+    oneOf: getProductionTypeChecker,
+    oneOfType: getProductionTypeChecker,
+    shape: getProductionTypeChecker
+  };
+}
 
 /**
  * inlined Object.is polyfill to avoid requiring consumers ship their own
@@ -2664,21 +2683,9 @@ function PropTypeError(message) {
 PropTypeError.prototype = Error.prototype;
 
 function createChainableTypeChecker(validate) {
-  if ("development" !== 'production') {
-    var manualPropTypeCallCache = {};
-  }
-  function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+  function checkType(isRequired, props, propName, componentName, location, propFullName) {
     componentName = componentName || ANONYMOUS;
     propFullName = propFullName || propName;
-    if ("development" !== 'production') {
-      if (secret !== ReactPropTypesSecret && typeof console !== 'undefined') {
-        var cacheKey = componentName + ':' + propName;
-        if (!manualPropTypeCallCache[cacheKey]) {
-          "development" !== 'production' ? warning(false, 'You are manually calling a React.PropTypes validation ' + 'function for the `%s` prop on `%s`. This is deprecated ' + 'and will not work in production with the next major version. ' + 'You may be seeing this warning due to a third-party PropTypes ' + 'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.', propFullName, componentName) : void 0;
-          manualPropTypeCallCache[cacheKey] = true;
-        }
-      }
-    }
     if (props[propName] == null) {
       var locationName = ReactPropTypeLocationNames[location];
       if (isRequired) {
@@ -2700,7 +2707,7 @@ function createChainableTypeChecker(validate) {
 }
 
 function createPrimitiveTypeChecker(expectedType) {
-  function validate(props, propName, componentName, location, propFullName, secret) {
+  function validate(props, propName, componentName, location, propFullName) {
     var propValue = props[propName];
     var propType = getPropType(propValue);
     if (propType !== expectedType) {
@@ -2733,7 +2740,7 @@ function createArrayOfTypeChecker(typeChecker) {
       return new PropTypeError('Invalid ' + locationName + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
     }
     for (var i = 0; i < propValue.length; i++) {
-      var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
+      var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']');
       if (error instanceof Error) {
         return error;
       }
@@ -2803,7 +2810,7 @@ function createObjectOfTypeChecker(typeChecker) {
     }
     for (var key in propValue) {
       if (propValue.hasOwnProperty(key)) {
-        var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key);
         if (error instanceof Error) {
           return error;
         }
@@ -2823,7 +2830,7 @@ function createUnionTypeChecker(arrayOfTypeCheckers) {
   function validate(props, propName, componentName, location, propFullName) {
     for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
       var checker = arrayOfTypeCheckers[i];
-      if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) {
+      if (checker(props, propName, componentName, location, propFullName) == null) {
         return null;
       }
     }
@@ -2858,7 +2865,7 @@ function createShapeTypeChecker(shapeTypes) {
       if (!checker) {
         continue;
       }
-      var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+      var error = checker(propValue, key, componentName, location, propFullName + '.' + key);
       if (error) {
         return error;
       }
@@ -2975,7 +2982,7 @@ function getClassName(propValue) {
 }
 
 module.exports = ReactPropTypes;
-},{"10":10,"14":14,"16":16,"22":22,"26":26,"29":29}],16:[function(_dereq_,module,exports){
+},{"10":10,"14":14,"21":21,"23":23,"25":25,"27":27,"28":28}],16:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2984,35 +2991,16 @@ module.exports = ReactPropTypes;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
- * @providesModule ReactPropTypesSecret
  */
 
 'use strict';
 
-var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
-
-module.exports = ReactPropTypesSecret;
-},{}],17:[function(_dereq_,module,exports){
-/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule ReactPureComponent
- */
-
-'use strict';
-
-var _assign = _dereq_(30);
+var _assign = _dereq_(29);
 
 var ReactComponent = _dereq_(6);
 var ReactNoopUpdateQueue = _dereq_(13);
 
-var emptyObject = _dereq_(27);
+var emptyObject = _dereq_(26);
 
 /**
  * Base class helpers for the updating state of a component.
@@ -3036,7 +3024,7 @@ _assign(ReactPureComponent.prototype, ReactComponent.prototype);
 ReactPureComponent.prototype.isPureReactComponent = true;
 
 module.exports = ReactPureComponent;
-},{"13":13,"27":27,"30":30,"6":6}],18:[function(_dereq_,module,exports){
+},{"13":13,"26":26,"29":29,"6":6}],17:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3045,12 +3033,11 @@ module.exports = ReactPureComponent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactUMDEntry
  */
 
 'use strict';
 
-var _assign = _dereq_(30);
+var _assign = _dereq_(29);
 
 var React = _dereq_(3);
 
@@ -3069,7 +3056,7 @@ if ("development" !== 'production') {
 }
 
 module.exports = ReactUMDEntry;
-},{"3":3,"30":30,"7":7,"8":8}],19:[function(_dereq_,module,exports){
+},{"29":29,"3":3,"7":7,"8":8}],18:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3078,13 +3065,12 @@ module.exports = ReactUMDEntry;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactVersion
  */
 
 'use strict';
 
 module.exports = '16.0.0-alpha';
-},{}],20:[function(_dereq_,module,exports){
+},{}],19:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3094,7 +3080,6 @@ module.exports = '16.0.0-alpha';
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * 
- * @providesModule canDefineProperty
  */
 
 'use strict';
@@ -3111,7 +3096,7 @@ if ("development" !== 'production') {
 }
 
 module.exports = canDefineProperty;
-},{}],21:[function(_dereq_,module,exports){
+},{}],20:[function(_dereq_,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -3121,18 +3106,16 @@ module.exports = canDefineProperty;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule checkReactTypeSpec
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(24);
+var _prodInvariant = _dereq_(23);
 
 var ReactPropTypeLocationNames = _dereq_(14);
-var ReactPropTypesSecret = _dereq_(16);
 
-var invariant = _dereq_(28);
-var warning = _dereq_(29);
+var invariant = _dereq_(27);
+var warning = _dereq_(28);
 
 var ReactComponentTreeHook;
 
@@ -3170,7 +3153,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
         // This is intentionally an invariant that gets caught. It's the same
         // behavior as without this statement except with a better message.
         !(typeof typeSpecs[typeSpecName] === 'function') ? "development" !== 'production' ? invariant(false, '%s: %s type `%s` is invalid; it must be a function, usually from React.PropTypes.', componentName || 'React class', ReactPropTypeLocationNames[location], typeSpecName) : _prodInvariant('84', componentName || 'React class', ReactPropTypeLocationNames[location], typeSpecName) : void 0;
-        error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+        error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location);
       } catch (ex) {
         error = ex;
       }
@@ -3201,7 +3184,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,undefined)
-},{"14":14,"16":16,"24":24,"28":28,"29":29,"7":7}],22:[function(_dereq_,module,exports){
+},{"14":14,"23":23,"27":27,"28":28,"7":7}],21:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3210,7 +3193,6 @@ module.exports = checkReactTypeSpec;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule getIteratorFn
  * 
  */
 
@@ -3243,7 +3225,7 @@ function getIteratorFn(maybeIterable) {
 }
 
 module.exports = getIteratorFn;
-},{}],23:[function(_dereq_,module,exports){
+},{}],22:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3252,21 +3234,20 @@ module.exports = getIteratorFn;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule onlyChild
  */
 'use strict';
 
-var _prodInvariant = _dereq_(24);
+var _prodInvariant = _dereq_(23);
 
 var ReactElement = _dereq_(10);
 
-var invariant = _dereq_(28);
+var invariant = _dereq_(27);
 
 /**
  * Returns the first child in a collection of children and verifies that there
  * is only one child in the collection.
  *
- * See https://facebook.github.io/react/docs/top-level-api.html#react.children.only
+ * See https://facebook.github.io/react/docs/react-api.html#react.children.only
  *
  * The current implementation of this function assumes that a single child gets
  * passed without a wrapper, but the purpose of this helper function is to
@@ -3282,7 +3263,7 @@ function onlyChild(children) {
 }
 
 module.exports = onlyChild;
-},{"10":10,"24":24,"28":28}],24:[function(_dereq_,module,exports){
+},{"10":10,"23":23,"27":27}],23:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3291,7 +3272,6 @@ module.exports = onlyChild;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule reactProdInvariant
  * 
  */
 'use strict';
@@ -3322,7 +3302,7 @@ function reactProdInvariant(code) {
 }
 
 module.exports = reactProdInvariant;
-},{}],25:[function(_dereq_,module,exports){
+},{}],24:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3331,20 +3311,19 @@ module.exports = reactProdInvariant;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule traverseAllChildren
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(24);
+var _prodInvariant = _dereq_(23);
 
 var ReactCurrentOwner = _dereq_(8);
 var REACT_ELEMENT_TYPE = _dereq_(11);
 
-var getIteratorFn = _dereq_(22);
-var invariant = _dereq_(28);
+var getIteratorFn = _dereq_(21);
+var invariant = _dereq_(27);
 var KeyEscapeUtils = _dereq_(1);
-var warning = _dereq_(29);
+var warning = _dereq_(28);
 
 var SEPARATOR = '.';
 var SUBSEPARATOR = ':';
@@ -3499,7 +3478,7 @@ function traverseAllChildren(children, callback, traverseContext) {
 }
 
 module.exports = traverseAllChildren;
-},{"1":1,"11":11,"22":22,"24":24,"28":28,"29":29,"8":8}],26:[function(_dereq_,module,exports){
+},{"1":1,"11":11,"21":21,"23":23,"27":27,"28":28,"8":8}],25:[function(_dereq_,module,exports){
 "use strict";
 
 /**
@@ -3538,7 +3517,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],27:[function(_dereq_,module,exports){
+},{}],26:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3558,7 +3537,7 @@ if ("development" !== 'production') {
 }
 
 module.exports = emptyObject;
-},{}],28:[function(_dereq_,module,exports){
+},{}],27:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3608,7 +3587,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-},{}],29:[function(_dereq_,module,exports){
+},{}],28:[function(_dereq_,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -3621,7 +3600,7 @@ module.exports = invariant;
 
 'use strict';
 
-var emptyFunction = _dereq_(26);
+var emptyFunction = _dereq_(25);
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -3675,7 +3654,7 @@ if ("development" !== 'production') {
 }
 
 module.exports = warning;
-},{"26":26}],30:[function(_dereq_,module,exports){
+},{"25":25}],29:[function(_dereq_,module,exports){
 'use strict';
 /* eslint-disable no-unused-vars */
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -3760,5 +3739,5 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}]},{},[18])(18)
+},{}]},{},[17])(17)
 });

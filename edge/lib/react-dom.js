@@ -38,7 +38,6 @@
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ARIADOMPropertyConfig
  */
 
 'use strict';
@@ -113,14 +112,13 @@ module.exports = ARIADOMPropertyConfig;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule AutoFocusUtils
  */
 
 'use strict';
 
 var ReactDOMComponentTree = _dereq_(34);
 
-var focusNode = _dereq_(144);
+var focusNode = _dereq_(143);
 
 var AutoFocusUtils = {
   focusDOMComponent: function () {
@@ -129,7 +127,7 @@ var AutoFocusUtils = {
 };
 
 module.exports = AutoFocusUtils;
-},{"144":144,"34":34}],3:[function(_dereq_,module,exports){
+},{"143":143,"34":34}],3:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present Facebook, Inc.
  * All rights reserved.
@@ -138,16 +136,15 @@ module.exports = AutoFocusUtils;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule BeforeInputEventPlugin
  */
 
 'use strict';
 
 var EventPropagators = _dereq_(20);
-var ExecutionEnvironment = _dereq_(136);
+var ExecutionEnvironment = _dereq_(135);
 var FallbackCompositionState = _dereq_(21);
-var SyntheticCompositionEvent = _dereq_(89);
-var SyntheticInputEvent = _dereq_(93);
+var SyntheticCompositionEvent = _dereq_(88);
+var SyntheticInputEvent = _dereq_(92);
 
 var END_KEYCODES = [9, 13, 27, 32]; // Tab, Return, Esc, Space
 var START_KEYCODE = 229;
@@ -515,7 +512,7 @@ var BeforeInputEventPlugin = {
 };
 
 module.exports = BeforeInputEventPlugin;
-},{"136":136,"20":20,"21":21,"89":89,"93":93}],4:[function(_dereq_,module,exports){
+},{"135":135,"20":20,"21":21,"88":88,"92":92}],4:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -524,7 +521,6 @@ module.exports = BeforeInputEventPlugin;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule CSSProperty
  */
 
 'use strict';
@@ -673,20 +669,19 @@ module.exports = CSSProperty;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule CSSPropertyOperations
  */
 
 'use strict';
 
 var CSSProperty = _dereq_(4);
-var ExecutionEnvironment = _dereq_(136);
-var ReactInstrumentation = _dereq_(64);
+var ExecutionEnvironment = _dereq_(135);
+var ReactInstrumentation = _dereq_(63);
 
-var camelizeStyleName = _dereq_(138);
-var dangerousStyleValue = _dereq_(106);
-var hyphenateStyleName = _dereq_(149);
-var memoizeStringOnly = _dereq_(153);
-var warning = _dereq_(157);
+var camelizeStyleName = _dereq_(137);
+var dangerousStyleValue = _dereq_(105);
+var hyphenateStyleName = _dereq_(148);
+var memoizeStringOnly = _dereq_(152);
+var warning = _dereq_(156);
 
 var processStyleName = memoizeStringOnly(function (styleName) {
   return hyphenateStyleName(styleName);
@@ -874,7 +869,7 @@ var CSSPropertyOperations = {
 };
 
 module.exports = CSSPropertyOperations;
-},{"106":106,"136":136,"138":138,"149":149,"153":153,"157":157,"4":4,"64":64}],6:[function(_dereq_,module,exports){
+},{"105":105,"135":135,"137":137,"148":148,"152":152,"156":156,"4":4,"63":63}],6:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -883,19 +878,18 @@ module.exports = CSSPropertyOperations;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule CallbackQueue
  * 
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var PooledClass = _dereq_(25);
 
-var invariant = _dereq_(150);
+var invariant = _dereq_(149);
 
 /**
  * A specialized pseudo-event module to help keep track of components waiting to
@@ -994,7 +988,7 @@ var CallbackQueue = function () {
 }();
 
 module.exports = PooledClass.addPoolingTo(CallbackQueue);
-},{"125":125,"150":150,"25":25}],7:[function(_dereq_,module,exports){
+},{"124":124,"149":149,"25":25}],7:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1003,22 +997,21 @@ module.exports = PooledClass.addPoolingTo(CallbackQueue);
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ChangeEventPlugin
  */
 
 'use strict';
 
 var EventPluginHub = _dereq_(17);
 var EventPropagators = _dereq_(20);
-var ExecutionEnvironment = _dereq_(136);
+var ExecutionEnvironment = _dereq_(135);
 var ReactDOMComponentTree = _dereq_(34);
-var ReactUpdates = _dereq_(82);
-var SyntheticEvent = _dereq_(91);
+var ReactUpdates = _dereq_(81);
+var SyntheticEvent = _dereq_(90);
 
-var inputValueTracking = _dereq_(120);
-var getEventTarget = _dereq_(114);
-var isEventSupported = _dereq_(122);
-var isTextInputElement = _dereq_(123);
+var inputValueTracking = _dereq_(119);
+var getEventTarget = _dereq_(113);
+var isEventSupported = _dereq_(121);
+var isTextInputElement = _dereq_(122);
 
 var eventTypes = {
   change: {
@@ -1278,7 +1271,7 @@ var ChangeEventPlugin = {
 };
 
 module.exports = ChangeEventPlugin;
-},{"114":114,"120":120,"122":122,"123":123,"136":136,"17":17,"20":20,"34":34,"82":82,"91":91}],8:[function(_dereq_,module,exports){
+},{"113":113,"119":119,"121":121,"122":122,"135":135,"17":17,"20":20,"34":34,"81":81,"90":90}],8:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1287,19 +1280,18 @@ module.exports = ChangeEventPlugin;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule DOMChildrenOperations
  */
 
 'use strict';
 
-var DOMLazyTree = _dereq_(9);
-var Danger = _dereq_(13);
+var DOMLazyTree = _dereq_(10);
+var Danger = _dereq_(14);
 var ReactDOMComponentTree = _dereq_(34);
-var ReactInstrumentation = _dereq_(64);
+var ReactInstrumentation = _dereq_(63);
 
-var createMicrosoftUnsafeLocalFunction = _dereq_(105);
-var setInnerHTML = _dereq_(127);
-var setTextContent = _dereq_(128);
+var createMicrosoftUnsafeLocalFunction = _dereq_(104);
+var setInnerHTML = _dereq_(126);
+var setTextContent = _dereq_(127);
 
 function getNodeAfter(parentNode, node) {
   // Special case for text components, which return [open, close] comments
@@ -1504,7 +1496,33 @@ var DOMChildrenOperations = {
 };
 
 module.exports = DOMChildrenOperations;
-},{"105":105,"127":127,"128":128,"13":13,"34":34,"64":64,"9":9}],9:[function(_dereq_,module,exports){
+},{"10":10,"104":104,"126":126,"127":127,"14":14,"34":34,"63":63}],9:[function(_dereq_,module,exports){
+/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
+'use strict';
+
+/**
+ * Module that is injectable into `EventPluginHub`, that specifies a
+ * deterministic ordering of `EventPlugin`s. A convenient way to reason about
+ * plugins, without having to package every one of them. This is better than
+ * having plugins be ordered in the same order that they are injected because
+ * that ordering would be influenced by the packaging order.
+ * `ResponderEventPlugin` must occur before `SimpleEventPlugin` so that
+ * preventing default on events is convenient in `SimpleEventPlugin` handlers.
+ */
+
+var DOMEventPluginOrder = ['ResponderEventPlugin', 'SimpleEventPlugin', 'TapEventPlugin', 'EnterLeaveEventPlugin', 'ChangeEventPlugin', 'SelectEventPlugin', 'BeforeInputEventPlugin'];
+
+module.exports = DOMEventPluginOrder;
+},{}],10:[function(_dereq_,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -1513,16 +1531,15 @@ module.exports = DOMChildrenOperations;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule DOMLazyTree
  */
 
 'use strict';
 
-var DOMNamespaces = _dereq_(10);
-var setInnerHTML = _dereq_(127);
+var DOMNamespaces = _dereq_(11);
+var setInnerHTML = _dereq_(126);
 
-var createMicrosoftUnsafeLocalFunction = _dereq_(105);
-var setTextContent = _dereq_(128);
+var createMicrosoftUnsafeLocalFunction = _dereq_(104);
+var setTextContent = _dereq_(127);
 
 var ELEMENT_NODE_TYPE = 1;
 var DOCUMENT_FRAGMENT_NODE_TYPE = 11;
@@ -1623,7 +1640,7 @@ DOMLazyTree.queueHTML = queueHTML;
 DOMLazyTree.queueText = queueText;
 
 module.exports = DOMLazyTree;
-},{"10":10,"105":105,"127":127,"128":128}],10:[function(_dereq_,module,exports){
+},{"104":104,"11":11,"126":126,"127":127}],11:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1632,7 +1649,6 @@ module.exports = DOMLazyTree;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule DOMNamespaces
  */
 
 'use strict';
@@ -1644,7 +1660,7 @@ var DOMNamespaces = {
 };
 
 module.exports = DOMNamespaces;
-},{}],11:[function(_dereq_,module,exports){
+},{}],12:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1653,14 +1669,13 @@ module.exports = DOMNamespaces;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule DOMProperty
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
-var invariant = _dereq_(150);
+var invariant = _dereq_(149);
 
 function checkMask(value, bitmask) {
   return (value & bitmask) === bitmask;
@@ -1855,7 +1870,7 @@ var DOMProperty = {
 };
 
 module.exports = DOMProperty;
-},{"125":125,"150":150}],12:[function(_dereq_,module,exports){
+},{"124":124,"149":149}],13:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1864,17 +1879,16 @@ module.exports = DOMProperty;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule DOMPropertyOperations
  */
 
 'use strict';
 
-var DOMProperty = _dereq_(11);
+var DOMProperty = _dereq_(12);
 var ReactDOMComponentTree = _dereq_(34);
-var ReactInstrumentation = _dereq_(64);
+var ReactInstrumentation = _dereq_(63);
 
-var quoteAttributeValueForBrowser = _dereq_(124);
-var warning = _dereq_(157);
+var quoteAttributeValueForBrowser = _dereq_(123);
+var warning = _dereq_(156);
 
 var VALID_ATTRIBUTE_NAME_REGEX = new RegExp('^[' + DOMProperty.ATTRIBUTE_NAME_START_CHAR + '][' + DOMProperty.ATTRIBUTE_NAME_CHAR + ']*$');
 var illegalAttributeNameCache = {};
@@ -2093,7 +2107,7 @@ var DOMPropertyOperations = {
 };
 
 module.exports = DOMPropertyOperations;
-},{"11":11,"124":124,"157":157,"34":34,"64":64}],13:[function(_dereq_,module,exports){
+},{"12":12,"123":123,"156":156,"34":34,"63":63}],14:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2102,19 +2116,18 @@ module.exports = DOMPropertyOperations;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule Danger
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
-var DOMLazyTree = _dereq_(9);
-var ExecutionEnvironment = _dereq_(136);
+var DOMLazyTree = _dereq_(10);
+var ExecutionEnvironment = _dereq_(135);
 
-var createNodesFromMarkup = _dereq_(141);
-var emptyFunction = _dereq_(142);
-var invariant = _dereq_(150);
+var createNodesFromMarkup = _dereq_(140);
+var emptyFunction = _dereq_(141);
+var invariant = _dereq_(149);
 
 var Danger = {
 
@@ -2142,7 +2155,7 @@ var Danger = {
 };
 
 module.exports = Danger;
-},{"125":125,"136":136,"141":141,"142":142,"150":150,"9":9}],14:[function(_dereq_,module,exports){
+},{"10":10,"124":124,"135":135,"140":140,"141":141,"149":149}],15:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2151,41 +2164,13 @@ module.exports = Danger;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule DefaultEventPluginOrder
- */
-
-'use strict';
-
-/**
- * Module that is injectable into `EventPluginHub`, that specifies a
- * deterministic ordering of `EventPlugin`s. A convenient way to reason about
- * plugins, without having to package every one of them. This is better than
- * having plugins be ordered in the same order that they are injected because
- * that ordering would be influenced by the packaging order.
- * `ResponderEventPlugin` must occur before `SimpleEventPlugin` so that
- * preventing default on events is convenient in `SimpleEventPlugin` handlers.
- */
-
-var DefaultEventPluginOrder = ['ResponderEventPlugin', 'SimpleEventPlugin', 'TapEventPlugin', 'EnterLeaveEventPlugin', 'ChangeEventPlugin', 'SelectEventPlugin', 'BeforeInputEventPlugin'];
-
-module.exports = DefaultEventPluginOrder;
-},{}],15:[function(_dereq_,module,exports){
-/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule EnterLeaveEventPlugin
  */
 
 'use strict';
 
 var EventPropagators = _dereq_(20);
 var ReactDOMComponentTree = _dereq_(34);
-var SyntheticMouseEvent = _dereq_(95);
+var SyntheticMouseEvent = _dereq_(94);
 
 var eventTypes = {
   mouseEnter: {
@@ -2270,7 +2255,7 @@ var EnterLeaveEventPlugin = {
 };
 
 module.exports = EnterLeaveEventPlugin;
-},{"20":20,"34":34,"95":95}],16:[function(_dereq_,module,exports){
+},{"20":20,"34":34,"94":94}],16:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2279,7 +2264,6 @@ module.exports = EnterLeaveEventPlugin;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule EventConstants
  */
 
 'use strict';
@@ -2372,20 +2356,19 @@ module.exports = EventConstants;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule EventPluginHub
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
 var EventPluginRegistry = _dereq_(18);
 var EventPluginUtils = _dereq_(19);
 var ReactErrorUtils = _dereq_(55);
 
-var accumulateInto = _dereq_(102);
-var forEachAccumulated = _dereq_(110);
-var invariant = _dereq_(150);
+var accumulateInto = _dereq_(101);
+var forEachAccumulated = _dereq_(109);
+var invariant = _dereq_(149);
 
 /**
  * Internal store for event listeners
@@ -2615,7 +2598,7 @@ var EventPluginHub = {
 };
 
 module.exports = EventPluginHub;
-},{"102":102,"110":110,"125":125,"150":150,"18":18,"19":19,"55":55}],18:[function(_dereq_,module,exports){
+},{"101":101,"109":109,"124":124,"149":149,"18":18,"19":19,"55":55}],18:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2624,15 +2607,14 @@ module.exports = EventPluginHub;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule EventPluginRegistry
  * 
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
-var invariant = _dereq_(150);
+var invariant = _dereq_(149);
 
 /**
  * Injectable ordering of event plugins.
@@ -2871,7 +2853,7 @@ var EventPluginRegistry = {
 };
 
 module.exports = EventPluginRegistry;
-},{"125":125,"150":150}],19:[function(_dereq_,module,exports){
+},{"124":124,"149":149}],19:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2880,17 +2862,17 @@ module.exports = EventPluginRegistry;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule EventPluginUtils
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
+var ReactTreeTraversal = _dereq_(79);
 var ReactErrorUtils = _dereq_(55);
 
-var invariant = _dereq_(150);
-var warning = _dereq_(157);
+var invariant = _dereq_(149);
+var warning = _dereq_(156);
 
 /**
  * Injected dependencies:
@@ -2901,18 +2883,11 @@ var warning = _dereq_(157);
  *   and actual node references.
  */
 var ComponentTree;
-var TreeTraversal;
 var injection = {
   injectComponentTree: function (Injected) {
     ComponentTree = Injected;
     if ("development" !== 'production') {
       "development" !== 'production' ? warning(Injected && Injected.getNodeFromInstance && Injected.getInstanceFromNode, 'EventPluginUtils.injection.injectComponentTree(...): Injected ' + 'module is missing getNodeFromInstance or getInstanceFromNode.') : void 0;
-    }
-  },
-  injectTreeTraversal: function (Injected) {
-    TreeTraversal = Injected;
-    if ("development" !== 'production') {
-      "development" !== 'production' ? warning(Injected && Injected.isAncestor && Injected.getLowestCommonAncestor, 'EventPluginUtils.injection.injectTreeTraversal(...): Injected ' + 'module is missing isAncestor or getLowestCommonAncestor.') : void 0;
     }
   }
 };
@@ -3079,26 +3054,26 @@ var EventPluginUtils = {
     return ComponentTree.getNodeFromInstance(node);
   },
   isAncestor: function (a, b) {
-    return TreeTraversal.isAncestor(a, b);
+    return ReactTreeTraversal.isAncestor(a, b);
   },
   getLowestCommonAncestor: function (a, b) {
-    return TreeTraversal.getLowestCommonAncestor(a, b);
+    return ReactTreeTraversal.getLowestCommonAncestor(a, b);
   },
   getParentInstance: function (inst) {
-    return TreeTraversal.getParentInstance(inst);
+    return ReactTreeTraversal.getParentInstance(inst);
   },
   traverseTwoPhase: function (target, fn, arg) {
-    return TreeTraversal.traverseTwoPhase(target, fn, arg);
+    return ReactTreeTraversal.traverseTwoPhase(target, fn, arg);
   },
   traverseEnterLeave: function (from, to, fn, argFrom, argTo) {
-    return TreeTraversal.traverseEnterLeave(from, to, fn, argFrom, argTo);
+    return ReactTreeTraversal.traverseEnterLeave(from, to, fn, argFrom, argTo);
   },
 
   injection: injection
 };
 
 module.exports = EventPluginUtils;
-},{"125":125,"150":150,"157":157,"55":55}],20:[function(_dereq_,module,exports){
+},{"124":124,"149":149,"156":156,"55":55,"79":79}],20:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3107,7 +3082,6 @@ module.exports = EventPluginUtils;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule EventPropagators
  */
 
 'use strict';
@@ -3115,9 +3089,9 @@ module.exports = EventPluginUtils;
 var EventPluginHub = _dereq_(17);
 var EventPluginUtils = _dereq_(19);
 
-var accumulateInto = _dereq_(102);
-var forEachAccumulated = _dereq_(110);
-var warning = _dereq_(157);
+var accumulateInto = _dereq_(101);
+var forEachAccumulated = _dereq_(109);
+var warning = _dereq_(156);
 
 var getListener = EventPluginHub.getListener;
 
@@ -3233,7 +3207,7 @@ var EventPropagators = {
 };
 
 module.exports = EventPropagators;
-},{"102":102,"110":110,"157":157,"17":17,"19":19}],21:[function(_dereq_,module,exports){
+},{"101":101,"109":109,"156":156,"17":17,"19":19}],21:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3242,16 +3216,15 @@ module.exports = EventPropagators;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule FallbackCompositionState
  */
 
 'use strict';
 
-var _assign = _dereq_(158);
+var _assign = _dereq_(157);
 
 var PooledClass = _dereq_(25);
 
-var getTextContentAccessor = _dereq_(118);
+var getTextContentAccessor = _dereq_(117);
 
 /**
  * This helper class stores information about text content of a target node,
@@ -3329,7 +3302,7 @@ _assign(FallbackCompositionState.prototype, {
 PooledClass.addPoolingTo(FallbackCompositionState);
 
 module.exports = FallbackCompositionState;
-},{"118":118,"158":158,"25":25}],22:[function(_dereq_,module,exports){
+},{"117":117,"157":157,"25":25}],22:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3338,12 +3311,11 @@ module.exports = FallbackCompositionState;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule HTMLDOMPropertyConfig
  */
 
 'use strict';
 
-var DOMProperty = _dereq_(11);
+var DOMProperty = _dereq_(12);
 
 var MUST_USE_PROPERTY = DOMProperty.injection.MUST_USE_PROPERTY;
 var HAS_BOOLEAN_VALUE = DOMProperty.injection.HAS_BOOLEAN_VALUE;
@@ -3537,11 +3509,35 @@ var HTMLDOMPropertyConfig = {
     htmlFor: 'for',
     httpEquiv: 'http-equiv'
   },
-  DOMPropertyNames: {}
+  DOMPropertyNames: {},
+  DOMMutationMethods: {
+    value: function (node, value) {
+      if (value == null) {
+        return node.removeAttribute('value');
+      }
+
+      // Number inputs get special treatment due to some edge cases in
+      // Chrome. Let everything else assign the value attribute as normal.
+      // https://github.com/facebook/react/issues/7253#issuecomment-236074326
+      if (node.type !== 'number') {
+        node.setAttribute('value', '' + value);
+      } else if (node.validity && !node.validity.badInput && node.ownerDocument.activeElement !== node) {
+        // Don't assign an attribute if validation reports bad
+        // input. Chrome will clear the value. Additionally, don't
+        // operate on inputs that have focus, otherwise Chrome might
+        // strip off trailing decimal places and cause the user's
+        // cursor position to jump to the beginning of the input.
+        //
+        // In ReactDOMInput, we have an onBlur event that will trigger
+        // this function again when focus is lost.
+        node.setAttribute('value', '' + value);
+      }
+    }
+  }
 };
 
 module.exports = HTMLDOMPropertyConfig;
-},{"11":11}],23:[function(_dereq_,module,exports){
+},{"12":12}],23:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3550,7 +3546,6 @@ module.exports = HTMLDOMPropertyConfig;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule KeyEscapeUtils
  * 
  */
 
@@ -3610,18 +3605,16 @@ module.exports = KeyEscapeUtils;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule LinkedValueUtils
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
-var React = _dereq_(134);
-var ReactPropTypesSecret = _dereq_(73);
+var React = _dereq_(133);
 
-var invariant = _dereq_(150);
-var warning = _dereq_(157);
+var invariant = _dereq_(149);
+var warning = _dereq_(156);
 
 var hasReadOnlyValue = {
   'button': true,
@@ -3681,7 +3674,7 @@ var LinkedValueUtils = {
   checkPropTypes: function (tagName, props, owner) {
     for (var propName in propTypes) {
       if (propTypes.hasOwnProperty(propName)) {
-        var error = propTypes[propName](props, propName, tagName, 'prop', null, ReactPropTypesSecret);
+        var error = propTypes[propName](props, propName, tagName, 'prop');
       }
       if (error instanceof Error && !(error.message in loggedTypeFailures)) {
         // Only monitor this failure once because there tends to be a lot of the
@@ -3737,7 +3730,7 @@ var LinkedValueUtils = {
 };
 
 module.exports = LinkedValueUtils;
-},{"125":125,"134":134,"150":150,"157":157,"73":73}],25:[function(_dereq_,module,exports){
+},{"124":124,"133":133,"149":149,"156":156}],25:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3746,15 +3739,14 @@ module.exports = LinkedValueUtils;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule PooledClass
  * 
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
-var invariant = _dereq_(150);
+var invariant = _dereq_(149);
 
 /**
  * Static poolers. Several custom versions for each potential number of
@@ -3862,7 +3854,7 @@ var PooledClass = {
 };
 
 module.exports = PooledClass;
-},{"125":125,"150":150}],26:[function(_dereq_,module,exports){
+},{"124":124,"149":149}],26:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3871,19 +3863,18 @@ module.exports = PooledClass;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactBrowserEventEmitter
  */
 
 'use strict';
 
-var _assign = _dereq_(158);
+var _assign = _dereq_(157);
 
 var EventPluginRegistry = _dereq_(18);
 var ReactEventEmitterMixin = _dereq_(56);
-var ViewportMetrics = _dereq_(101);
+var ViewportMetrics = _dereq_(100);
 
-var getVendorPrefixedEventName = _dereq_(119);
-var isEventSupported = _dereq_(122);
+var getVendorPrefixedEventName = _dereq_(118);
+var isEventSupported = _dereq_(121);
 
 /**
  * Summary of `ReactBrowserEventEmitter` event handling:
@@ -4191,7 +4182,7 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
 });
 
 module.exports = ReactBrowserEventEmitter;
-},{"101":101,"119":119,"122":122,"158":158,"18":18,"56":56}],27:[function(_dereq_,module,exports){
+},{"100":100,"118":118,"121":121,"157":157,"18":18,"56":56}],27:[function(_dereq_,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -4201,18 +4192,17 @@ module.exports = ReactBrowserEventEmitter;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactChildReconciler
  */
 
 'use strict';
 
-var ReactReconciler = _dereq_(75);
+var ReactReconciler = _dereq_(73);
 
-var instantiateReactComponent = _dereq_(121);
+var instantiateReactComponent = _dereq_(120);
 var KeyEscapeUtils = _dereq_(23);
-var shouldUpdateReactComponent = _dereq_(129);
-var traverseAllChildren = _dereq_(130);
-var warning = _dereq_(157);
+var shouldUpdateReactComponent = _dereq_(128);
+var traverseAllChildren = _dereq_(129);
+var warning = _dereq_(156);
 
 var ReactComponentTreeHook;
 
@@ -4222,7 +4212,7 @@ if (typeof process !== 'undefined' && process.env && "development" === 'test') {
   // https://github.com/facebook/react/issues/7240
   // Remove the inline requires when we don't need them anymore:
   // https://github.com/facebook/react/pull/7178
-  ReactComponentTreeHook = _dereq_(132);
+  ReactComponentTreeHook = _dereq_(131);
 }
 
 function instantiateChild(childInstances, child, name, selfDebugID) {
@@ -4230,7 +4220,7 @@ function instantiateChild(childInstances, child, name, selfDebugID) {
   var keyUnique = childInstances[name] === undefined;
   if ("development" !== 'production') {
     if (!ReactComponentTreeHook) {
-      ReactComponentTreeHook = _dereq_(132);
+      ReactComponentTreeHook = _dereq_(131);
     }
     if (!keyUnique) {
       "development" !== 'production' ? warning(false, 'flattenChildren(...): Encountered two children with the same key, ' + '`%s`. Child keys must be unique; when two children share a key, only ' + 'the first child will be used.%s', KeyEscapeUtils.unescape(name), ReactComponentTreeHook.getStackAddendumByID(selfDebugID)) : void 0;
@@ -4307,7 +4297,9 @@ var ReactChildReconciler = {
       } else {
         if (prevChild) {
           removedNodes[name] = ReactReconciler.getHostNode(prevChild);
-          ReactReconciler.unmountComponent(prevChild, false);
+          ReactReconciler.unmountComponent(prevChild, false, /* safely */
+          false /* skipLifecycle */
+          );
         }
         // The child must be instantiated before it's mounted.
         var nextChildInstance = instantiateReactComponent(nextElement, true);
@@ -4323,7 +4315,9 @@ var ReactChildReconciler = {
       if (prevChildren.hasOwnProperty(name) && !(nextChildren && nextChildren.hasOwnProperty(name))) {
         prevChild = prevChildren[name];
         removedNodes[name] = ReactReconciler.getHostNode(prevChild);
-        ReactReconciler.unmountComponent(prevChild, false);
+        ReactReconciler.unmountComponent(prevChild, false, /* safely */
+        false /* skipLifecycle */
+        );
       }
     }
   },
@@ -4335,11 +4329,11 @@ var ReactChildReconciler = {
    * @param {?object} renderedChildren Previously initialized set of children.
    * @internal
    */
-  unmountChildren: function (renderedChildren, safely) {
+  unmountChildren: function (renderedChildren, safely, skipLifecycle) {
     for (var name in renderedChildren) {
       if (renderedChildren.hasOwnProperty(name)) {
         var renderedChild = renderedChildren[name];
-        ReactReconciler.unmountComponent(renderedChild, safely);
+        ReactReconciler.unmountComponent(renderedChild, safely, skipLifecycle);
       }
     }
   }
@@ -4348,7 +4342,7 @@ var ReactChildReconciler = {
 
 module.exports = ReactChildReconciler;
 }).call(this,undefined)
-},{"121":121,"129":129,"130":130,"132":132,"157":157,"23":23,"75":75}],28:[function(_dereq_,module,exports){
+},{"120":120,"128":128,"129":129,"131":131,"156":156,"23":23,"73":73}],28:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -4357,7 +4351,6 @@ module.exports = ReactChildReconciler;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactComponentBrowserEnvironment
  */
 
 'use strict';
@@ -4388,15 +4381,14 @@ module.exports = ReactComponentBrowserEnvironment;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactComponentEnvironment
  * 
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
-var invariant = _dereq_(150);
+var invariant = _dereq_(149);
 
 var injected = false;
 
@@ -4426,7 +4418,7 @@ var ReactComponentEnvironment = {
 };
 
 module.exports = ReactComponentEnvironment;
-},{"125":125,"150":150}],30:[function(_dereq_,module,exports){
+},{"124":124,"149":149}],30:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -4435,32 +4427,31 @@ module.exports = ReactComponentEnvironment;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactCompositeComponent
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125),
-    _assign = _dereq_(158);
+var _prodInvariant = _dereq_(124),
+    _assign = _dereq_(157);
 
-var React = _dereq_(134);
+var React = _dereq_(133);
 var ReactComponentEnvironment = _dereq_(29);
-var ReactCurrentOwner = _dereq_(133);
+var ReactCurrentOwner = _dereq_(132);
 var ReactErrorUtils = _dereq_(55);
-var ReactInstanceMap = _dereq_(63);
-var ReactInstrumentation = _dereq_(64);
-var ReactNodeTypes = _dereq_(69);
-var ReactReconciler = _dereq_(75);
+var ReactInstanceMap = _dereq_(62);
+var ReactInstrumentation = _dereq_(63);
+var ReactNodeTypes = _dereq_(68);
+var ReactReconciler = _dereq_(73);
 
 if ("development" !== 'production') {
-  var checkReactTypeSpec = _dereq_(104);
+  var checkReactTypeSpec = _dereq_(103);
 }
 
-var emptyObject = _dereq_(143);
-var invariant = _dereq_(150);
-var shallowEqual = _dereq_(156);
-var shouldUpdateReactComponent = _dereq_(129);
-var warning = _dereq_(157);
+var emptyObject = _dereq_(142);
+var invariant = _dereq_(149);
+var shallowEqual = _dereq_(155);
+var shouldUpdateReactComponent = _dereq_(128);
+var warning = _dereq_(156);
 
 var CompositeTypes = {
   ImpureClass: 0,
@@ -4681,6 +4672,21 @@ var ReactCompositeComponent = {
     this._pendingReplaceState = false;
     this._pendingForceUpdate = false;
 
+    if (inst.componentWillMount) {
+      if ("development" !== 'production') {
+        measureLifeCyclePerf(function () {
+          return inst.componentWillMount();
+        }, this._debugID, 'componentWillMount');
+      } else {
+        inst.componentWillMount();
+      }
+      // When mounting, calls to `setState` by `componentWillMount` will set
+      // `this._pendingStateQueue` without triggering a re-render.
+      if (this._pendingStateQueue) {
+        inst.state = this._processPendingState(inst.props, inst.context);
+      }
+    }
+
     var markup;
     if (inst.unstable_handleError) {
       markup = this.performInitialMountWithErrorHandling(renderedElement, hostParent, hostContainerInfo, transaction, context);
@@ -4753,8 +4759,10 @@ var ReactCompositeComponent = {
         this._instance.state = this._processPendingState(this._instance.props, this._instance.context);
       }
       checkpoint = transaction.checkpoint();
-
-      this._renderedComponent.unmountComponent(true);
+      this._renderedComponent.unmountComponent(true, /* safely */
+      // Don't call componentWillUnmount() because they never fully mounted:
+      true /* skipLifecyle */
+      );
       transaction.rollback(checkpoint);
 
       // Try again - we've informed the component about the error, so they can render an error message this time.
@@ -4765,28 +4773,6 @@ var ReactCompositeComponent = {
   },
 
   performInitialMount: function (renderedElement, hostParent, hostContainerInfo, transaction, context) {
-    var inst = this._instance;
-
-    var debugID = 0;
-    if ("development" !== 'production') {
-      debugID = this._debugID;
-    }
-
-    if (inst.componentWillMount) {
-      if ("development" !== 'production') {
-        measureLifeCyclePerf(function () {
-          return inst.componentWillMount();
-        }, debugID, 'componentWillMount');
-      } else {
-        inst.componentWillMount();
-      }
-      // When mounting, calls to `setState` by `componentWillMount` will set
-      // `this._pendingStateQueue` without triggering a re-render.
-      if (this._pendingStateQueue) {
-        inst.state = this._processPendingState(inst.props, inst.context);
-      }
-    }
-
     // If not a stateless component, we now render
     if (renderedElement === undefined) {
       renderedElement = this._renderValidatedComponent();
@@ -4797,6 +4783,11 @@ var ReactCompositeComponent = {
     var child = this._instantiateReactComponent(renderedElement, nodeType !== ReactNodeTypes.EMPTY /* shouldHaveDebugID */
     );
     this._renderedComponent = child;
+
+    var debugID = 0;
+    if ("development" !== 'production') {
+      debugID = this._debugID;
+    }
 
     var markup = ReactReconciler.mountComponent(child, transaction, hostParent, hostContainerInfo, this._processChildContext(context), debugID);
 
@@ -4820,7 +4811,7 @@ var ReactCompositeComponent = {
    * @final
    * @internal
    */
-  unmountComponent: function (safely) {
+  unmountComponent: function (safely, skipLifecycle) {
     if (!this._renderedComponent) {
       return;
     }
@@ -4831,8 +4822,10 @@ var ReactCompositeComponent = {
       inst._calledComponentWillUnmount = true;
 
       if (safely) {
-        var name = this.getName() + '.componentWillUnmount()';
-        ReactErrorUtils.invokeGuardedCallback(name, inst.componentWillUnmount.bind(inst));
+        if (!skipLifecycle) {
+          var name = this.getName() + '.componentWillUnmount()';
+          ReactErrorUtils.invokeGuardedCallback(name, inst.componentWillUnmount.bind(inst));
+        }
       } else {
         if ("development" !== 'production') {
           measureLifeCyclePerf(function () {
@@ -4845,7 +4838,7 @@ var ReactCompositeComponent = {
     }
 
     if (this._renderedComponent) {
-      ReactReconciler.unmountComponent(this._renderedComponent, safely);
+      ReactReconciler.unmountComponent(this._renderedComponent, safely, skipLifecycle);
       this._renderedNodeType = null;
       this._renderedComponent = null;
       this._instance = null;
@@ -5151,7 +5144,11 @@ var ReactCompositeComponent = {
     inst.state = nextState;
     inst.context = nextContext;
 
-    this._updateRenderedComponent(transaction, unmaskedContext);
+    if (inst.unstable_handleError) {
+      this._updateRenderedComponentWithErrorHandling(transaction, unmaskedContext);
+    } else {
+      this._updateRenderedComponent(transaction, unmaskedContext);
+    }
 
     if (hasComponentDidUpdate) {
       if ("development" !== 'production') {
@@ -5170,10 +5167,51 @@ var ReactCompositeComponent = {
    * @param {ReactReconcileTransaction} transaction
    * @internal
    */
+  _updateRenderedComponentWithErrorHandling: function (transaction, context) {
+    var checkpoint = transaction.checkpoint();
+    try {
+      this._updateRenderedComponent(transaction, context);
+    } catch (e) {
+      // Roll back to checkpoint, handle error (which may add items to the transaction),
+      // and take a new checkpoint
+      transaction.rollback(checkpoint);
+      this._instance.unstable_handleError(e);
+      if (this._pendingStateQueue) {
+        this._instance.state = this._processPendingState(this._instance.props, this._instance.context);
+      }
+      checkpoint = transaction.checkpoint();
+
+      // Gracefully update to a clean state
+      this._updateRenderedComponentWithNextElement(transaction, context, null, true /* safely */
+      );
+
+      // Try again - we've informed the component about the error, so they can render an error message this time.
+      // If this throws again, the error will bubble up (and can be caught by a higher error boundary).
+      this._updateRenderedComponent(transaction, context);
+    }
+  },
+
+  /**
+   * Call the component's `render` method and update the DOM accordingly.
+   *
+   * @param {ReactReconcileTransaction} transaction
+   * @internal
+   */
   _updateRenderedComponent: function (transaction, context) {
+    var nextRenderedElement = this._renderValidatedComponent();
+    this._updateRenderedComponentWithNextElement(transaction, context, nextRenderedElement, false /* safely */
+    );
+  },
+
+  /**
+   * Call the component's `render` method and update the DOM accordingly.
+   *
+   * @param {ReactReconcileTransaction} transaction
+   * @internal
+   */
+  _updateRenderedComponentWithNextElement: function (transaction, context, nextRenderedElement, safely) {
     var prevComponentInstance = this._renderedComponent;
     var prevRenderedElement = prevComponentInstance._currentElement;
-    var nextRenderedElement = this._renderValidatedComponent();
 
     var debugID = 0;
     if ("development" !== 'production') {
@@ -5184,7 +5222,8 @@ var ReactCompositeComponent = {
       ReactReconciler.receiveComponent(prevComponentInstance, nextRenderedElement, transaction, this._processChildContext(context));
     } else {
       var oldHostNode = ReactReconciler.getHostNode(prevComponentInstance);
-      ReactReconciler.unmountComponent(prevComponentInstance, false);
+      ReactReconciler.unmountComponent(prevComponentInstance, safely, false /* skipLifecycle */
+      );
 
       var nodeType = ReactNodeTypes.getType(nextRenderedElement);
       this._renderedNodeType = nodeType;
@@ -5329,7 +5368,7 @@ var ReactCompositeComponent = {
 };
 
 module.exports = ReactCompositeComponent;
-},{"104":104,"125":125,"129":129,"133":133,"134":134,"143":143,"150":150,"156":156,"157":157,"158":158,"29":29,"55":55,"63":63,"64":64,"69":69,"75":75}],31:[function(_dereq_,module,exports){
+},{"103":103,"124":124,"128":128,"132":132,"133":133,"142":142,"149":149,"155":155,"156":156,"157":157,"29":29,"55":55,"62":62,"63":63,"68":68,"73":73}],31:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -5338,7 +5377,6 @@ module.exports = ReactCompositeComponent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOM
  */
 
 /* globals __REACT_DEVTOOLS_GLOBAL_HOOK__*/
@@ -5346,18 +5384,20 @@ module.exports = ReactCompositeComponent;
 'use strict';
 
 var ReactDOMComponentTree = _dereq_(34);
-var ReactDefaultInjection = _dereq_(52);
-var ReactMount = _dereq_(67);
-var ReactReconciler = _dereq_(75);
-var ReactUpdates = _dereq_(82);
-var ReactVersion = _dereq_(83);
+var ReactDOMInjection = _dereq_(39);
+var ReactDOMStackInjection = _dereq_(46);
+var ReactMount = _dereq_(66);
+var ReactReconciler = _dereq_(73);
+var ReactUpdates = _dereq_(81);
+var ReactVersion = _dereq_(82);
 
-var findDOMNode = _dereq_(108);
-var getHostComponentFromComposite = _dereq_(115);
-var renderSubtreeIntoContainer = _dereq_(126);
-var warning = _dereq_(157);
+var findDOMNode = _dereq_(107);
+var getHostComponentFromComposite = _dereq_(114);
+var renderSubtreeIntoContainer = _dereq_(125);
+var warning = _dereq_(156);
 
-ReactDefaultInjection.inject();
+ReactDOMInjection.inject();
+ReactDOMStackInjection.inject();
 
 var ReactDOM = {
   findDOMNode: findDOMNode,
@@ -5395,7 +5435,7 @@ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined' && typeof __REACT_DEVT
 }
 
 if ("development" !== 'production') {
-  var ExecutionEnvironment = _dereq_(136);
+  var ExecutionEnvironment = _dereq_(135);
   if (ExecutionEnvironment.canUseDOM && window.top === window.self) {
 
     // First check if devtools is not installed
@@ -5431,10 +5471,10 @@ if ("development" !== 'production') {
 }
 
 if ("development" !== 'production') {
-  var ReactInstrumentation = _dereq_(64);
-  var ReactDOMUnknownPropertyHook = _dereq_(49);
-  var ReactDOMNullInputValuePropHook = _dereq_(41);
-  var ReactDOMInvalidARIAHook = _dereq_(40);
+  var ReactInstrumentation = _dereq_(63);
+  var ReactDOMUnknownPropertyHook = _dereq_(50);
+  var ReactDOMNullInputValuePropHook = _dereq_(42);
+  var ReactDOMInvalidARIAHook = _dereq_(41);
 
   ReactInstrumentation.debugTool.addHook(ReactDOMUnknownPropertyHook);
   ReactInstrumentation.debugTool.addHook(ReactDOMNullInputValuePropHook);
@@ -5442,7 +5482,7 @@ if ("development" !== 'production') {
 }
 
 module.exports = ReactDOM;
-},{"108":108,"115":115,"126":126,"136":136,"157":157,"34":34,"40":40,"41":41,"49":49,"52":52,"64":64,"67":67,"75":75,"82":82,"83":83}],32:[function(_dereq_,module,exports){
+},{"107":107,"114":114,"125":125,"135":135,"156":156,"34":34,"39":39,"41":41,"42":42,"46":46,"50":50,"63":63,"66":66,"73":73,"81":81,"82":82}],32:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -5451,43 +5491,43 @@ module.exports = ReactDOM;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOMComponent
  */
 
 /* global hasOwnProperty:true */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125),
-    _assign = _dereq_(158);
+var _prodInvariant = _dereq_(124),
+    _assign = _dereq_(157);
 
 var AutoFocusUtils = _dereq_(2);
 var CSSPropertyOperations = _dereq_(5);
-var DOMLazyTree = _dereq_(9);
-var DOMNamespaces = _dereq_(10);
-var DOMProperty = _dereq_(11);
-var DOMPropertyOperations = _dereq_(12);
+var DOMLazyTree = _dereq_(10);
+var DOMNamespaces = _dereq_(11);
+var DOMProperty = _dereq_(12);
+var DOMPropertyOperations = _dereq_(13);
 var EventPluginHub = _dereq_(17);
 var EventPluginRegistry = _dereq_(18);
 var ReactBrowserEventEmitter = _dereq_(26);
 var ReactDOMComponentFlags = _dereq_(33);
 var ReactDOMComponentTree = _dereq_(34);
-var ReactDOMInput = _dereq_(39);
-var ReactDOMOption = _dereq_(42);
-var ReactDOMSelect = _dereq_(43);
-var ReactDOMTextarea = _dereq_(46);
-var ReactInstrumentation = _dereq_(64);
-var ReactMultiChild = _dereq_(68);
-var ReactServerRenderingTransaction = _dereq_(77);
+var ReactDOMInput = _dereq_(40);
+var ReactDOMOption = _dereq_(43);
+var ReactDOMSelect = _dereq_(44);
+var ReactDOMTextarea = _dereq_(48);
+var ReactInstrumentation = _dereq_(63);
+var ReactMultiChild = _dereq_(67);
+var ReactServerRenderingTransaction = _dereq_(75);
 
-var emptyFunction = _dereq_(142);
-var escapeTextContentForBrowser = _dereq_(107);
-var invariant = _dereq_(150);
-var isEventSupported = _dereq_(122);
-var shallowEqual = _dereq_(156);
-var inputValueTracking = _dereq_(120);
-var validateDOMNesting = _dereq_(131);
-var warning = _dereq_(157);
+var emptyFunction = _dereq_(141);
+var escapeTextContentForBrowser = _dereq_(106);
+var invariant = _dereq_(149);
+var isEventSupported = _dereq_(121);
+var shallowEqual = _dereq_(155);
+var inputValueTracking = _dereq_(119);
+var validateDOMNesting = _dereq_(130);
+var warning = _dereq_(156);
+var didWarnShadyDOM = false;
 
 var Flags = ReactDOMComponentFlags;
 var deleteListener = EventPluginHub.deleteListener;
@@ -5938,6 +5978,7 @@ ReactDOMComponent.Mixin = {
     }
 
     var mountImage;
+    var type = this._currentElement.type;
     if (transaction.useCreateElement) {
       var ownerDocument = hostContainerInfo._ownerDocument;
       var el;
@@ -5946,26 +5987,32 @@ ReactDOMComponent.Mixin = {
           // Create the script via .innerHTML so its "parser-inserted" flag is
           // set to true and it does not execute
           var div = ownerDocument.createElement('div');
-          var type = this._currentElement.type;
           div.innerHTML = '<' + type + '></' + type + '>';
           el = div.removeChild(div.firstChild);
         } else if (props.is) {
-          el = ownerDocument.createElement(this._currentElement.type, props.is);
+          el = ownerDocument.createElement(type, props.is);
         } else {
           // Separate else branch instead of using `props.is || undefined` above becuase of a Firefox bug.
           // See discussion in https://github.com/facebook/react/pull/6896
           // and discussion in https://bugzilla.mozilla.org/show_bug.cgi?id=1276240
-          el = ownerDocument.createElement(this._currentElement.type);
+          el = ownerDocument.createElement(type);
         }
       } else {
-        el = ownerDocument.createElementNS(namespaceURI, this._currentElement.type);
+        el = ownerDocument.createElementNS(namespaceURI, type);
+      }
+      var isCustomComponentTag = isCustomComponent(this._tag, props);
+      if ("development" !== 'production' && isCustomComponentTag && !didWarnShadyDOM && el.shadyRoot) {
+        var owner = this._currentElement._owner;
+        var name = owner && owner.getName() || 'A component';
+        "development" !== 'production' ? warning(false, '%s is using shady DOM. Using shady DOM with React can ' + 'cause things to break subtly.', name) : void 0;
+        didWarnShadyDOM = true;
       }
       ReactDOMComponentTree.precacheNode(this, el);
       this._flags |= Flags.hasCachedChildNodes;
       if (!this._hostParent) {
         DOMPropertyOperations.setAttributeForRoot(el);
       }
-      this._updateDOMProperties(null, props, transaction);
+      this._updateDOMProperties(null, props, transaction, isCustomComponentTag);
       var lazyTree = DOMLazyTree(el);
       this._createInitialChildren(transaction, props, context, lazyTree);
       mountImage = lazyTree;
@@ -5975,7 +6022,7 @@ ReactDOMComponent.Mixin = {
       if (!tagContent && omittedCloseTags[this._tag]) {
         mountImage = tagOpen + '/>';
       } else {
-        mountImage = tagOpen + '>' + tagContent + '</' + this._currentElement.type + '>';
+        mountImage = tagOpen + '>' + tagContent + '</' + type + '>';
       }
     }
 
@@ -6198,7 +6245,8 @@ ReactDOMComponent.Mixin = {
     }
 
     assertValidProps(this, nextProps);
-    this._updateDOMProperties(lastProps, nextProps, transaction);
+    var isCustomComponentTag = isCustomComponent(this._tag, nextProps);
+    this._updateDOMProperties(lastProps, nextProps, transaction, isCustomComponentTag);
     this._updateDOMChildren(lastProps, nextProps, transaction, context);
 
     switch (this._tag) {
@@ -6235,7 +6283,7 @@ ReactDOMComponent.Mixin = {
    * @param {object} nextProps
    * @param {?DOMElement} node
    */
-  _updateDOMProperties: function (lastProps, nextProps, transaction) {
+  _updateDOMProperties: function (lastProps, nextProps, transaction, isCustomComponentTag) {
     var propKey;
     var styleName;
     var styleUpdates;
@@ -6308,7 +6356,7 @@ ReactDOMComponent.Mixin = {
         } else if (lastProp) {
           deleteListener(this, propKey);
         }
-      } else if (isCustomComponent(this._tag, nextProps)) {
+      } else if (isCustomComponentTag) {
         if (!RESERVED_PROPS.hasOwnProperty(propKey)) {
           DOMPropertyOperations.setValueForAttribute(getNode(this), propKey, nextProp);
         }
@@ -6395,7 +6443,7 @@ ReactDOMComponent.Mixin = {
    *
    * @internal
    */
-  unmountComponent: function (safely) {
+  unmountComponent: function (safely, skipLifecycle) {
     switch (this._tag) {
       case 'audio':
       case 'form':
@@ -6429,7 +6477,7 @@ ReactDOMComponent.Mixin = {
         break;
     }
 
-    this.unmountChildren(safely);
+    this.unmountChildren(safely, skipLifecycle);
     ReactDOMComponentTree.uncacheNode(this);
     EventPluginHub.deleteAllListeners(this);
     this._rootNodeID = 0;
@@ -6450,7 +6498,7 @@ ReactDOMComponent.Mixin = {
 _assign(ReactDOMComponent.prototype, ReactDOMComponent.Mixin, ReactMultiChild);
 
 module.exports = ReactDOMComponent;
-},{"10":10,"107":107,"11":11,"12":12,"120":120,"122":122,"125":125,"131":131,"142":142,"150":150,"156":156,"157":157,"158":158,"17":17,"18":18,"2":2,"26":26,"33":33,"34":34,"39":39,"42":42,"43":43,"46":46,"5":5,"64":64,"68":68,"77":77,"9":9}],33:[function(_dereq_,module,exports){
+},{"10":10,"106":106,"11":11,"119":119,"12":12,"121":121,"124":124,"13":13,"130":130,"141":141,"149":149,"155":155,"156":156,"157":157,"17":17,"18":18,"2":2,"26":26,"33":33,"34":34,"40":40,"43":43,"44":44,"48":48,"5":5,"63":63,"67":67,"75":75}],33:[function(_dereq_,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -6459,7 +6507,6 @@ module.exports = ReactDOMComponent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOMComponentFlags
  */
 
 'use strict';
@@ -6478,17 +6525,16 @@ module.exports = ReactDOMComponentFlags;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOMComponentTree
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
-var DOMProperty = _dereq_(11);
+var DOMProperty = _dereq_(12);
 var ReactDOMComponentFlags = _dereq_(33);
 
-var invariant = _dereq_(150);
+var invariant = _dereq_(149);
 
 var ATTR_NAME = DOMProperty.ID_ATTRIBUTE_NAME;
 var Flags = ReactDOMComponentFlags;
@@ -6658,7 +6704,7 @@ var ReactDOMComponentTree = {
 };
 
 module.exports = ReactDOMComponentTree;
-},{"11":11,"125":125,"150":150,"33":33}],35:[function(_dereq_,module,exports){
+},{"12":12,"124":124,"149":149,"33":33}],35:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -6667,12 +6713,11 @@ module.exports = ReactDOMComponentTree;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOMContainerInfo
  */
 
 'use strict';
 
-var validateDOMNesting = _dereq_(131);
+var validateDOMNesting = _dereq_(130);
 
 var DOC_NODE_TYPE = 9;
 
@@ -6692,7 +6737,7 @@ function ReactDOMContainerInfo(topLevelWrapper, node) {
 }
 
 module.exports = ReactDOMContainerInfo;
-},{"131":131}],36:[function(_dereq_,module,exports){
+},{"130":130}],36:[function(_dereq_,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -6701,14 +6746,13 @@ module.exports = ReactDOMContainerInfo;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOMEmptyComponent
  */
 
 'use strict';
 
-var _assign = _dereq_(158);
+var _assign = _dereq_(157);
 
-var DOMLazyTree = _dereq_(9);
+var DOMLazyTree = _dereq_(10);
 var ReactDOMComponentTree = _dereq_(34);
 
 var ReactDOMEmptyComponent = function (instantiate) {
@@ -6753,7 +6797,7 @@ _assign(ReactDOMEmptyComponent.prototype, {
 });
 
 module.exports = ReactDOMEmptyComponent;
-},{"158":158,"34":34,"9":9}],37:[function(_dereq_,module,exports){
+},{"10":10,"157":157,"34":34}],37:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -6762,7 +6806,6 @@ module.exports = ReactDOMEmptyComponent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOMFeatureFlags
  */
 
 'use strict';
@@ -6782,7 +6825,6 @@ module.exports = ReactDOMFeatureFlags;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOMIDOperations
  */
 
 'use strict';
@@ -6817,21 +6859,88 @@ module.exports = ReactDOMIDOperations;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOMInput
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125),
-    _assign = _dereq_(158);
+var ARIADOMPropertyConfig = _dereq_(1);
+var BeforeInputEventPlugin = _dereq_(3);
+var DOMProperty = _dereq_(12);
+var ChangeEventPlugin = _dereq_(7);
+var DOMEventPluginOrder = _dereq_(9);
+var EnterLeaveEventPlugin = _dereq_(15);
+var EventPluginHub = _dereq_(17);
+var EventPluginUtils = _dereq_(19);
+var HTMLDOMPropertyConfig = _dereq_(22);
+var ReactBrowserEventEmitter = _dereq_(26);
+var ReactDOMComponentTree = _dereq_(34);
+var ReactEventListener = _dereq_(57);
+var SVGDOMPropertyConfig = _dereq_(83);
+var SelectEventPlugin = _dereq_(84);
+var SimpleEventPlugin = _dereq_(85);
 
-var DOMPropertyOperations = _dereq_(12);
+var alreadyInjected = false;
+
+function inject() {
+  if (alreadyInjected) {
+    // TODO: This is currently true because these injections are shared between
+    // the client and the server package. They should be built independently
+    // and not share any injection state. Then this problem will be solved.
+    return;
+  }
+  alreadyInjected = true;
+
+  ReactBrowserEventEmitter.injection.injectReactEventListener(ReactEventListener);
+
+  /**
+   * Inject modules for resolving DOM hierarchy and plugin ordering.
+   */
+  EventPluginHub.injection.injectEventPluginOrder(DOMEventPluginOrder);
+  EventPluginUtils.injection.injectComponentTree(ReactDOMComponentTree);
+
+  /**
+   * Some important event plugins included by default (without having to require
+   * them).
+   */
+  EventPluginHub.injection.injectEventPluginsByName({
+    SimpleEventPlugin: SimpleEventPlugin,
+    EnterLeaveEventPlugin: EnterLeaveEventPlugin,
+    ChangeEventPlugin: ChangeEventPlugin,
+    SelectEventPlugin: SelectEventPlugin,
+    BeforeInputEventPlugin: BeforeInputEventPlugin
+  });
+
+  DOMProperty.injection.injectDOMPropertyConfig(ARIADOMPropertyConfig);
+  DOMProperty.injection.injectDOMPropertyConfig(HTMLDOMPropertyConfig);
+  DOMProperty.injection.injectDOMPropertyConfig(SVGDOMPropertyConfig);
+}
+
+module.exports = {
+  inject: inject
+};
+},{"1":1,"12":12,"15":15,"17":17,"19":19,"22":22,"26":26,"3":3,"34":34,"57":57,"7":7,"83":83,"84":84,"85":85,"9":9}],40:[function(_dereq_,module,exports){
+/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
+'use strict';
+
+var _prodInvariant = _dereq_(124),
+    _assign = _dereq_(157);
+
+var DOMPropertyOperations = _dereq_(13);
 var LinkedValueUtils = _dereq_(24);
 var ReactDOMComponentTree = _dereq_(34);
-var ReactUpdates = _dereq_(82);
+var ReactUpdates = _dereq_(81);
 
-var invariant = _dereq_(150);
-var warning = _dereq_(157);
+var invariant = _dereq_(149);
+var warning = _dereq_(156);
 
 var didWarnValueLink = false;
 var didWarnCheckedLink = false;
@@ -6889,7 +6998,8 @@ var ReactDOMInput = {
       defaultValue: undefined,
       value: value != null ? value : inst._wrapperState.initialValue,
       checked: checked != null ? checked : inst._wrapperState.initialChecked,
-      onChange: inst._wrapperState.onChange
+      onChange: inst._wrapperState.onChange,
+      onBlurCapture: inst._wrapperState.onBlur
     });
 
     return hostProps;
@@ -6924,7 +7034,8 @@ var ReactDOMInput = {
       initialChecked: props.checked != null ? props.checked : props.defaultChecked,
       initialValue: props.value != null ? props.value : defaultValue,
       listeners: null,
-      onChange: _handleChange.bind(inst)
+      onChange: _handleChange.bind(inst),
+      onBlur: _handleBlur.bind(inst)
     };
 
     if ("development" !== 'production') {
@@ -6958,19 +7069,29 @@ var ReactDOMInput = {
     var node = ReactDOMComponentTree.getNodeFromInstance(inst);
     var value = LinkedValueUtils.getValue(props);
     if (value != null) {
-
-      // Cast `value` to a string to ensure the value is set correctly. While
-      // browsers typically do this as necessary, jsdom doesn't.
-      var newValue = '' + value;
-
-      // To avoid side effects (such as losing text selection), only set value if changed
-      if (newValue !== node.value) {
-        node.value = newValue;
+      if (value === 0) {
+        // Since we use loose type checking below, zero is
+        // falsy, so we need to manually cover it
+        value = '0';
+      }
+      // Use loose coercion to prevent replacement on comparisons like
+      // '3e1' == 30 in Chrome (~52).
+      if (value != node.value) {
+        // eslint-disable-line
+        // Cast `value` to a string to ensure the value is set correctly. While
+        // browsers typically do this as necessary, jsdom doesn't.
+        node.value = '' + value;
       }
     } else {
       if (props.value == null && props.defaultValue != null) {
-        // Assigning defaultValue causes side-effects on value, which can cause
-        // unexpected value changes and selections skipping. A quick check avoids this
+        // In Chrome, assigning defaultValue to certain input types triggers input validation.
+        // For number inputs, the display value loses trailing decimal points. For email inputs,
+        // Chrome raises "The specified value <x> is not a valid email address".
+        //
+        // Here we check to see if the defaultValue has actually changed, avoiding these problems
+        // when the user is inputting text
+        //
+        // https://github.com/facebook/react/issues/7253
         if (node.defaultValue !== '' + props.defaultValue) {
           node.defaultValue = '' + props.defaultValue;
         }
@@ -7032,6 +7153,19 @@ var ReactDOMInput = {
   }
 };
 
+function _handleBlur(event) {
+  var props = this._currentElement.props;
+  var value = LinkedValueUtils.getValue(props);
+
+  if (value != null) {
+    DOMPropertyOperations.setValueForProperty(ReactDOMComponentTree.getNodeFromInstance(this), 'value', value);
+  }
+
+  if (props.onBlur) {
+    return props.onBlur.call(undefined, event);
+  }
+}
+
 function _handleChange(event) {
   var props = this._currentElement.props;
 
@@ -7081,7 +7215,7 @@ function _handleChange(event) {
 }
 
 module.exports = ReactDOMInput;
-},{"12":12,"125":125,"150":150,"157":157,"158":158,"24":24,"34":34,"82":82}],40:[function(_dereq_,module,exports){
+},{"124":124,"13":13,"149":149,"156":156,"157":157,"24":24,"34":34,"81":81}],41:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -7090,15 +7224,14 @@ module.exports = ReactDOMInput;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOMInvalidARIAHook
  */
 
 'use strict';
 
-var DOMProperty = _dereq_(11);
-var ReactComponentTreeHook = _dereq_(132);
+var DOMProperty = _dereq_(12);
+var ReactComponentTreeHook = _dereq_(131);
 
-var warning = _dereq_(157);
+var warning = _dereq_(156);
 
 var warnedProperties = {};
 var rARIA = new RegExp('^(aria)-[' + DOMProperty.ATTRIBUTE_NAME_CHAR + ']*$');
@@ -7175,7 +7308,7 @@ var ReactDOMInvalidARIAHook = {
 };
 
 module.exports = ReactDOMInvalidARIAHook;
-},{"11":11,"132":132,"157":157}],41:[function(_dereq_,module,exports){
+},{"12":12,"131":131,"156":156}],42:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -7184,14 +7317,13 @@ module.exports = ReactDOMInvalidARIAHook;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOMNullInputValuePropHook
  */
 
 'use strict';
 
-var ReactComponentTreeHook = _dereq_(132);
+var ReactComponentTreeHook = _dereq_(131);
 
-var warning = _dereq_(157);
+var warning = _dereq_(156);
 
 var didWarnValueNull = false;
 
@@ -7219,7 +7351,7 @@ var ReactDOMNullInputValuePropHook = {
 };
 
 module.exports = ReactDOMNullInputValuePropHook;
-},{"132":132,"157":157}],42:[function(_dereq_,module,exports){
+},{"131":131,"156":156}],43:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -7228,18 +7360,17 @@ module.exports = ReactDOMNullInputValuePropHook;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOMOption
  */
 
 'use strict';
 
-var _assign = _dereq_(158);
+var _assign = _dereq_(157);
 
-var React = _dereq_(134);
+var React = _dereq_(133);
 var ReactDOMComponentTree = _dereq_(34);
-var ReactDOMSelect = _dereq_(43);
+var ReactDOMSelect = _dereq_(44);
 
-var warning = _dereq_(157);
+var warning = _dereq_(156);
 var didWarnInvalidOptionChildren = false;
 
 function flattenChildren(children) {
@@ -7343,7 +7474,7 @@ var ReactDOMOption = {
 };
 
 module.exports = ReactDOMOption;
-},{"134":134,"157":157,"158":158,"34":34,"43":43}],43:[function(_dereq_,module,exports){
+},{"133":133,"156":156,"157":157,"34":34,"44":44}],44:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -7352,18 +7483,17 @@ module.exports = ReactDOMOption;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOMSelect
  */
 
 'use strict';
 
-var _assign = _dereq_(158);
+var _assign = _dereq_(157);
 
 var LinkedValueUtils = _dereq_(24);
 var ReactDOMComponentTree = _dereq_(34);
-var ReactUpdates = _dereq_(82);
+var ReactUpdates = _dereq_(81);
 
-var warning = _dereq_(157);
+var warning = _dereq_(156);
 
 var didWarnValueLink = false;
 var didWarnValueDefaultValue = false;
@@ -7544,7 +7674,7 @@ function _handleChange(event) {
 }
 
 module.exports = ReactDOMSelect;
-},{"157":157,"158":158,"24":24,"34":34,"82":82}],44:[function(_dereq_,module,exports){
+},{"156":156,"157":157,"24":24,"34":34,"81":81}],45:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -7553,15 +7683,14 @@ module.exports = ReactDOMSelect;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOMSelection
  */
 
 'use strict';
 
-var ExecutionEnvironment = _dereq_(136);
+var ExecutionEnvironment = _dereq_(135);
 
-var getNodeForCharacterOffset = _dereq_(117);
-var getTextContentAccessor = _dereq_(118);
+var getNodeForCharacterOffset = _dereq_(116);
+var getTextContentAccessor = _dereq_(117);
 
 /**
  * While `isCollapsed` is available on the Selection object and `collapsed`
@@ -7757,7 +7886,7 @@ var ReactDOMSelection = {
 };
 
 module.exports = ReactDOMSelection;
-},{"117":117,"118":118,"136":136}],45:[function(_dereq_,module,exports){
+},{"116":116,"117":117,"135":135}],46:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -7766,21 +7895,72 @@ module.exports = ReactDOMSelection;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOMTextComponent
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125),
-    _assign = _dereq_(158);
+var ReactComponentEnvironment = _dereq_(29);
+var ReactComponentBrowserEnvironment = _dereq_(28);
+var ReactDOMComponent = _dereq_(32);
+var ReactDOMEmptyComponent = _dereq_(36);
+var ReactDOMTextComponent = _dereq_(47);
+var ReactDefaultBatchingStrategy = _dereq_(52);
+var ReactEmptyComponent = _dereq_(54);
+var ReactHostComponent = _dereq_(59);
+var ReactReconcileTransaction = _dereq_(72);
+var ReactUpdates = _dereq_(81);
+
+var alreadyInjected = false;
+
+function inject() {
+  if (alreadyInjected) {
+    // TODO: This is currently true because these injections are shared between
+    // the client and the server package. They should be built independently
+    // and not share any injection state. Then this problem will be solved.
+    return;
+  }
+  alreadyInjected = true;
+
+  ReactHostComponent.injection.injectGenericComponentClass(ReactDOMComponent);
+
+  ReactHostComponent.injection.injectTextComponentClass(ReactDOMTextComponent);
+
+  ReactEmptyComponent.injection.injectEmptyComponentFactory(function (instantiate) {
+    return new ReactDOMEmptyComponent(instantiate);
+  });
+
+  ReactUpdates.injection.injectReconcileTransaction(ReactReconcileTransaction);
+  ReactUpdates.injection.injectBatchingStrategy(ReactDefaultBatchingStrategy);
+
+  ReactComponentEnvironment.injection.injectEnvironment(ReactComponentBrowserEnvironment);
+}
+
+module.exports = {
+  inject: inject
+};
+},{"28":28,"29":29,"32":32,"36":36,"47":47,"52":52,"54":54,"59":59,"72":72,"81":81}],47:[function(_dereq_,module,exports){
+/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
+'use strict';
+
+var _prodInvariant = _dereq_(124),
+    _assign = _dereq_(157);
 
 var DOMChildrenOperations = _dereq_(8);
-var DOMLazyTree = _dereq_(9);
+var DOMLazyTree = _dereq_(10);
 var ReactDOMComponentTree = _dereq_(34);
 
-var escapeTextContentForBrowser = _dereq_(107);
-var invariant = _dereq_(150);
-var validateDOMNesting = _dereq_(131);
+var escapeTextContentForBrowser = _dereq_(106);
+var invariant = _dereq_(149);
+var validateDOMNesting = _dereq_(130);
 
 /**
  * Text nodes violate a couple assumptions that React makes about components:
@@ -7922,7 +8102,7 @@ _assign(ReactDOMTextComponent.prototype, {
 });
 
 module.exports = ReactDOMTextComponent;
-},{"107":107,"125":125,"131":131,"150":150,"158":158,"34":34,"8":8,"9":9}],46:[function(_dereq_,module,exports){
+},{"10":10,"106":106,"124":124,"130":130,"149":149,"157":157,"34":34,"8":8}],48:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -7931,20 +8111,19 @@ module.exports = ReactDOMTextComponent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOMTextarea
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125),
-    _assign = _dereq_(158);
+var _prodInvariant = _dereq_(124),
+    _assign = _dereq_(157);
 
 var LinkedValueUtils = _dereq_(24);
 var ReactDOMComponentTree = _dereq_(34);
-var ReactUpdates = _dereq_(82);
+var ReactUpdates = _dereq_(81);
 
-var invariant = _dereq_(150);
-var warning = _dereq_(157);
+var invariant = _dereq_(149);
+var warning = _dereq_(156);
 
 var didWarnValueLink = false;
 var didWarnValDefaultVal = false;
@@ -8077,144 +8256,7 @@ function _handleChange(event) {
 }
 
 module.exports = ReactDOMTextarea;
-},{"125":125,"150":150,"157":157,"158":158,"24":24,"34":34,"82":82}],47:[function(_dereq_,module,exports){
-/**
- * Copyright 2015-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule ReactDOMTreeTraversal
- */
-
-'use strict';
-
-var _prodInvariant = _dereq_(125);
-
-var invariant = _dereq_(150);
-
-/**
- * Return the lowest common ancestor of A and B, or null if they are in
- * different trees.
- */
-function getLowestCommonAncestor(instA, instB) {
-  !('_hostNode' in instA) ? "development" !== 'production' ? invariant(false, 'getNodeFromInstance: Invalid argument.') : _prodInvariant('33') : void 0;
-  !('_hostNode' in instB) ? "development" !== 'production' ? invariant(false, 'getNodeFromInstance: Invalid argument.') : _prodInvariant('33') : void 0;
-
-  var depthA = 0;
-  for (var tempA = instA; tempA; tempA = tempA._hostParent) {
-    depthA++;
-  }
-  var depthB = 0;
-  for (var tempB = instB; tempB; tempB = tempB._hostParent) {
-    depthB++;
-  }
-
-  // If A is deeper, crawl up.
-  while (depthA - depthB > 0) {
-    instA = instA._hostParent;
-    depthA--;
-  }
-
-  // If B is deeper, crawl up.
-  while (depthB - depthA > 0) {
-    instB = instB._hostParent;
-    depthB--;
-  }
-
-  // Walk in lockstep until we find a match.
-  var depth = depthA;
-  while (depth--) {
-    if (instA === instB) {
-      return instA;
-    }
-    instA = instA._hostParent;
-    instB = instB._hostParent;
-  }
-  return null;
-}
-
-/**
- * Return if A is an ancestor of B.
- */
-function isAncestor(instA, instB) {
-  !('_hostNode' in instA) ? "development" !== 'production' ? invariant(false, 'isAncestor: Invalid argument.') : _prodInvariant('35') : void 0;
-  !('_hostNode' in instB) ? "development" !== 'production' ? invariant(false, 'isAncestor: Invalid argument.') : _prodInvariant('35') : void 0;
-
-  while (instB) {
-    if (instB === instA) {
-      return true;
-    }
-    instB = instB._hostParent;
-  }
-  return false;
-}
-
-/**
- * Return the parent instance of the passed-in instance.
- */
-function getParentInstance(inst) {
-  !('_hostNode' in inst) ? "development" !== 'production' ? invariant(false, 'getParentInstance: Invalid argument.') : _prodInvariant('36') : void 0;
-
-  return inst._hostParent;
-}
-
-/**
- * Simulates the traversal of a two-phase, capture/bubble event dispatch.
- */
-function traverseTwoPhase(inst, fn, arg) {
-  var path = [];
-  while (inst) {
-    path.push(inst);
-    inst = inst._hostParent;
-  }
-  var i;
-  for (i = path.length; i-- > 0;) {
-    fn(path[i], 'captured', arg);
-  }
-  for (i = 0; i < path.length; i++) {
-    fn(path[i], 'bubbled', arg);
-  }
-}
-
-/**
- * Traverses the ID hierarchy and invokes the supplied `cb` on any IDs that
- * should would receive a `mouseEnter` or `mouseLeave` event.
- *
- * Does not invoke the callback on the nearest common ancestor because nothing
- * "entered" or "left" that element.
- */
-function traverseEnterLeave(from, to, fn, argFrom, argTo) {
-  var common = from && to ? getLowestCommonAncestor(from, to) : null;
-  var pathFrom = [];
-  while (from && from !== common) {
-    pathFrom.push(from);
-    from = from._hostParent;
-  }
-  var pathTo = [];
-  while (to && to !== common) {
-    pathTo.push(to);
-    to = to._hostParent;
-  }
-  var i;
-  for (i = 0; i < pathFrom.length; i++) {
-    fn(pathFrom[i], 'bubbled', argFrom);
-  }
-  for (i = pathTo.length; i-- > 0;) {
-    fn(pathTo[i], 'captured', argTo);
-  }
-}
-
-module.exports = {
-  isAncestor: isAncestor,
-  getLowestCommonAncestor: getLowestCommonAncestor,
-  getParentInstance: getParentInstance,
-  traverseTwoPhase: traverseTwoPhase,
-  traverseEnterLeave: traverseEnterLeave
-};
-},{"125":125,"150":150}],48:[function(_dereq_,module,exports){
+},{"124":124,"149":149,"156":156,"157":157,"24":24,"34":34,"81":81}],49:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -8223,18 +8265,17 @@ module.exports = {
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOMUMDEntry
  */
 
 'use strict';
 
-var _assign = _dereq_(158);
+var _assign = _dereq_(157);
 
 var ReactDOM = _dereq_(31);
 
 var ReactDOMUMDEntry = _assign({
   __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: {
-    ReactInstanceMap: _dereq_(63)
+    ReactInstanceMap: _dereq_(62)
   }
 }, ReactDOM);
 
@@ -8242,13 +8283,13 @@ if ("development" !== 'production') {
   _assign(ReactDOMUMDEntry.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, {
     // ReactPerf and ReactTestUtils currently only work with the DOM renderer
     // so we expose them from here, but only in DEV mode.
-    ReactPerf: _dereq_(71),
-    ReactTestUtils: _dereq_(80)
+    ReactPerf: _dereq_(70),
+    ReactTestUtils: _dereq_(78)
   });
 }
 
 module.exports = ReactDOMUMDEntry;
-},{"158":158,"31":31,"63":63,"71":71,"80":80}],49:[function(_dereq_,module,exports){
+},{"157":157,"31":31,"62":62,"70":70,"78":78}],50:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -8257,16 +8298,15 @@ module.exports = ReactDOMUMDEntry;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDOMUnknownPropertyHook
  */
 
 'use strict';
 
-var DOMProperty = _dereq_(11);
+var DOMProperty = _dereq_(12);
 var EventPluginRegistry = _dereq_(18);
-var ReactComponentTreeHook = _dereq_(132);
+var ReactComponentTreeHook = _dereq_(131);
 
-var warning = _dereq_(157);
+var warning = _dereq_(156);
 
 if ("development" !== 'production') {
   var reactProps = {
@@ -8361,7 +8401,7 @@ var ReactDOMUnknownPropertyHook = {
 };
 
 module.exports = ReactDOMUnknownPropertyHook;
-},{"11":11,"132":132,"157":157,"18":18}],50:[function(_dereq_,module,exports){
+},{"12":12,"131":131,"156":156,"18":18}],51:[function(_dereq_,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -8370,19 +8410,18 @@ module.exports = ReactDOMUnknownPropertyHook;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDebugTool
  * 
  */
 
 'use strict';
 
-var ReactInvalidSetStateWarningHook = _dereq_(65);
+var ReactInvalidSetStateWarningHook = _dereq_(64);
 var ReactHostOperationHistoryHook = _dereq_(60);
-var ReactComponentTreeHook = _dereq_(132);
-var ExecutionEnvironment = _dereq_(136);
+var ReactComponentTreeHook = _dereq_(131);
+var ExecutionEnvironment = _dereq_(135);
 
-var performanceNow = _dereq_(155);
-var warning = _dereq_(157);
+var performanceNow = _dereq_(154);
+var warning = _dereq_(156);
 
 var hooks = [];
 var didHookThrowForEvent = {};
@@ -8469,7 +8508,7 @@ function resetMeasurements() {
 }
 
 function checkDebugID(debugID) {
-  var allowRoot = arguments.length <= 1 || arguments[1] === undefined ? false : arguments[1];
+  var allowRoot = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
   if (allowRoot && debugID === 0) {
     return;
@@ -8544,9 +8583,7 @@ function resumeCurrentLifeCycleTimer() {
 }
 
 var lastMarkTimeStamp = 0;
-var canUsePerformanceMeasure =
-// $FlowFixMe https://github.com/facebook/flow/issues/2345
-typeof performance !== 'undefined' && typeof performance.mark === 'function' && typeof performance.clearMarks === 'function' && typeof performance.measure === 'function' && typeof performance.clearMeasures === 'function';
+var canUsePerformanceMeasure = typeof performance !== 'undefined' && typeof performance.mark === 'function' && typeof performance.clearMarks === 'function' && typeof performance.measure === 'function' && typeof performance.clearMeasures === 'function';
 
 function shouldMark(debugID) {
   if (!isProfiling || !canUsePerformanceMeasure) {
@@ -8724,7 +8761,7 @@ if (/[?&]react_perf\b/.test(url)) {
 }
 
 module.exports = ReactDebugTool;
-},{"132":132,"136":136,"155":155,"157":157,"60":60,"65":65}],51:[function(_dereq_,module,exports){
+},{"131":131,"135":135,"154":154,"156":156,"60":60,"64":64}],52:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -8733,17 +8770,16 @@ module.exports = ReactDebugTool;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactDefaultBatchingStrategy
  */
 
 'use strict';
 
-var _assign = _dereq_(158);
+var _assign = _dereq_(157);
 
-var ReactUpdates = _dereq_(82);
-var Transaction = _dereq_(100);
+var ReactUpdates = _dereq_(81);
+var Transaction = _dereq_(99);
 
-var emptyFunction = _dereq_(142);
+var emptyFunction = _dereq_(141);
 
 var RESET_BATCHED_UPDATES = {
   initialize: emptyFunction,
@@ -8793,94 +8829,7 @@ var ReactDefaultBatchingStrategy = {
 };
 
 module.exports = ReactDefaultBatchingStrategy;
-},{"100":100,"142":142,"158":158,"82":82}],52:[function(_dereq_,module,exports){
-/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule ReactDefaultInjection
- */
-
-'use strict';
-
-var ARIADOMPropertyConfig = _dereq_(1);
-var BeforeInputEventPlugin = _dereq_(3);
-var ChangeEventPlugin = _dereq_(7);
-var DefaultEventPluginOrder = _dereq_(14);
-var EnterLeaveEventPlugin = _dereq_(15);
-var HTMLDOMPropertyConfig = _dereq_(22);
-var ReactComponentBrowserEnvironment = _dereq_(28);
-var ReactDOMComponent = _dereq_(32);
-var ReactDOMComponentTree = _dereq_(34);
-var ReactDOMEmptyComponent = _dereq_(36);
-var ReactDOMTreeTraversal = _dereq_(47);
-var ReactDOMTextComponent = _dereq_(45);
-var ReactDefaultBatchingStrategy = _dereq_(51);
-var ReactEventListener = _dereq_(57);
-var ReactInjection = _dereq_(61);
-var ReactReconcileTransaction = _dereq_(74);
-var SVGDOMPropertyConfig = _dereq_(84);
-var SelectEventPlugin = _dereq_(85);
-var SimpleEventPlugin = _dereq_(86);
-
-var alreadyInjected = false;
-
-function inject() {
-  if (alreadyInjected) {
-    // TODO: This is currently true because these injections are shared between
-    // the client and the server package. They should be built independently
-    // and not share any injection state. Then this problem will be solved.
-    return;
-  }
-  alreadyInjected = true;
-
-  ReactInjection.EventEmitter.injectReactEventListener(ReactEventListener);
-
-  /**
-   * Inject modules for resolving DOM hierarchy and plugin ordering.
-   */
-  ReactInjection.EventPluginHub.injectEventPluginOrder(DefaultEventPluginOrder);
-  ReactInjection.EventPluginUtils.injectComponentTree(ReactDOMComponentTree);
-  ReactInjection.EventPluginUtils.injectTreeTraversal(ReactDOMTreeTraversal);
-
-  /**
-   * Some important event plugins included by default (without having to require
-   * them).
-   */
-  ReactInjection.EventPluginHub.injectEventPluginsByName({
-    SimpleEventPlugin: SimpleEventPlugin,
-    EnterLeaveEventPlugin: EnterLeaveEventPlugin,
-    ChangeEventPlugin: ChangeEventPlugin,
-    SelectEventPlugin: SelectEventPlugin,
-    BeforeInputEventPlugin: BeforeInputEventPlugin
-  });
-
-  ReactInjection.HostComponent.injectGenericComponentClass(ReactDOMComponent);
-
-  ReactInjection.HostComponent.injectTextComponentClass(ReactDOMTextComponent);
-
-  ReactInjection.DOMProperty.injectDOMPropertyConfig(ARIADOMPropertyConfig);
-  ReactInjection.DOMProperty.injectDOMPropertyConfig(HTMLDOMPropertyConfig);
-  ReactInjection.DOMProperty.injectDOMPropertyConfig(SVGDOMPropertyConfig);
-
-  ReactInjection.EmptyComponent.injectEmptyComponentFactory(function (instantiate) {
-    return new ReactDOMEmptyComponent(instantiate);
-  });
-
-  ReactInjection.Updates.injectReconcileTransaction(ReactReconcileTransaction);
-  ReactInjection.Updates.injectBatchingStrategy(ReactDefaultBatchingStrategy);
-
-  ReactInjection.Component.injectEnvironment(ReactComponentBrowserEnvironment);
-}
-
-module.exports = {
-  inject: inject
-};
-},{"1":1,"14":14,"15":15,"22":22,"28":28,"3":3,"32":32,"34":34,"36":36,"45":45,"47":47,"51":51,"57":57,"61":61,"7":7,"74":74,"84":84,"85":85,"86":86}],53:[function(_dereq_,module,exports){
+},{"141":141,"157":157,"81":81,"99":99}],53:[function(_dereq_,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -8889,7 +8838,6 @@ module.exports = {
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactElementSymbol
  * 
  */
 
@@ -8910,7 +8858,6 @@ module.exports = REACT_ELEMENT_TYPE;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactEmptyComponent
  */
 
 'use strict';
@@ -8941,7 +8888,6 @@ module.exports = ReactEmptyComponent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactErrorUtils
  * 
  */
 
@@ -9001,7 +8947,6 @@ if ("development" !== 'production') {
       var evtType = 'react-' + name;
       fakeNode.addEventListener(evtType, boundFunc, false);
       var evt = document.createEvent('Event');
-      // $FlowFixMe https://github.com/facebook/flow/issues/2336
       evt.initEvent(evtType, false, false);
       fakeNode.dispatchEvent(evt);
       fakeNode.removeEventListener(evtType, boundFunc, false);
@@ -9019,7 +8964,6 @@ module.exports = ReactErrorUtils;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactEventEmitterMixin
  */
 
 'use strict';
@@ -9053,21 +8997,20 @@ module.exports = ReactEventEmitterMixin;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactEventListener
  */
 
 'use strict';
 
-var _assign = _dereq_(158);
+var _assign = _dereq_(157);
 
-var EventListener = _dereq_(135);
-var ExecutionEnvironment = _dereq_(136);
+var EventListener = _dereq_(134);
+var ExecutionEnvironment = _dereq_(135);
 var PooledClass = _dereq_(25);
 var ReactDOMComponentTree = _dereq_(34);
-var ReactUpdates = _dereq_(82);
+var ReactUpdates = _dereq_(81);
 
-var getEventTarget = _dereq_(114);
-var getUnboundedScrollPosition = _dereq_(147);
+var getEventTarget = _dereq_(113);
+var getUnboundedScrollPosition = _dereq_(146);
 
 /**
  * Find the deepest React component completely containing the root of the
@@ -9200,7 +9143,7 @@ var ReactEventListener = {
 };
 
 module.exports = ReactEventListener;
-},{"114":114,"135":135,"136":136,"147":147,"158":158,"25":25,"34":34,"82":82}],58:[function(_dereq_,module,exports){
+},{"113":113,"134":134,"135":135,"146":146,"157":157,"25":25,"34":34,"81":81}],58:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -9209,7 +9152,6 @@ module.exports = ReactEventListener;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactFeatureFlags
  * 
  */
 
@@ -9232,19 +9174,15 @@ module.exports = ReactFeatureFlags;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactHostComponent
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125),
-    _assign = _dereq_(158);
+var _prodInvariant = _dereq_(124);
 
-var invariant = _dereq_(150);
+var invariant = _dereq_(149);
 
 var genericComponentClass = null;
-// This registry keeps track of wrapper classes around host tags.
-var tagToComponentClass = {};
 var textComponentClass = null;
 
 var ReactHostComponentInjection = {
@@ -9257,11 +9195,6 @@ var ReactHostComponentInjection = {
   // rendered as props.
   injectTextComponentClass: function (componentClass) {
     textComponentClass = componentClass;
-  },
-  // This accepts a keyed object with classes as values. Each key represents a
-  // tag. That particular tag will use this class instead of the generic one.
-  injectComponentClasses: function (componentClasses) {
-    _assign(tagToComponentClass, componentClasses);
   }
 };
 
@@ -9300,7 +9233,7 @@ var ReactHostComponent = {
 };
 
 module.exports = ReactHostComponent;
-},{"125":125,"150":150,"158":158}],60:[function(_dereq_,module,exports){
+},{"124":124,"149":149}],60:[function(_dereq_,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -9309,7 +9242,6 @@ module.exports = ReactHostComponent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactHostOperationHistoryHook
  * 
  */
 
@@ -9344,51 +9276,15 @@ module.exports = ReactHostOperationHistoryHook;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactInjection
  */
 
 'use strict';
 
-var DOMProperty = _dereq_(11);
-var EventPluginHub = _dereq_(17);
-var EventPluginUtils = _dereq_(19);
-var ReactComponentEnvironment = _dereq_(29);
-var ReactEmptyComponent = _dereq_(54);
-var ReactBrowserEventEmitter = _dereq_(26);
-var ReactHostComponent = _dereq_(59);
-var ReactUpdates = _dereq_(82);
+var ReactDOMSelection = _dereq_(45);
 
-var ReactInjection = {
-  Component: ReactComponentEnvironment.injection,
-  DOMProperty: DOMProperty.injection,
-  EmptyComponent: ReactEmptyComponent.injection,
-  EventPluginHub: EventPluginHub.injection,
-  EventPluginUtils: EventPluginUtils.injection,
-  EventEmitter: ReactBrowserEventEmitter.injection,
-  HostComponent: ReactHostComponent.injection,
-  Updates: ReactUpdates.injection
-};
-
-module.exports = ReactInjection;
-},{"11":11,"17":17,"19":19,"26":26,"29":29,"54":54,"59":59,"82":82}],62:[function(_dereq_,module,exports){
-/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule ReactInputSelection
- */
-
-'use strict';
-
-var ReactDOMSelection = _dereq_(44);
-
-var containsNode = _dereq_(139);
-var focusNode = _dereq_(144);
-var getActiveElement = _dereq_(145);
+var containsNode = _dereq_(138);
+var focusNode = _dereq_(143);
+var getActiveElement = _dereq_(144);
 
 function isInDocument(node) {
   return containsNode(document.documentElement, node);
@@ -9495,7 +9391,7 @@ var ReactInputSelection = {
 };
 
 module.exports = ReactInputSelection;
-},{"139":139,"144":144,"145":145,"44":44}],63:[function(_dereq_,module,exports){
+},{"138":138,"143":143,"144":144,"45":45}],62:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -9504,7 +9400,6 @@ module.exports = ReactInputSelection;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactInstanceMap
  */
 
 'use strict';
@@ -9544,7 +9439,7 @@ var ReactInstanceMap = {
 };
 
 module.exports = ReactInstanceMap;
-},{}],64:[function(_dereq_,module,exports){
+},{}],63:[function(_dereq_,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -9553,7 +9448,6 @@ module.exports = ReactInstanceMap;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactInstrumentation
  * 
  */
 
@@ -9564,12 +9458,12 @@ module.exports = ReactInstanceMap;
 var debugTool = null;
 
 if ("development" !== 'production') {
-  var ReactDebugTool = _dereq_(50);
+  var ReactDebugTool = _dereq_(51);
   debugTool = ReactDebugTool;
 }
 
 module.exports = { debugTool: debugTool };
-},{"50":50}],65:[function(_dereq_,module,exports){
+},{"51":51}],64:[function(_dereq_,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -9578,13 +9472,12 @@ module.exports = { debugTool: debugTool };
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactInvalidSetStateWarningHook
  * 
  */
 
 'use strict';
 
-var warning = _dereq_(157);
+var warning = _dereq_(156);
 
 if ("development" !== 'production') {
   var processingChildContext = false;
@@ -9607,7 +9500,7 @@ var ReactInvalidSetStateWarningHook = {
 };
 
 module.exports = ReactInvalidSetStateWarningHook;
-},{"157":157}],66:[function(_dereq_,module,exports){
+},{"156":156}],65:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -9616,12 +9509,11 @@ module.exports = ReactInvalidSetStateWarningHook;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactMarkupChecksum
  */
 
 'use strict';
 
-var adler32 = _dereq_(103);
+var adler32 = _dereq_(102);
 
 var TAG_END = /\/?>/;
 var COMMENT_START = /^<\!\-\-/;
@@ -9658,7 +9550,7 @@ var ReactMarkupChecksum = {
 };
 
 module.exports = ReactMarkupChecksum;
-},{"103":103}],67:[function(_dereq_,module,exports){
+},{"102":102}],66:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -9667,35 +9559,34 @@ module.exports = ReactMarkupChecksum;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactMount
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
-var DOMLazyTree = _dereq_(9);
-var DOMProperty = _dereq_(11);
-var React = _dereq_(134);
+var DOMLazyTree = _dereq_(10);
+var DOMProperty = _dereq_(12);
+var React = _dereq_(133);
 var ReactBrowserEventEmitter = _dereq_(26);
-var ReactCurrentOwner = _dereq_(133);
+var ReactCurrentOwner = _dereq_(132);
 var ReactDOMComponentTree = _dereq_(34);
 var ReactDOMContainerInfo = _dereq_(35);
 var ReactDOMFeatureFlags = _dereq_(37);
 var ReactFeatureFlags = _dereq_(58);
-var ReactInstanceMap = _dereq_(63);
-var ReactInstrumentation = _dereq_(64);
-var ReactMarkupChecksum = _dereq_(66);
-var ReactReconciler = _dereq_(75);
-var ReactUpdateQueue = _dereq_(81);
-var ReactUpdates = _dereq_(82);
+var ReactInstanceMap = _dereq_(62);
+var ReactInstrumentation = _dereq_(63);
+var ReactMarkupChecksum = _dereq_(65);
+var ReactReconciler = _dereq_(73);
+var ReactUpdateQueue = _dereq_(80);
+var ReactUpdates = _dereq_(81);
 
-var emptyObject = _dereq_(143);
-var instantiateReactComponent = _dereq_(121);
-var invariant = _dereq_(150);
-var setInnerHTML = _dereq_(127);
-var shouldUpdateReactComponent = _dereq_(129);
-var warning = _dereq_(157);
+var emptyObject = _dereq_(142);
+var instantiateReactComponent = _dereq_(120);
+var invariant = _dereq_(149);
+var setInnerHTML = _dereq_(126);
+var shouldUpdateReactComponent = _dereq_(128);
+var warning = _dereq_(156);
 
 var ATTR_NAME = DOMProperty.ID_ATTRIBUTE_NAME;
 var ROOT_ATTR_NAME = DOMProperty.ROOT_ATTRIBUTE_NAME;
@@ -9798,11 +9689,13 @@ function batchedMountComponentIntoNode(componentInstance, container, shouldReuse
  * @internal
  * @see {ReactMount.unmountComponentAtNode}
  */
-function unmountComponentFromNode(instance, container, safely) {
+function unmountComponentFromNode(instance, container) {
   if ("development" !== 'production') {
     ReactInstrumentation.debugTool.onBeginFlush();
   }
-  ReactReconciler.unmountComponent(instance, safely);
+  ReactReconciler.unmountComponent(instance, false /* safely */
+  , false /* skipLifecycle */
+  );
   if ("development" !== 'production') {
     ReactInstrumentation.debugTool.onEndFlush();
   }
@@ -10069,7 +9962,7 @@ var ReactMount = {
 
   /**
    * Renders a React component into the DOM in the supplied `container`.
-   * See https://facebook.github.io/react/docs/top-level-api.html#reactdom.render
+   * See https://facebook.github.io/react/docs/react-dom.html#render
    *
    * If the React component was previously rendered into `container`, this will
    * perform an update on it and only mutate the DOM as necessary to reflect the
@@ -10086,7 +9979,7 @@ var ReactMount = {
 
   /**
    * Unmounts and destroys the React component rendered in the `container`.
-   * See https://facebook.github.io/react/docs/top-level-api.html#reactdom.unmountcomponentatnode
+   * See https://facebook.github.io/react/docs/react-dom.html#unmountcomponentatnode
    *
    * @param {DOMElement} container DOM element containing a React component.
    * @return {boolean} True if a component was found in and unmounted from
@@ -10121,7 +10014,7 @@ var ReactMount = {
       return false;
     }
     delete instancesByReactRootID[prevComponent._instance.rootID];
-    ReactUpdates.batchedUpdates(unmountComponentFromNode, prevComponent, container, false);
+    ReactUpdates.batchedUpdates(unmountComponentFromNode, prevComponent, container);
     return true;
   },
 
@@ -10197,7 +10090,7 @@ var ReactMount = {
 };
 
 module.exports = ReactMount;
-},{"11":11,"121":121,"125":125,"127":127,"129":129,"133":133,"134":134,"143":143,"150":150,"157":157,"26":26,"34":34,"35":35,"37":37,"58":58,"63":63,"64":64,"66":66,"75":75,"81":81,"82":82,"9":9}],68:[function(_dereq_,module,exports){
+},{"10":10,"12":12,"120":120,"124":124,"126":126,"128":128,"132":132,"133":133,"142":142,"149":149,"156":156,"26":26,"34":34,"35":35,"37":37,"58":58,"62":62,"63":63,"65":65,"73":73,"80":80,"81":81}],67:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -10206,24 +10099,23 @@ module.exports = ReactMount;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactMultiChild
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
 var ReactComponentEnvironment = _dereq_(29);
-var ReactInstanceMap = _dereq_(63);
-var ReactInstrumentation = _dereq_(64);
+var ReactInstanceMap = _dereq_(62);
+var ReactInstrumentation = _dereq_(63);
 
-var ReactCurrentOwner = _dereq_(133);
-var ReactReconciler = _dereq_(75);
+var ReactCurrentOwner = _dereq_(132);
+var ReactReconciler = _dereq_(73);
 var ReactChildReconciler = _dereq_(27);
 
-var emptyFunction = _dereq_(142);
-var flattenChildren = _dereq_(109);
-var invariant = _dereq_(150);
+var emptyFunction = _dereq_(141);
+var flattenChildren = _dereq_(108);
+var invariant = _dereq_(149);
 
 /**
  * Make an update for markup to be rendered and inserted at a supplied index.
@@ -10447,7 +10339,9 @@ var ReactMultiChild = {
   updateTextContent: function (nextContent) {
     var prevChildren = this._renderedChildren;
     // Remove any rendered children.
-    ReactChildReconciler.unmountChildren(prevChildren, false);
+    ReactChildReconciler.unmountChildren(prevChildren, false, /* safely */
+    false /* skipLifecycle */
+    );
     for (var name in prevChildren) {
       if (prevChildren.hasOwnProperty(name)) {
         !false ? "development" !== 'production' ? invariant(false, 'updateTextContent called on non-empty component.') : _prodInvariant('118') : void 0;
@@ -10467,7 +10361,9 @@ var ReactMultiChild = {
   updateMarkup: function (nextMarkup) {
     var prevChildren = this._renderedChildren;
     // Remove any rendered children.
-    ReactChildReconciler.unmountChildren(prevChildren, false);
+    ReactChildReconciler.unmountChildren(prevChildren, false, /* safely */
+    false /* skipLifecycle */
+    );
     for (var name in prevChildren) {
       if (prevChildren.hasOwnProperty(name)) {
         !false ? "development" !== 'production' ? invariant(false, 'updateTextContent called on non-empty component.') : _prodInvariant('118') : void 0;
@@ -10558,9 +10454,9 @@ var ReactMultiChild = {
    *
    * @internal
    */
-  unmountChildren: function (safely) {
+  unmountChildren: function (safely, skipLifecycle) {
     var renderedChildren = this._renderedChildren;
-    ReactChildReconciler.unmountChildren(renderedChildren, safely);
+    ReactChildReconciler.unmountChildren(renderedChildren, safely, skipLifecycle);
     this._renderedChildren = null;
   },
 
@@ -10634,7 +10530,7 @@ var ReactMultiChild = {
 };
 
 module.exports = ReactMultiChild;
-},{"109":109,"125":125,"133":133,"142":142,"150":150,"27":27,"29":29,"63":63,"64":64,"75":75}],69:[function(_dereq_,module,exports){
+},{"108":108,"124":124,"132":132,"141":141,"149":149,"27":27,"29":29,"62":62,"63":63,"73":73}],68:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -10643,17 +10539,16 @@ module.exports = ReactMultiChild;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactNodeTypes
  * 
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
-var React = _dereq_(134);
+var React = _dereq_(133);
 
-var invariant = _dereq_(150);
+var invariant = _dereq_(149);
 
 var ReactNodeTypes = {
   HOST: 0,
@@ -10675,7 +10570,7 @@ var ReactNodeTypes = {
 };
 
 module.exports = ReactNodeTypes;
-},{"125":125,"134":134,"150":150}],70:[function(_dereq_,module,exports){
+},{"124":124,"133":133,"149":149}],69:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -10684,15 +10579,14 @@ module.exports = ReactNodeTypes;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactOwner
  * 
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
-var invariant = _dereq_(150);
+var invariant = _dereq_(149);
 
 /**
  * @param {?object} object
@@ -10770,7 +10664,7 @@ var ReactOwner = {
 };
 
 module.exports = ReactOwner;
-},{"125":125,"150":150}],71:[function(_dereq_,module,exports){
+},{"124":124,"149":149}],70:[function(_dereq_,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -10779,22 +10673,21 @@ module.exports = ReactOwner;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactPerf
  * 
  */
 
 'use strict';
 
-var _assign = _dereq_(158);
+var _assign = _dereq_(157);
 
 var _extends = _assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var ReactDebugTool = _dereq_(50);
-var warning = _dereq_(157);
+var ReactDebugTool = _dereq_(51);
+var warning = _dereq_(156);
 var alreadyWarned = false;
 
 function roundFloat(val) {
-  var base = arguments.length <= 1 || arguments[1] === undefined ? 2 : arguments[1];
+  var base = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
 
   var n = Math.pow(10, base);
   return Math.floor(val * n) / n;
@@ -10826,7 +10719,7 @@ function getLastMeasurements() {
 }
 
 function getExclusive() {
-  var flushHistory = arguments.length <= 0 || arguments[0] === undefined ? getLastMeasurements() : arguments[0];
+  var flushHistory = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : getLastMeasurements();
 
   if (!("development" !== 'production')) {
     warnInProduction();
@@ -10888,7 +10781,7 @@ function getExclusive() {
 }
 
 function getInclusive() {
-  var flushHistory = arguments.length <= 0 || arguments[0] === undefined ? getLastMeasurements() : arguments[0];
+  var flushHistory = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : getLastMeasurements();
 
   if (!("development" !== 'production')) {
     warnInProduction();
@@ -10973,7 +10866,7 @@ function getInclusive() {
 }
 
 function getWasted() {
-  var flushHistory = arguments.length <= 0 || arguments[0] === undefined ? getLastMeasurements() : arguments[0];
+  var flushHistory = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : getLastMeasurements();
 
   if (!("development" !== 'production')) {
     warnInProduction();
@@ -11083,7 +10976,7 @@ function getWasted() {
 }
 
 function getOperations() {
-  var flushHistory = arguments.length <= 0 || arguments[0] === undefined ? getLastMeasurements() : arguments[0];
+  var flushHistory = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : getLastMeasurements();
 
   if (!("development" !== 'production')) {
     warnInProduction();
@@ -11272,7 +11165,7 @@ var ReactPerfAnalysis = {
 };
 
 module.exports = ReactPerfAnalysis;
-},{"157":157,"158":158,"50":50}],72:[function(_dereq_,module,exports){
+},{"156":156,"157":157,"51":51}],71:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -11282,7 +11175,6 @@ module.exports = ReactPerfAnalysis;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * 
- * @providesModule ReactPropTypeLocationNames
  */
 
 'use strict';
@@ -11298,7 +11190,7 @@ if ("development" !== 'production') {
 }
 
 module.exports = ReactPropTypeLocationNames;
-},{}],73:[function(_dereq_,module,exports){
+},{}],72:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -11307,38 +11199,19 @@ module.exports = ReactPropTypeLocationNames;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * 
- * @providesModule ReactPropTypesSecret
  */
 
 'use strict';
 
-var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
-
-module.exports = ReactPropTypesSecret;
-},{}],74:[function(_dereq_,module,exports){
-/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule ReactReconcileTransaction
- */
-
-'use strict';
-
-var _assign = _dereq_(158);
+var _assign = _dereq_(157);
 
 var CallbackQueue = _dereq_(6);
 var PooledClass = _dereq_(25);
 var ReactBrowserEventEmitter = _dereq_(26);
-var ReactInputSelection = _dereq_(62);
-var ReactInstrumentation = _dereq_(64);
-var Transaction = _dereq_(100);
-var ReactUpdateQueue = _dereq_(81);
+var ReactInputSelection = _dereq_(61);
+var ReactInstrumentation = _dereq_(63);
+var Transaction = _dereq_(99);
+var ReactUpdateQueue = _dereq_(80);
 
 /**
  * Ensures that, when possible, the selection range (currently selected text
@@ -11495,7 +11368,7 @@ _assign(ReactReconcileTransaction.prototype, Transaction, Mixin);
 PooledClass.addPoolingTo(ReactReconcileTransaction);
 
 module.exports = ReactReconcileTransaction;
-},{"100":100,"158":158,"25":25,"26":26,"6":6,"62":62,"64":64,"81":81}],75:[function(_dereq_,module,exports){
+},{"157":157,"25":25,"26":26,"6":6,"61":61,"63":63,"80":80,"99":99}],73:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -11504,15 +11377,14 @@ module.exports = ReactReconcileTransaction;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactReconciler
  */
 
 'use strict';
 
-var ReactRef = _dereq_(76);
-var ReactInstrumentation = _dereq_(64);
+var ReactRef = _dereq_(74);
+var ReactInstrumentation = _dereq_(63);
 
-var warning = _dereq_(157);
+var warning = _dereq_(156);
 
 /**
  * Helper to call ReactRef.attachRefs with this composite component, split out
@@ -11568,14 +11440,14 @@ var ReactReconciler = {
    * @final
    * @internal
    */
-  unmountComponent: function (internalInstance, safely) {
+  unmountComponent: function (internalInstance, safely, skipLifecycle) {
     if ("development" !== 'production') {
       if (internalInstance._debugID !== 0) {
         ReactInstrumentation.debugTool.onBeforeUnmountComponent(internalInstance._debugID);
       }
     }
     ReactRef.detachRefs(internalInstance, internalInstance._currentElement);
-    internalInstance.unmountComponent(safely);
+    internalInstance.unmountComponent(safely, skipLifecycle);
     if ("development" !== 'production') {
       if (internalInstance._debugID !== 0) {
         ReactInstrumentation.debugTool.onUnmountComponent(internalInstance._debugID);
@@ -11664,7 +11536,7 @@ var ReactReconciler = {
 };
 
 module.exports = ReactReconciler;
-},{"157":157,"64":64,"76":76}],76:[function(_dereq_,module,exports){
+},{"156":156,"63":63,"74":74}],74:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -11673,13 +11545,12 @@ module.exports = ReactReconciler;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactRef
  * 
  */
 
 'use strict';
 
-var ReactOwner = _dereq_(70);
+var ReactOwner = _dereq_(69);
 
 var ReactRef = {};
 
@@ -11754,7 +11625,7 @@ ReactRef.detachRefs = function (instance, element) {
 };
 
 module.exports = ReactRef;
-},{"70":70}],77:[function(_dereq_,module,exports){
+},{"69":69}],75:[function(_dereq_,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -11763,17 +11634,16 @@ module.exports = ReactRef;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactServerRenderingTransaction
  */
 
 'use strict';
 
-var _assign = _dereq_(158);
+var _assign = _dereq_(157);
 
 var PooledClass = _dereq_(25);
-var Transaction = _dereq_(100);
-var ReactInstrumentation = _dereq_(64);
-var ReactServerUpdateQueue = _dereq_(78);
+var Transaction = _dereq_(99);
+var ReactInstrumentation = _dereq_(63);
+var ReactServerUpdateQueue = _dereq_(76);
 
 /**
  * Executed within the scope of the `Transaction` instance. Consider these as
@@ -11845,7 +11715,7 @@ _assign(ReactServerRenderingTransaction.prototype, Transaction, Mixin);
 PooledClass.addPoolingTo(ReactServerRenderingTransaction);
 
 module.exports = ReactServerRenderingTransaction;
-},{"100":100,"158":158,"25":25,"64":64,"78":78}],78:[function(_dereq_,module,exports){
+},{"157":157,"25":25,"63":63,"76":76,"99":99}],76:[function(_dereq_,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -11854,7 +11724,6 @@ module.exports = ReactServerRenderingTransaction;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactServerUpdateQueue
  * 
  */
 
@@ -11862,9 +11731,9 @@ module.exports = ReactServerRenderingTransaction;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ReactUpdateQueue = _dereq_(81);
+var ReactUpdateQueue = _dereq_(80);
 
-var warning = _dereq_(157);
+var warning = _dereq_(156);
 
 function warnNoop(publicInstance, callerName) {
   if ("development" !== 'production') {
@@ -11985,7 +11854,7 @@ var ReactServerUpdateQueue = function () {
 }();
 
 module.exports = ReactServerUpdateQueue;
-},{"157":157,"81":81}],79:[function(_dereq_,module,exports){
+},{"156":156,"80":80}],77:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -11994,24 +11863,25 @@ module.exports = ReactServerUpdateQueue;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactShallowRenderer
+ * @preventMunge
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125),
-    _assign = _dereq_(158);
+var _prodInvariant = _dereq_(124),
+    _assign = _dereq_(157);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var React = _dereq_(134);
-var ReactDefaultInjection = _dereq_(52);
+var React = _dereq_(133);
+var ReactDOMInjection = _dereq_(39);
+var ReactDOMStackInjection = _dereq_(46);
 var ReactCompositeComponent = _dereq_(30);
-var ReactReconciler = _dereq_(75);
-var ReactUpdates = _dereq_(82);
+var ReactReconciler = _dereq_(73);
+var ReactUpdates = _dereq_(81);
 
-var emptyObject = _dereq_(143);
-var invariant = _dereq_(150);
+var emptyObject = _dereq_(142);
+var invariant = _dereq_(149);
 
 var nextDebugID = 1;
 
@@ -12085,7 +11955,8 @@ var ReactShallowRenderer = function () {
     // Ensure we've done the default injections. This might not be true in the
     // case of a simple test that only requires React and the TestUtils in
     // conjunction with an inline-requires transform.
-    ReactDefaultInjection.inject();
+    ReactDOMInjection.inject();
+    ReactDOMStackInjection.inject();
 
     !React.isValidElement(element) ? "development" !== 'production' ? invariant(false, 'ReactShallowRenderer render(): Invalid component element.%s', typeof element === 'function' ? ' Instead of passing a component class, make sure to instantiate ' + 'it by passing it to React.createElement.' : '') : _prodInvariant('12', typeof element === 'function' ? ' Instead of passing a component class, make sure to instantiate ' + 'it by passing it to React.createElement.' : '') : void 0;
     !(typeof element.type !== 'string') ? "development" !== 'production' ? invariant(false, 'ReactShallowRenderer render(): Shallow rendering works only with custom components, not primitives (%s). Instead of calling `.render(el)` and inspecting the rendered output, look at `el.props` directly instead.', element.type) : _prodInvariant('13', element.type) : void 0;
@@ -12104,7 +11975,9 @@ var ReactShallowRenderer = function () {
 
   ReactShallowRenderer.prototype.unmount = function unmount() {
     if (this._instance) {
-      ReactReconciler.unmountComponent(this._instance, false);
+      ReactReconciler.unmountComponent(this._instance, false, /* safely */
+      false /* skipLifecycle */
+      );
     }
   };
 
@@ -12122,7 +11995,7 @@ var ReactShallowRenderer = function () {
 }();
 
 module.exports = ReactShallowRenderer;
-},{"125":125,"134":134,"143":143,"150":150,"158":158,"30":30,"52":52,"75":75,"82":82}],80:[function(_dereq_,module,exports){
+},{"124":124,"133":133,"142":142,"149":149,"157":157,"30":30,"39":39,"46":46,"73":73,"81":81}],78:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12131,29 +12004,28 @@ module.exports = ReactShallowRenderer;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactTestUtils
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125),
-    _assign = _dereq_(158);
+var _prodInvariant = _dereq_(124),
+    _assign = _dereq_(157);
 
 var EventConstants = _dereq_(16);
 var EventPluginHub = _dereq_(17);
 var EventPluginRegistry = _dereq_(18);
 var EventPropagators = _dereq_(20);
-var React = _dereq_(134);
+var React = _dereq_(133);
 var ReactDOM = _dereq_(31);
 var ReactDOMComponentTree = _dereq_(34);
 var ReactBrowserEventEmitter = _dereq_(26);
-var ReactInstanceMap = _dereq_(63);
-var ReactUpdates = _dereq_(82);
-var SyntheticEvent = _dereq_(91);
-var ReactShallowRenderer = _dereq_(79);
+var ReactInstanceMap = _dereq_(62);
+var ReactUpdates = _dereq_(81);
+var SyntheticEvent = _dereq_(90);
+var ReactShallowRenderer = _dereq_(77);
 
-var findDOMNode = _dereq_(108);
-var invariant = _dereq_(150);
+var findDOMNode = _dereq_(107);
+var invariant = _dereq_(149);
 
 var topLevelTypes = EventConstants.topLevelTypes;
 
@@ -12195,14 +12067,14 @@ function findAllInRenderedTreeInternal(inst, test) {
  * @lends ReactTestUtils
  */
 var ReactTestUtils = {
-  renderIntoDocument: function (instance) {
+  renderIntoDocument: function (element) {
     var div = document.createElement('div');
     // None of our tests actually require attaching the container to the
     // DOM, and doing so creates a mess that we rely on test isolation to
     // clean up, so we're going to stop honoring the name of this method
     // (and probably rename it eventually) if no problems arise.
     // document.documentElement.appendChild(div);
-    return ReactDOM.render(instance, div);
+    return ReactDOM.render(element, div);
   },
 
   isElement: function (element) {
@@ -12535,7 +12407,7 @@ Object.keys(topLevelTypes).forEach(function (eventType) {
 });
 
 module.exports = ReactTestUtils;
-},{"108":108,"125":125,"134":134,"150":150,"158":158,"16":16,"17":17,"18":18,"20":20,"26":26,"31":31,"34":34,"63":63,"79":79,"82":82,"91":91}],81:[function(_dereq_,module,exports){
+},{"107":107,"124":124,"133":133,"149":149,"157":157,"16":16,"17":17,"18":18,"20":20,"26":26,"31":31,"34":34,"62":62,"77":77,"81":81,"90":90}],79:[function(_dereq_,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -12544,20 +12416,144 @@ module.exports = ReactTestUtils;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactUpdateQueue
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+/**
+ * Return the lowest common ancestor of A and B, or null if they are in
+ * different trees.
+ */
 
-var ReactCurrentOwner = _dereq_(133);
-var ReactInstanceMap = _dereq_(63);
-var ReactInstrumentation = _dereq_(64);
-var ReactUpdates = _dereq_(82);
+function getLowestCommonAncestor(instA, instB) {
+  var depthA = 0;
+  for (var tempA = instA; tempA; tempA = tempA._hostParent) {
+    depthA++;
+  }
+  var depthB = 0;
+  for (var tempB = instB; tempB; tempB = tempB._hostParent) {
+    depthB++;
+  }
 
-var invariant = _dereq_(150);
-var warning = _dereq_(157);
+  // If A is deeper, crawl up.
+  while (depthA - depthB > 0) {
+    instA = instA._hostParent;
+    depthA--;
+  }
+
+  // If B is deeper, crawl up.
+  while (depthB - depthA > 0) {
+    instB = instB._hostParent;
+    depthB--;
+  }
+
+  // Walk in lockstep until we find a match.
+  var depth = depthA;
+  while (depth--) {
+    if (instA === instB) {
+      return instA;
+    }
+    instA = instA._hostParent;
+    instB = instB._hostParent;
+  }
+  return null;
+}
+
+/**
+ * Return if A is an ancestor of B.
+ */
+function isAncestor(instA, instB) {
+  while (instB) {
+    if (instB === instA) {
+      return true;
+    }
+    instB = instB._hostParent;
+  }
+  return false;
+}
+
+/**
+ * Return the parent instance of the passed-in instance.
+ */
+function getParentInstance(inst) {
+  return inst._hostParent;
+}
+
+/**
+ * Simulates the traversal of a two-phase, capture/bubble event dispatch.
+ */
+function traverseTwoPhase(inst, fn, arg) {
+  var path = [];
+  while (inst) {
+    path.push(inst);
+    inst = inst._hostParent;
+  }
+  var i;
+  for (i = path.length; i-- > 0;) {
+    fn(path[i], 'captured', arg);
+  }
+  for (i = 0; i < path.length; i++) {
+    fn(path[i], 'bubbled', arg);
+  }
+}
+
+/**
+ * Traverses the ID hierarchy and invokes the supplied `cb` on any IDs that
+ * should would receive a `mouseEnter` or `mouseLeave` event.
+ *
+ * Does not invoke the callback on the nearest common ancestor because nothing
+ * "entered" or "left" that element.
+ */
+function traverseEnterLeave(from, to, fn, argFrom, argTo) {
+  var common = from && to ? getLowestCommonAncestor(from, to) : null;
+  var pathFrom = [];
+  while (from && from !== common) {
+    pathFrom.push(from);
+    from = from._hostParent;
+  }
+  var pathTo = [];
+  while (to && to !== common) {
+    pathTo.push(to);
+    to = to._hostParent;
+  }
+  var i;
+  for (i = 0; i < pathFrom.length; i++) {
+    fn(pathFrom[i], 'bubbled', argFrom);
+  }
+  for (i = pathTo.length; i-- > 0;) {
+    fn(pathTo[i], 'captured', argTo);
+  }
+}
+
+module.exports = {
+  isAncestor: isAncestor,
+  getLowestCommonAncestor: getLowestCommonAncestor,
+  getParentInstance: getParentInstance,
+  traverseTwoPhase: traverseTwoPhase,
+  traverseEnterLeave: traverseEnterLeave
+};
+},{}],80:[function(_dereq_,module,exports){
+/**
+ * Copyright 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
+'use strict';
+
+var _prodInvariant = _dereq_(124);
+
+var ReactCurrentOwner = _dereq_(132);
+var ReactInstanceMap = _dereq_(62);
+var ReactInstrumentation = _dereq_(63);
+var ReactUpdates = _dereq_(81);
+
+var invariant = _dereq_(149);
+var warning = _dereq_(156);
 
 function enqueueUpdate(internalInstance) {
   ReactUpdates.enqueueUpdate(internalInstance);
@@ -12762,7 +12758,7 @@ var ReactUpdateQueue = {
 };
 
 module.exports = ReactUpdateQueue;
-},{"125":125,"133":133,"150":150,"157":157,"63":63,"64":64,"82":82}],82:[function(_dereq_,module,exports){
+},{"124":124,"132":132,"149":149,"156":156,"62":62,"63":63,"81":81}],81:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12771,21 +12767,20 @@ module.exports = ReactUpdateQueue;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactUpdates
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125),
-    _assign = _dereq_(158);
+var _prodInvariant = _dereq_(124),
+    _assign = _dereq_(157);
 
 var CallbackQueue = _dereq_(6);
 var PooledClass = _dereq_(25);
 var ReactFeatureFlags = _dereq_(58);
-var ReactReconciler = _dereq_(75);
-var Transaction = _dereq_(100);
+var ReactReconciler = _dereq_(73);
+var Transaction = _dereq_(99);
 
-var invariant = _dereq_(150);
+var invariant = _dereq_(149);
 
 var dirtyComponents = [];
 var updateBatchNumber = 0;
@@ -12994,6 +12989,10 @@ var ReactUpdatesInjection = {
     !(typeof _batchingStrategy.batchedUpdates === 'function') ? "development" !== 'production' ? invariant(false, 'ReactUpdates: must provide a batchedUpdates() function') : _prodInvariant('128') : void 0;
     !(typeof _batchingStrategy.isBatchingUpdates === 'boolean') ? "development" !== 'production' ? invariant(false, 'ReactUpdates: must provide an isBatchingUpdates boolean attribute') : _prodInvariant('129') : void 0;
     batchingStrategy = _batchingStrategy;
+  },
+
+  getBatchingStrategy: function () {
+    return batchingStrategy;
   }
 };
 
@@ -13014,7 +13013,7 @@ var ReactUpdates = {
 };
 
 module.exports = ReactUpdates;
-},{"100":100,"125":125,"150":150,"158":158,"25":25,"58":58,"6":6,"75":75}],83:[function(_dereq_,module,exports){
+},{"124":124,"149":149,"157":157,"25":25,"58":58,"6":6,"73":73,"99":99}],82:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13023,13 +13022,12 @@ module.exports = ReactUpdates;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactVersion
  */
 
 'use strict';
 
 module.exports = '16.0.0-alpha';
-},{}],84:[function(_dereq_,module,exports){
+},{}],83:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13038,7 +13036,6 @@ module.exports = '16.0.0-alpha';
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule SVGDOMPropertyConfig
  */
 
 'use strict';
@@ -13332,7 +13329,7 @@ Object.keys(ATTRS).forEach(function (key) {
 });
 
 module.exports = SVGDOMPropertyConfig;
-},{}],85:[function(_dereq_,module,exports){
+},{}],84:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13341,20 +13338,19 @@ module.exports = SVGDOMPropertyConfig;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule SelectEventPlugin
  */
 
 'use strict';
 
 var EventPropagators = _dereq_(20);
-var ExecutionEnvironment = _dereq_(136);
+var ExecutionEnvironment = _dereq_(135);
 var ReactDOMComponentTree = _dereq_(34);
-var ReactInputSelection = _dereq_(62);
-var SyntheticEvent = _dereq_(91);
+var ReactInputSelection = _dereq_(61);
+var SyntheticEvent = _dereq_(90);
 
-var getActiveElement = _dereq_(145);
-var isTextInputElement = _dereq_(123);
-var shallowEqual = _dereq_(156);
+var getActiveElement = _dereq_(144);
+var isTextInputElement = _dereq_(122);
+var shallowEqual = _dereq_(155);
 
 var skipSelectionChangeEvent = ExecutionEnvironment.canUseDOM && 'documentMode' in document && document.documentMode <= 11;
 
@@ -13524,7 +13520,7 @@ var SelectEventPlugin = {
 };
 
 module.exports = SelectEventPlugin;
-},{"123":123,"136":136,"145":145,"156":156,"20":20,"34":34,"62":62,"91":91}],86:[function(_dereq_,module,exports){
+},{"122":122,"135":135,"144":144,"155":155,"20":20,"34":34,"61":61,"90":90}],85:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13533,32 +13529,31 @@ module.exports = SelectEventPlugin;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule SimpleEventPlugin
  * 
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
-var EventListener = _dereq_(135);
+var EventListener = _dereq_(134);
 var EventPropagators = _dereq_(20);
 var ReactDOMComponentTree = _dereq_(34);
-var SyntheticAnimationEvent = _dereq_(87);
-var SyntheticClipboardEvent = _dereq_(88);
-var SyntheticEvent = _dereq_(91);
-var SyntheticFocusEvent = _dereq_(92);
-var SyntheticKeyboardEvent = _dereq_(94);
-var SyntheticMouseEvent = _dereq_(95);
-var SyntheticDragEvent = _dereq_(90);
-var SyntheticTouchEvent = _dereq_(96);
-var SyntheticTransitionEvent = _dereq_(97);
-var SyntheticUIEvent = _dereq_(98);
-var SyntheticWheelEvent = _dereq_(99);
+var SyntheticAnimationEvent = _dereq_(86);
+var SyntheticClipboardEvent = _dereq_(87);
+var SyntheticEvent = _dereq_(90);
+var SyntheticFocusEvent = _dereq_(91);
+var SyntheticKeyboardEvent = _dereq_(93);
+var SyntheticMouseEvent = _dereq_(94);
+var SyntheticDragEvent = _dereq_(89);
+var SyntheticTouchEvent = _dereq_(95);
+var SyntheticTransitionEvent = _dereq_(96);
+var SyntheticUIEvent = _dereq_(97);
+var SyntheticWheelEvent = _dereq_(98);
 
-var emptyFunction = _dereq_(142);
-var getEventCharCode = _dereq_(111);
-var invariant = _dereq_(150);
+var emptyFunction = _dereq_(141);
+var getEventCharCode = _dereq_(110);
+var invariant = _dereq_(149);
 
 /**
  * Turns
@@ -13768,7 +13763,7 @@ var SimpleEventPlugin = {
 };
 
 module.exports = SimpleEventPlugin;
-},{"111":111,"125":125,"135":135,"142":142,"150":150,"20":20,"34":34,"87":87,"88":88,"90":90,"91":91,"92":92,"94":94,"95":95,"96":96,"97":97,"98":98,"99":99}],87:[function(_dereq_,module,exports){
+},{"110":110,"124":124,"134":134,"141":141,"149":149,"20":20,"34":34,"86":86,"87":87,"89":89,"90":90,"91":91,"93":93,"94":94,"95":95,"96":96,"97":97,"98":98}],86:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13777,12 +13772,11 @@ module.exports = SimpleEventPlugin;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule SyntheticAnimationEvent
  */
 
 'use strict';
 
-var SyntheticEvent = _dereq_(91);
+var SyntheticEvent = _dereq_(90);
 
 /**
  * @interface Event
@@ -13808,7 +13802,7 @@ function SyntheticAnimationEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticAnimationEvent, AnimationEventInterface);
 
 module.exports = SyntheticAnimationEvent;
-},{"91":91}],88:[function(_dereq_,module,exports){
+},{"90":90}],87:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13817,12 +13811,11 @@ module.exports = SyntheticAnimationEvent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule SyntheticClipboardEvent
  */
 
 'use strict';
 
-var SyntheticEvent = _dereq_(91);
+var SyntheticEvent = _dereq_(90);
 
 /**
  * @interface Event
@@ -13847,7 +13840,7 @@ function SyntheticClipboardEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 
 module.exports = SyntheticClipboardEvent;
-},{"91":91}],89:[function(_dereq_,module,exports){
+},{"90":90}],88:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13856,12 +13849,11 @@ module.exports = SyntheticClipboardEvent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule SyntheticCompositionEvent
  */
 
 'use strict';
 
-var SyntheticEvent = _dereq_(91);
+var SyntheticEvent = _dereq_(90);
 
 /**
  * @interface Event
@@ -13884,7 +13876,7 @@ function SyntheticCompositionEvent(dispatchConfig, dispatchMarker, nativeEvent, 
 SyntheticEvent.augmentClass(SyntheticCompositionEvent, CompositionEventInterface);
 
 module.exports = SyntheticCompositionEvent;
-},{"91":91}],90:[function(_dereq_,module,exports){
+},{"90":90}],89:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13893,12 +13885,11 @@ module.exports = SyntheticCompositionEvent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule SyntheticDragEvent
  */
 
 'use strict';
 
-var SyntheticMouseEvent = _dereq_(95);
+var SyntheticMouseEvent = _dereq_(94);
 
 /**
  * @interface DragEvent
@@ -13921,7 +13912,7 @@ function SyntheticDragEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeE
 SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 
 module.exports = SyntheticDragEvent;
-},{"95":95}],91:[function(_dereq_,module,exports){
+},{"94":94}],90:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13930,17 +13921,16 @@ module.exports = SyntheticDragEvent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule SyntheticEvent
  */
 
 'use strict';
 
-var _assign = _dereq_(158);
+var _assign = _dereq_(157);
 
 var PooledClass = _dereq_(25);
 
-var emptyFunction = _dereq_(142);
-var warning = _dereq_(157);
+var emptyFunction = _dereq_(141);
+var warning = _dereq_(156);
 
 var didWarnForAddedNewProperty = false;
 var isProxySupported = typeof Proxy === 'function';
@@ -14190,7 +14180,7 @@ function getPooledWarningPropertyDefinition(propName, getVal) {
     "development" !== 'production' ? warning(warningCondition, 'This synthetic event is reused for performance reasons. If you\'re seeing this, ' + 'you\'re %s `%s` on a released/nullified synthetic event. %s. ' + 'If you must keep the original synthetic event around, use event.persist(). ' + 'See https://fb.me/react-event-pooling for more information.', action, propName, result) : void 0;
   }
 }
-},{"142":142,"157":157,"158":158,"25":25}],92:[function(_dereq_,module,exports){
+},{"141":141,"156":156,"157":157,"25":25}],91:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14199,12 +14189,11 @@ function getPooledWarningPropertyDefinition(propName, getVal) {
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule SyntheticFocusEvent
  */
 
 'use strict';
 
-var SyntheticUIEvent = _dereq_(98);
+var SyntheticUIEvent = _dereq_(97);
 
 /**
  * @interface FocusEvent
@@ -14227,7 +14216,7 @@ function SyntheticFocusEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 
 module.exports = SyntheticFocusEvent;
-},{"98":98}],93:[function(_dereq_,module,exports){
+},{"97":97}],92:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14236,12 +14225,11 @@ module.exports = SyntheticFocusEvent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule SyntheticInputEvent
  */
 
 'use strict';
 
-var SyntheticEvent = _dereq_(91);
+var SyntheticEvent = _dereq_(90);
 
 /**
  * @interface Event
@@ -14265,7 +14253,7 @@ function SyntheticInputEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticEvent.augmentClass(SyntheticInputEvent, InputEventInterface);
 
 module.exports = SyntheticInputEvent;
-},{"91":91}],94:[function(_dereq_,module,exports){
+},{"90":90}],93:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14274,16 +14262,15 @@ module.exports = SyntheticInputEvent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule SyntheticKeyboardEvent
  */
 
 'use strict';
 
-var SyntheticUIEvent = _dereq_(98);
+var SyntheticUIEvent = _dereq_(97);
 
-var getEventCharCode = _dereq_(111);
-var getEventKey = _dereq_(112);
-var getEventModifierState = _dereq_(113);
+var getEventCharCode = _dereq_(110);
+var getEventKey = _dereq_(111);
+var getEventModifierState = _dereq_(112);
 
 /**
  * @interface KeyboardEvent
@@ -14350,7 +14337,7 @@ function SyntheticKeyboardEvent(dispatchConfig, dispatchMarker, nativeEvent, nat
 SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 
 module.exports = SyntheticKeyboardEvent;
-},{"111":111,"112":112,"113":113,"98":98}],95:[function(_dereq_,module,exports){
+},{"110":110,"111":111,"112":112,"97":97}],94:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14359,15 +14346,14 @@ module.exports = SyntheticKeyboardEvent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule SyntheticMouseEvent
  */
 
 'use strict';
 
-var SyntheticUIEvent = _dereq_(98);
-var ViewportMetrics = _dereq_(101);
+var SyntheticUIEvent = _dereq_(97);
+var ViewportMetrics = _dereq_(100);
 
-var getEventModifierState = _dereq_(113);
+var getEventModifierState = _dereq_(112);
 
 /**
  * @interface MouseEvent
@@ -14423,7 +14409,7 @@ function SyntheticMouseEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 
 module.exports = SyntheticMouseEvent;
-},{"101":101,"113":113,"98":98}],96:[function(_dereq_,module,exports){
+},{"100":100,"112":112,"97":97}],95:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14432,14 +14418,13 @@ module.exports = SyntheticMouseEvent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule SyntheticTouchEvent
  */
 
 'use strict';
 
-var SyntheticUIEvent = _dereq_(98);
+var SyntheticUIEvent = _dereq_(97);
 
-var getEventModifierState = _dereq_(113);
+var getEventModifierState = _dereq_(112);
 
 /**
  * @interface TouchEvent
@@ -14469,7 +14454,7 @@ function SyntheticTouchEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 
 module.exports = SyntheticTouchEvent;
-},{"113":113,"98":98}],97:[function(_dereq_,module,exports){
+},{"112":112,"97":97}],96:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14478,12 +14463,11 @@ module.exports = SyntheticTouchEvent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule SyntheticTransitionEvent
  */
 
 'use strict';
 
-var SyntheticEvent = _dereq_(91);
+var SyntheticEvent = _dereq_(90);
 
 /**
  * @interface Event
@@ -14509,7 +14493,7 @@ function SyntheticTransitionEvent(dispatchConfig, dispatchMarker, nativeEvent, n
 SyntheticEvent.augmentClass(SyntheticTransitionEvent, TransitionEventInterface);
 
 module.exports = SyntheticTransitionEvent;
-},{"91":91}],98:[function(_dereq_,module,exports){
+},{"90":90}],97:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14518,14 +14502,13 @@ module.exports = SyntheticTransitionEvent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule SyntheticUIEvent
  */
 
 'use strict';
 
-var SyntheticEvent = _dereq_(91);
+var SyntheticEvent = _dereq_(90);
 
-var getEventTarget = _dereq_(114);
+var getEventTarget = _dereq_(113);
 
 /**
  * @interface UIEvent
@@ -14569,7 +14552,7 @@ function SyntheticUIEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEve
 SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 
 module.exports = SyntheticUIEvent;
-},{"114":114,"91":91}],99:[function(_dereq_,module,exports){
+},{"113":113,"90":90}],98:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14578,12 +14561,11 @@ module.exports = SyntheticUIEvent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule SyntheticWheelEvent
  */
 
 'use strict';
 
-var SyntheticMouseEvent = _dereq_(95);
+var SyntheticMouseEvent = _dereq_(94);
 
 /**
  * @interface WheelEvent
@@ -14624,7 +14606,7 @@ function SyntheticWheelEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 
 module.exports = SyntheticWheelEvent;
-},{"95":95}],100:[function(_dereq_,module,exports){
+},{"94":94}],99:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14633,15 +14615,14 @@ module.exports = SyntheticWheelEvent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule Transaction
  * 
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
-var invariant = _dereq_(150);
+var invariant = _dereq_(149);
 
 var OBSERVED_ERROR = {};
 
@@ -14851,7 +14832,7 @@ var TransactionImpl = {
 };
 
 module.exports = TransactionImpl;
-},{"125":125,"150":150}],101:[function(_dereq_,module,exports){
+},{"124":124,"149":149}],100:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14860,7 +14841,6 @@ module.exports = TransactionImpl;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ViewportMetrics
  */
 
 'use strict';
@@ -14879,7 +14859,7 @@ var ViewportMetrics = {
 };
 
 module.exports = ViewportMetrics;
-},{}],102:[function(_dereq_,module,exports){
+},{}],101:[function(_dereq_,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -14888,15 +14868,14 @@ module.exports = ViewportMetrics;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule accumulateInto
  * 
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
-var invariant = _dereq_(150);
+var invariant = _dereq_(149);
 
 /**
  * Accumulates items that must not be null or undefined into the first one. This
@@ -14938,7 +14917,7 @@ function accumulateInto(current, next) {
 }
 
 module.exports = accumulateInto;
-},{"125":125,"150":150}],103:[function(_dereq_,module,exports){
+},{"124":124,"149":149}],102:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14947,7 +14926,6 @@ module.exports = accumulateInto;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule adler32
  * 
  */
 
@@ -14983,7 +14961,7 @@ function adler32(data) {
 }
 
 module.exports = adler32;
-},{}],104:[function(_dereq_,module,exports){
+},{}],103:[function(_dereq_,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -14993,18 +14971,16 @@ module.exports = adler32;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule checkReactTypeSpec
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
-var ReactPropTypeLocationNames = _dereq_(72);
-var ReactPropTypesSecret = _dereq_(73);
+var ReactPropTypeLocationNames = _dereq_(71);
 
-var invariant = _dereq_(150);
-var warning = _dereq_(157);
+var invariant = _dereq_(149);
+var warning = _dereq_(156);
 
 var ReactComponentTreeHook;
 
@@ -15014,7 +14990,7 @@ if (typeof process !== 'undefined' && process.env && "development" === 'test') {
   // https://github.com/facebook/react/issues/7240
   // Remove the inline requires when we don't need them anymore:
   // https://github.com/facebook/react/pull/7178
-  ReactComponentTreeHook = _dereq_(132);
+  ReactComponentTreeHook = _dereq_(131);
 }
 
 var loggedTypeFailures = {};
@@ -15042,7 +15018,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
         // This is intentionally an invariant that gets caught. It's the same
         // behavior as without this statement except with a better message.
         !(typeof typeSpecs[typeSpecName] === 'function') ? "development" !== 'production' ? invariant(false, '%s: %s type `%s` is invalid; it must be a function, usually from React.PropTypes.', componentName || 'React class', ReactPropTypeLocationNames[location], typeSpecName) : _prodInvariant('84', componentName || 'React class', ReactPropTypeLocationNames[location], typeSpecName) : void 0;
-        error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+        error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location);
       } catch (ex) {
         error = ex;
       }
@@ -15056,7 +15032,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
         if ("development" !== 'production') {
           if (!ReactComponentTreeHook) {
-            ReactComponentTreeHook = _dereq_(132);
+            ReactComponentTreeHook = _dereq_(131);
           }
           if (debugID !== null) {
             componentStackInfo = ReactComponentTreeHook.getStackAddendumByID(debugID);
@@ -15073,7 +15049,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,undefined)
-},{"125":125,"132":132,"150":150,"157":157,"72":72,"73":73}],105:[function(_dereq_,module,exports){
+},{"124":124,"131":131,"149":149,"156":156,"71":71}],104:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15082,7 +15058,6 @@ module.exports = checkReactTypeSpec;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule createMicrosoftUnsafeLocalFunction
  */
 
 /* globals MSApp */
@@ -15106,7 +15081,7 @@ var createMicrosoftUnsafeLocalFunction = function (func) {
 };
 
 module.exports = createMicrosoftUnsafeLocalFunction;
-},{}],106:[function(_dereq_,module,exports){
+},{}],105:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15115,7 +15090,6 @@ module.exports = createMicrosoftUnsafeLocalFunction;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule dangerousStyleValue
  */
 
 'use strict';
@@ -15158,7 +15132,7 @@ function dangerousStyleValue(name, value, component) {
 }
 
 module.exports = dangerousStyleValue;
-},{"4":4}],107:[function(_dereq_,module,exports){
+},{"4":4}],106:[function(_dereq_,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -15192,7 +15166,6 @@ module.exports = dangerousStyleValue;
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
- * @providesModule escapeTextContentForBrowser
  */
 
 'use strict';
@@ -15282,7 +15255,7 @@ function escapeTextContentForBrowser(text) {
 }
 
 module.exports = escapeTextContentForBrowser;
-},{}],108:[function(_dereq_,module,exports){
+},{}],107:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15291,25 +15264,24 @@ module.exports = escapeTextContentForBrowser;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule findDOMNode
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
-var ReactCurrentOwner = _dereq_(133);
+var ReactCurrentOwner = _dereq_(132);
 var ReactDOMComponentTree = _dereq_(34);
-var ReactInstanceMap = _dereq_(63);
+var ReactInstanceMap = _dereq_(62);
 
-var getHostComponentFromComposite = _dereq_(115);
-var invariant = _dereq_(150);
-var warning = _dereq_(157);
+var getHostComponentFromComposite = _dereq_(114);
+var invariant = _dereq_(149);
+var warning = _dereq_(156);
 
 /**
  * Returns the DOM node rendered by this element.
  *
- * See https://facebook.github.io/react/docs/top-level-api.html#reactdom.finddomnode
+ * See https://facebook.github.io/react/docs/react-dom.html#finddomnode
  *
  * @param {ReactComponent|DOMElement} componentOrElement
  * @return {?DOMElement} The root node of this element.
@@ -15343,7 +15315,7 @@ function findDOMNode(componentOrElement) {
 }
 
 module.exports = findDOMNode;
-},{"115":115,"125":125,"133":133,"150":150,"157":157,"34":34,"63":63}],109:[function(_dereq_,module,exports){
+},{"114":114,"124":124,"132":132,"149":149,"156":156,"34":34,"62":62}],108:[function(_dereq_,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -15353,15 +15325,14 @@ module.exports = findDOMNode;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule flattenChildren
  * 
  */
 
 'use strict';
 
 var KeyEscapeUtils = _dereq_(23);
-var traverseAllChildren = _dereq_(130);
-var warning = _dereq_(157);
+var traverseAllChildren = _dereq_(129);
+var warning = _dereq_(156);
 
 var ReactComponentTreeHook;
 
@@ -15371,7 +15342,7 @@ if (typeof process !== 'undefined' && process.env && "development" === 'test') {
   // https://github.com/facebook/react/issues/7240
   // Remove the inline requires when we don't need them anymore:
   // https://github.com/facebook/react/pull/7178
-  ReactComponentTreeHook = _dereq_(132);
+  ReactComponentTreeHook = _dereq_(131);
 }
 
 /**
@@ -15387,7 +15358,7 @@ function flattenSingleChildIntoContext(traverseContext, child, name, selfDebugID
     var keyUnique = result[name] === undefined;
     if ("development" !== 'production') {
       if (!ReactComponentTreeHook) {
-        ReactComponentTreeHook = _dereq_(132);
+        ReactComponentTreeHook = _dereq_(131);
       }
       if (!keyUnique) {
         "development" !== 'production' ? warning(false, 'flattenChildren(...): Encountered two children with the same key, ' + '`%s`. Child keys must be unique; when two children share a key, only ' + 'the first child will be used.%s', KeyEscapeUtils.unescape(name), ReactComponentTreeHook.getStackAddendumByID(selfDebugID)) : void 0;
@@ -15422,7 +15393,7 @@ function flattenChildren(children, selfDebugID) {
 
 module.exports = flattenChildren;
 }).call(this,undefined)
-},{"130":130,"132":132,"157":157,"23":23}],110:[function(_dereq_,module,exports){
+},{"129":129,"131":131,"156":156,"23":23}],109:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15431,7 +15402,6 @@ module.exports = flattenChildren;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule forEachAccumulated
  * 
  */
 
@@ -15454,7 +15424,7 @@ function forEachAccumulated(arr, cb, scope) {
 }
 
 module.exports = forEachAccumulated;
-},{}],111:[function(_dereq_,module,exports){
+},{}],110:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15463,7 +15433,6 @@ module.exports = forEachAccumulated;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule getEventCharCode
  */
 
 'use strict';
@@ -15505,7 +15474,7 @@ function getEventCharCode(nativeEvent) {
 }
 
 module.exports = getEventCharCode;
-},{}],112:[function(_dereq_,module,exports){
+},{}],111:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15514,12 +15483,11 @@ module.exports = getEventCharCode;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule getEventKey
  */
 
 'use strict';
 
-var getEventCharCode = _dereq_(111);
+var getEventCharCode = _dereq_(110);
 
 /**
  * Normalization of deprecated HTML5 `key` values
@@ -15608,7 +15576,7 @@ function getEventKey(nativeEvent) {
 }
 
 module.exports = getEventKey;
-},{"111":111}],113:[function(_dereq_,module,exports){
+},{"110":110}],112:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15617,7 +15585,6 @@ module.exports = getEventKey;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule getEventModifierState
  */
 
 'use strict';
@@ -15652,7 +15619,7 @@ function getEventModifierState(nativeEvent) {
 }
 
 module.exports = getEventModifierState;
-},{}],114:[function(_dereq_,module,exports){
+},{}],113:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15661,7 +15628,6 @@ module.exports = getEventModifierState;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule getEventTarget
  */
 
 'use strict';
@@ -15688,7 +15654,7 @@ function getEventTarget(nativeEvent) {
 }
 
 module.exports = getEventTarget;
-},{}],115:[function(_dereq_,module,exports){
+},{}],114:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15697,12 +15663,11 @@ module.exports = getEventTarget;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule getHostComponentFromComposite
  */
 
 'use strict';
 
-var ReactNodeTypes = _dereq_(69);
+var ReactNodeTypes = _dereq_(68);
 
 function getHostComponentFromComposite(inst) {
   var type;
@@ -15719,7 +15684,7 @@ function getHostComponentFromComposite(inst) {
 }
 
 module.exports = getHostComponentFromComposite;
-},{"69":69}],116:[function(_dereq_,module,exports){
+},{"68":68}],115:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15728,7 +15693,6 @@ module.exports = getHostComponentFromComposite;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule getIteratorFn
  * 
  */
 
@@ -15761,7 +15725,7 @@ function getIteratorFn(maybeIterable) {
 }
 
 module.exports = getIteratorFn;
-},{}],117:[function(_dereq_,module,exports){
+},{}],116:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15770,7 +15734,6 @@ module.exports = getIteratorFn;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule getNodeForCharacterOffset
  */
 
 'use strict';
@@ -15836,7 +15799,7 @@ function getNodeForCharacterOffset(root, offset) {
 }
 
 module.exports = getNodeForCharacterOffset;
-},{}],118:[function(_dereq_,module,exports){
+},{}],117:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15845,12 +15808,11 @@ module.exports = getNodeForCharacterOffset;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule getTextContentAccessor
  */
 
 'use strict';
 
-var ExecutionEnvironment = _dereq_(136);
+var ExecutionEnvironment = _dereq_(135);
 
 var contentKey = null;
 
@@ -15870,7 +15832,7 @@ function getTextContentAccessor() {
 }
 
 module.exports = getTextContentAccessor;
-},{"136":136}],119:[function(_dereq_,module,exports){
+},{"135":135}],118:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15879,12 +15841,11 @@ module.exports = getTextContentAccessor;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule getVendorPrefixedEventName
  */
 
 'use strict';
 
-var ExecutionEnvironment = _dereq_(136);
+var ExecutionEnvironment = _dereq_(135);
 
 /**
  * Generate a mapping of standard vendor prefixes using the defined style property and event name.
@@ -15972,7 +15933,7 @@ function getVendorPrefixedEventName(eventName) {
 }
 
 module.exports = getVendorPrefixedEventName;
-},{"136":136}],120:[function(_dereq_,module,exports){
+},{"135":135}],119:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15981,7 +15942,6 @@ module.exports = getVendorPrefixedEventName;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule inputValueTracking
  */
 
 'use strict';
@@ -16096,7 +16056,7 @@ var inputValueTracking = {
 };
 
 module.exports = inputValueTracking;
-},{"34":34}],121:[function(_dereq_,module,exports){
+},{"34":34}],120:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16105,20 +16065,19 @@ module.exports = inputValueTracking;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule instantiateReactComponent
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125),
-    _assign = _dereq_(158);
+var _prodInvariant = _dereq_(124),
+    _assign = _dereq_(157);
 
 var ReactCompositeComponent = _dereq_(30);
 var ReactEmptyComponent = _dereq_(54);
 var ReactHostComponent = _dereq_(59);
 
-var invariant = _dereq_(150);
-var warning = _dereq_(157);
+var invariant = _dereq_(149);
+var warning = _dereq_(156);
 
 // To avoid a cyclic dependency, we create the final class in this module
 var ReactCompositeComponentWrapper = function (element) {
@@ -16216,7 +16175,7 @@ function instantiateReactComponent(node, shouldHaveDebugID) {
 }
 
 module.exports = instantiateReactComponent;
-},{"125":125,"150":150,"157":157,"158":158,"30":30,"54":54,"59":59}],122:[function(_dereq_,module,exports){
+},{"124":124,"149":149,"156":156,"157":157,"30":30,"54":54,"59":59}],121:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16225,12 +16184,11 @@ module.exports = instantiateReactComponent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule isEventSupported
  */
 
 'use strict';
 
-var ExecutionEnvironment = _dereq_(136);
+var ExecutionEnvironment = _dereq_(135);
 
 var useHasFeature;
 if (ExecutionEnvironment.canUseDOM) {
@@ -16277,7 +16235,7 @@ function isEventSupported(eventNameSuffix, capture) {
 }
 
 module.exports = isEventSupported;
-},{"136":136}],123:[function(_dereq_,module,exports){
+},{"135":135}],122:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16286,7 +16244,6 @@ module.exports = isEventSupported;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule isTextInputElement
  * 
  */
 
@@ -16329,7 +16286,7 @@ function isTextInputElement(elem) {
 }
 
 module.exports = isTextInputElement;
-},{}],124:[function(_dereq_,module,exports){
+},{}],123:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16338,12 +16295,11 @@ module.exports = isTextInputElement;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule quoteAttributeValueForBrowser
  */
 
 'use strict';
 
-var escapeTextContentForBrowser = _dereq_(107);
+var escapeTextContentForBrowser = _dereq_(106);
 
 /**
  * Escapes attribute value to prevent scripting attacks.
@@ -16356,7 +16312,7 @@ function quoteAttributeValueForBrowser(value) {
 }
 
 module.exports = quoteAttributeValueForBrowser;
-},{"107":107}],125:[function(_dereq_,module,exports){
+},{"106":106}],124:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16365,7 +16321,6 @@ module.exports = quoteAttributeValueForBrowser;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule reactProdInvariant
  * 
  */
 'use strict';
@@ -16396,7 +16351,7 @@ function reactProdInvariant(code) {
 }
 
 module.exports = reactProdInvariant;
-},{}],126:[function(_dereq_,module,exports){
+},{}],125:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16405,35 +16360,33 @@ module.exports = reactProdInvariant;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
-* @providesModule renderSubtreeIntoContainer
-*/
-
-'use strict';
-
-var ReactMount = _dereq_(67);
-
-module.exports = ReactMount.renderSubtreeIntoContainer;
-},{"67":67}],127:[function(_dereq_,module,exports){
-/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule setInnerHTML
  */
 
 'use strict';
 
-var ExecutionEnvironment = _dereq_(136);
-var DOMNamespaces = _dereq_(10);
+var ReactMount = _dereq_(66);
+
+module.exports = ReactMount.renderSubtreeIntoContainer;
+},{"66":66}],126:[function(_dereq_,module,exports){
+/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
+'use strict';
+
+var ExecutionEnvironment = _dereq_(135);
+var DOMNamespaces = _dereq_(11);
 
 var WHITESPACE_TEST = /^[ \r\n\t\f]/;
 var NONVISIBLE_TEST = /<(!--|link|noscript|meta|script|style)[ \r\n\t\f\/>]/;
 
-var createMicrosoftUnsafeLocalFunction = _dereq_(105);
+var createMicrosoftUnsafeLocalFunction = _dereq_(104);
 
 // SVG temp container for IE lacking innerHTML
 var reusableSVGContainer;
@@ -16512,7 +16465,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setInnerHTML;
-},{"10":10,"105":105,"136":136}],128:[function(_dereq_,module,exports){
+},{"104":104,"11":11,"135":135}],127:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16521,14 +16474,13 @@ module.exports = setInnerHTML;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule setTextContent
  */
 
 'use strict';
 
-var ExecutionEnvironment = _dereq_(136);
-var escapeTextContentForBrowser = _dereq_(107);
-var setInnerHTML = _dereq_(127);
+var ExecutionEnvironment = _dereq_(135);
+var escapeTextContentForBrowser = _dereq_(106);
+var setInnerHTML = _dereq_(126);
 
 /**
  * Set the textContent property of a node, ensuring that whitespace is preserved
@@ -16565,7 +16517,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setTextContent;
-},{"107":107,"127":127,"136":136}],129:[function(_dereq_,module,exports){
+},{"106":106,"126":126,"135":135}],128:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16574,7 +16526,6 @@ module.exports = setTextContent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule shouldUpdateReactComponent
  */
 
 'use strict';
@@ -16608,7 +16559,7 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 }
 
 module.exports = shouldUpdateReactComponent;
-},{}],130:[function(_dereq_,module,exports){
+},{}],129:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16617,20 +16568,19 @@ module.exports = shouldUpdateReactComponent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule traverseAllChildren
  */
 
 'use strict';
 
-var _prodInvariant = _dereq_(125);
+var _prodInvariant = _dereq_(124);
 
-var ReactCurrentOwner = _dereq_(133);
+var ReactCurrentOwner = _dereq_(132);
 var REACT_ELEMENT_TYPE = _dereq_(53);
 
-var getIteratorFn = _dereq_(116);
-var invariant = _dereq_(150);
+var getIteratorFn = _dereq_(115);
+var invariant = _dereq_(149);
 var KeyEscapeUtils = _dereq_(23);
-var warning = _dereq_(157);
+var warning = _dereq_(156);
 
 var SEPARATOR = '.';
 var SUBSEPARATOR = ':';
@@ -16785,7 +16735,7 @@ function traverseAllChildren(children, callback, traverseContext) {
 }
 
 module.exports = traverseAllChildren;
-},{"116":116,"125":125,"133":133,"150":150,"157":157,"23":23,"53":53}],131:[function(_dereq_,module,exports){
+},{"115":115,"124":124,"132":132,"149":149,"156":156,"23":23,"53":53}],130:[function(_dereq_,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -16794,15 +16744,14 @@ module.exports = traverseAllChildren;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule validateDOMNesting
  */
 
 'use strict';
 
-var _assign = _dereq_(158);
+var _assign = _dereq_(157);
 
-var emptyFunction = _dereq_(142);
-var warning = _dereq_(157);
+var emptyFunction = _dereq_(141);
+var warning = _dereq_(156);
 
 var validateDOMNesting = emptyFunction;
 
@@ -17168,7 +17117,7 @@ if ("development" !== 'production') {
 }
 
 module.exports = validateDOMNesting;
-},{"142":142,"157":157,"158":158}],132:[function(_dereq_,module,exports){
+},{"141":141,"156":156,"157":157}],131:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17177,7 +17126,6 @@ module.exports = validateDOMNesting;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactComponentTreeHookUMDShim
  */
 
 /* globals React */
@@ -17187,7 +17135,7 @@ module.exports = validateDOMNesting;
 var ReactInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 
 module.exports = ReactInternals.ReactComponentTreeHook;
-},{}],133:[function(_dereq_,module,exports){
+},{}],132:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17196,7 +17144,6 @@ module.exports = ReactInternals.ReactComponentTreeHook;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactCurrentOwnerUMDShim
  */
 
 /* globals React */
@@ -17206,7 +17153,7 @@ module.exports = ReactInternals.ReactComponentTreeHook;
 var ReactInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 
 module.exports = ReactInternals.ReactCurrentOwner;
-},{}],134:[function(_dereq_,module,exports){
+},{}],133:[function(_dereq_,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17215,7 +17162,6 @@ module.exports = ReactInternals.ReactCurrentOwner;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule ReactUMDShim
  */
 
 /* globals React */
@@ -17223,7 +17169,7 @@ module.exports = ReactInternals.ReactCurrentOwner;
 'use strict';
 
 module.exports = React;
-},{}],135:[function(_dereq_,module,exports){
+},{}],134:[function(_dereq_,module,exports){
 'use strict';
 
 /**
@@ -17244,7 +17190,7 @@ module.exports = React;
  * @typechecks
  */
 
-var emptyFunction = _dereq_(142);
+var emptyFunction = _dereq_(141);
 
 /**
  * Upstream version of event listener. Does not take into account specific
@@ -17307,7 +17253,8 @@ var EventListener = {
 };
 
 module.exports = EventListener;
-},{"142":142}],136:[function(_dereq_,module,exports){
+
+},{"141":141}],135:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17343,7 +17290,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],137:[function(_dereq_,module,exports){
+},{}],136:[function(_dereq_,module,exports){
 "use strict";
 
 /**
@@ -17375,7 +17322,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],138:[function(_dereq_,module,exports){
+},{}],137:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17389,7 +17336,7 @@ module.exports = camelize;
 
 'use strict';
 
-var camelize = _dereq_(137);
+var camelize = _dereq_(136);
 
 var msPattern = /^-ms-/;
 
@@ -17415,7 +17362,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"137":137}],139:[function(_dereq_,module,exports){
+},{"136":136}],138:[function(_dereq_,module,exports){
 'use strict';
 
 /**
@@ -17429,7 +17376,7 @@ module.exports = camelizeStyleName;
  * 
  */
 
-var isTextNode = _dereq_(152);
+var isTextNode = _dereq_(151);
 
 /*eslint-disable no-bitwise */
 
@@ -17455,7 +17402,7 @@ function containsNode(outerNode, innerNode) {
 }
 
 module.exports = containsNode;
-},{"152":152}],140:[function(_dereq_,module,exports){
+},{"151":151}],139:[function(_dereq_,module,exports){
 'use strict';
 
 /**
@@ -17469,7 +17416,7 @@ module.exports = containsNode;
  * @typechecks
  */
 
-var invariant = _dereq_(150);
+var invariant = _dereq_(149);
 
 /**
  * Convert array-like objects to arrays.
@@ -17582,7 +17529,7 @@ function createArrayFromMixed(obj) {
 }
 
 module.exports = createArrayFromMixed;
-},{"150":150}],141:[function(_dereq_,module,exports){
+},{"149":149}],140:[function(_dereq_,module,exports){
 'use strict';
 
 /**
@@ -17598,11 +17545,11 @@ module.exports = createArrayFromMixed;
 
 /*eslint-disable fb-www/unsafe-html*/
 
-var ExecutionEnvironment = _dereq_(136);
+var ExecutionEnvironment = _dereq_(135);
 
-var createArrayFromMixed = _dereq_(140);
-var getMarkupWrap = _dereq_(146);
-var invariant = _dereq_(150);
+var createArrayFromMixed = _dereq_(139);
+var getMarkupWrap = _dereq_(145);
+var invariant = _dereq_(149);
 
 /**
  * Dummy container used to render all markup.
@@ -17666,7 +17613,7 @@ function createNodesFromMarkup(markup, handleScript) {
 }
 
 module.exports = createNodesFromMarkup;
-},{"136":136,"140":140,"146":146,"150":150}],142:[function(_dereq_,module,exports){
+},{"135":135,"139":139,"145":145,"149":149}],141:[function(_dereq_,module,exports){
 "use strict";
 
 /**
@@ -17705,7 +17652,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],143:[function(_dereq_,module,exports){
+},{}],142:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17725,7 +17672,7 @@ if ("development" !== 'production') {
 }
 
 module.exports = emptyObject;
-},{}],144:[function(_dereq_,module,exports){
+},{}],143:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17752,7 +17699,7 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-},{}],145:[function(_dereq_,module,exports){
+},{}],144:[function(_dereq_,module,exports){
 'use strict';
 
 /**
@@ -17787,7 +17734,7 @@ function getActiveElement() /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],146:[function(_dereq_,module,exports){
+},{}],145:[function(_dereq_,module,exports){
 'use strict';
 
 /**
@@ -17802,9 +17749,9 @@ module.exports = getActiveElement;
 
 /*eslint-disable fb-www/unsafe-html */
 
-var ExecutionEnvironment = _dereq_(136);
+var ExecutionEnvironment = _dereq_(135);
 
-var invariant = _dereq_(150);
+var invariant = _dereq_(149);
 
 /**
  * Dummy container used to detect which wraps are necessary.
@@ -17882,7 +17829,7 @@ function getMarkupWrap(nodeName) {
 }
 
 module.exports = getMarkupWrap;
-},{"136":136,"150":150}],147:[function(_dereq_,module,exports){
+},{"135":135,"149":149}],146:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17921,7 +17868,7 @@ function getUnboundedScrollPosition(scrollable) {
 }
 
 module.exports = getUnboundedScrollPosition;
-},{}],148:[function(_dereq_,module,exports){
+},{}],147:[function(_dereq_,module,exports){
 'use strict';
 
 /**
@@ -17954,7 +17901,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],149:[function(_dereq_,module,exports){
+},{}],148:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17968,7 +17915,7 @@ module.exports = hyphenate;
 
 'use strict';
 
-var hyphenate = _dereq_(148);
+var hyphenate = _dereq_(147);
 
 var msPattern = /^ms-/;
 
@@ -17993,7 +17940,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"148":148}],150:[function(_dereq_,module,exports){
+},{"147":147}],149:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18043,7 +17990,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-},{}],151:[function(_dereq_,module,exports){
+},{}],150:[function(_dereq_,module,exports){
 'use strict';
 
 /**
@@ -18066,7 +18013,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],152:[function(_dereq_,module,exports){
+},{}],151:[function(_dereq_,module,exports){
 'use strict';
 
 /**
@@ -18080,7 +18027,7 @@ module.exports = isNode;
  * @typechecks
  */
 
-var isNode = _dereq_(151);
+var isNode = _dereq_(150);
 
 /**
  * @param {*} object The object to check.
@@ -18091,7 +18038,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"151":151}],153:[function(_dereq_,module,exports){
+},{"150":150}],152:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18121,7 +18068,7 @@ function memoizeStringOnly(callback) {
 }
 
 module.exports = memoizeStringOnly;
-},{}],154:[function(_dereq_,module,exports){
+},{}],153:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18135,7 +18082,7 @@ module.exports = memoizeStringOnly;
 
 'use strict';
 
-var ExecutionEnvironment = _dereq_(136);
+var ExecutionEnvironment = _dereq_(135);
 
 var performance;
 
@@ -18144,7 +18091,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = performance || {};
-},{"136":136}],155:[function(_dereq_,module,exports){
+},{"135":135}],154:[function(_dereq_,module,exports){
 'use strict';
 
 /**
@@ -18158,7 +18105,7 @@ module.exports = performance || {};
  * @typechecks
  */
 
-var performance = _dereq_(154);
+var performance = _dereq_(153);
 
 var performanceNow;
 
@@ -18178,7 +18125,7 @@ if (performance.now) {
 }
 
 module.exports = performanceNow;
-},{"154":154}],156:[function(_dereq_,module,exports){
+},{"153":153}],155:[function(_dereq_,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18206,7 +18153,8 @@ function is(x, y) {
   if (x === y) {
     // Steps 1-5, 7-10
     // Steps 6.b-6.e: +0 != -0
-    return x !== 0 || 1 / x === 1 / y;
+    // Added the nonzero y check to make Flow happy, but it is redundant
+    return x !== 0 || y !== 0 || 1 / x === 1 / y;
   } else {
     // Step 6.a: NaN == NaN
     return x !== x && y !== y;
@@ -18245,7 +18193,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],157:[function(_dereq_,module,exports){
+},{}],156:[function(_dereq_,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -18258,7 +18206,7 @@ module.exports = shallowEqual;
 
 'use strict';
 
-var emptyFunction = _dereq_(142);
+var emptyFunction = _dereq_(141);
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -18312,7 +18260,7 @@ if ("development" !== 'production') {
 }
 
 module.exports = warning;
-},{"142":142}],158:[function(_dereq_,module,exports){
+},{"141":141}],157:[function(_dereq_,module,exports){
 'use strict';
 /* eslint-disable no-unused-vars */
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -18397,6 +18345,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}]},{},[48])(48)
+},{}]},{},[49])(49)
 });
 });

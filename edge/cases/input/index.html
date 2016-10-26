@@ -30,18 +30,15 @@
 
         render() {
           return (
-            <form noValidate="true">
+            <div>
               <p>Controlled Number</p>
-              <input id="controlled" type="number" value={ this.state.number } onChange={ this.handleNumberChange } step="any" /> -> { this.state.number }
+              <input id="controlled" type="number" value={ this.state.number } onChange={ this.handleNumberChange } /> -> { this.state.number }
 
               <hr />
 
-              <p>Uncontrolled Email</p>
-              <input type="email" defaultValue="foo" />
-
               <p>Uncontrolled Number</p>
               <input id="uncontrolled" type="number" defaultValue="3.14" />
-            </form>
+            </div>
           )
         }
       })

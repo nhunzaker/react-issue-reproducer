@@ -4,11 +4,11 @@ PATH  := ./node_modules/.bin:$(PATH)
 PORT ?= 4000
 CASES := $(shell ls cases/)
 
-all: install copy
+all: node_modules copy
 	@ cat lib/index.template > index.html
 	@ echo "<ul>" $(foreach F,$(CASES),"<li><a href=\"cases/$(F)\">$(F)</a></li>") "</ul>" >> index.html
 
-install:
+node_modules: package.json
 	@ npm install
 
 copy: lib/react.js lib/react-dom.js

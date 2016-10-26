@@ -16,7 +16,7 @@
 
         getInitialState() {
           return {
-            number: 'nate@gmail.com'
+            number: 3.14
           };
         },
 
@@ -24,15 +24,13 @@
           let value = event.target.value
           let next = value == '' ? '' : parseFloat(event.target.value, 10) || 0;
 
-          console.log('change!')
-
-          this.setState({ number: value })
+          this.setState({ number: next })
         },
 
         render() {
           return (
             <form>
-              <p><input type="email" value={ this.state.number } onChange={ this.handleNumberChange } /> -> { this.state.number }</p>
+              <p><input type="number" value={ this.state.number } onChange={ this.handleNumberChange } /> -> { this.state.number }</p>
               <p><input type="reset" /></p>
             </form>
           )
