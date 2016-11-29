@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Input Backspace Issue</title>
+  </head>
+  <body>
+    <div id="container">Loading...</div>
+
+    <script src="../../lib/react.js"></script>
+    <script src="../../lib/react-dom.js"></script>
+    <script src="../../lib/babel.js"></script>
+
+    <script type="text/babel">
+      var Inputs = React.createClass({
+
+        getInitialState() {
+          return {
+            number: 3.14,
+            checked: true
+          };
+        },
+
+        handleNumberChange(event) {
+          let value = event.target.value
+          let next = value == '' ? '' : parseFloat(event.target.value, 10) || 0;
+
+          this.setState({ number: next })
+        },
+
+        render() {
+          return (
+            <div>
+              <p>Controlled Number</p>
+              <input id="controlled" type="number" value={ this.state.number } onChange={ this.handleNumberChange } /> -> { this.state.number }
+
+              <hr />
+
+              <p>Uncontrolled Number</p>
+              <input id="uncontrolled" type="number" defaultValue="3.14" />
+            </div>
+          )
+        }
+      })
+
+      ReactDOM.render(<Inputs />, document.getElementById('container'))
+    </script>
+  </body>
+</html>

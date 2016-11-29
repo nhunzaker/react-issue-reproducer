@@ -3471,7 +3471,31 @@ var HTMLDOMPropertyConfig = {
     htmlFor: 'for',
     httpEquiv: 'http-equiv'
   },
-  DOMPropertyNames: {}
+  DOMPropertyNames: {},
+  DOMMutationMethods: {
+    value: function (node, value) {
+      if (value == null) {
+        return node.removeAttribute('value');
+      }
+
+      // Number inputs get special treatment due to some edge cases in
+      // Chrome. Let everything else assign the value attribute as normal.
+      // https://github.com/facebook/react/issues/7253#issuecomment-236074326
+      if (node.type !== 'number') {
+        node.setAttribute('value', '' + value);
+      } else if (node.validity && !node.validity.badInput && node.ownerDocument.activeElement !== node) {
+        // Don't assign an attribute if validation reports bad
+        // input. Chrome will clear the value. Additionally, don't
+        // operate on inputs that have focus, otherwise Chrome might
+        // strip off trailing decimal places and cause the user's
+        // cursor position to jump to the beginning of the input.
+        //
+        // In ReactDOMInput, we have an onBlur event that will trigger
+        // this function again when focus is lost.
+        node.setAttribute('value', '' + value);
+      }
+    }
+  }
 };
 
 module.exports = HTMLDOMPropertyConfig;
@@ -6963,7 +6987,8 @@ var ReactDOMInput = {
       defaultChecked: undefined,
       defaultValue: undefined,
       value: value != null ? value : inst._wrapperState.initialValue,
-      checked: checked != null ? checked : inst._wrapperState.initialChecked
+      checked: checked != null ? checked : inst._wrapperState.initialChecked,
+      onBlurCapture: inst._wrapperState.onBlur
     });
 
     return hostProps;
@@ -6988,7 +7013,8 @@ var ReactDOMInput = {
     inst._wrapperState = {
       initialChecked: props.checked != null ? props.checked : props.defaultChecked,
       initialValue: props.value != null ? props.value : defaultValue,
-      listeners: null
+      listeners: null,
+      onBlur: _handleBlur.bind(inst)
     };
 
     if ("development" !== 'production') {
@@ -7021,14 +7047,18 @@ var ReactDOMInput = {
     var node = ReactDOMComponentTree.getNodeFromInstance(inst);
     var value = props.value;
     if (value != null) {
-
-      // Cast `value` to a string to ensure the value is set correctly. While
-      // browsers typically do this as necessary, jsdom doesn't.
-      var newValue = '' + value;
-
-      // To avoid side effects (such as losing text selection), only set value if changed
-      if (newValue !== node.value) {
-        node.value = newValue;
+      if (value === 0) {
+        // Since we use loose type checking below, zero is
+        // falsy, so we need to manually cover it
+        value = '0';
+      }
+      // Use loose coercion to prevent replacement on comparisons like
+      // '3e1' == 30 in Chrome (~52).
+      if (value != node.value) {
+        // eslint-disable-line
+        // Cast `value` to a string to ensure the value is set correctly. While
+        // browsers typically do this as necessary, jsdom doesn't.
+        node.value = '' + value;
       }
     } else {
       if (props.value == null && props.defaultValue != null) {
@@ -7109,6 +7139,19 @@ var ReactDOMInput = {
     updateNamedCousins(inst, props);
   }
 };
+
+function _handleBlur(event) {
+  var props = this._currentElement.props;
+  var value = props.value;
+
+  if (value != null) {
+    DOMPropertyOperations.setValueForProperty(ReactDOMComponentTree.getNodeFromInstance(this), 'value', value);
+  }
+
+  if (props.onBlur) {
+    return props.onBlur.call(undefined, event);
+  }
+}
 
 function updateNamedCousins(thisInstance, props) {
   var name = props.name;
