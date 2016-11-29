@@ -18,7 +18,7 @@ lib/%.js: ../react/build/%.js
 	@ cp $< $@
 	@ echo "Updated $*"
 
-serve: all
+serve:
 	@ php -S "localhost:$(PORT)"
 
 test: all
