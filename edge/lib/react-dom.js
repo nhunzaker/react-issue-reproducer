@@ -1222,6 +1222,16 @@ function getTargetInstForInputOrChangeEvent(topLevelType, targetInst) {
   }
 }
 
+function handleControlledInputBlur(inst, node) {
+  if (node.type !== 'number') {
+    return;
+  }
+
+  if (inst._currentElement && inst._currentElement.props.hasOwnProperty('value')) {
+    node.setAttribute('value', '' + node.value);
+  }
+}
+
 /**
  * This plugin creates an `onChange` event that normalizes change events
  * across form elements. This event fires at a time when it's possible to
@@ -1272,8 +1282,8 @@ var ChangeEventPlugin = {
     }
 
     // When blurring, set the value attribute for number inputs
-    if (topLevelType === 'topBlur' && targetNode.type === 'number') {
-      targetNode.setAttribute('value', targetNode.value);
+    if (topLevelType === 'topBlur') {
+      handleControlledInputBlur(targetInst, targetNode);
     }
   }
 
