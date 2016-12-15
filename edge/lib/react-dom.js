@@ -1223,13 +1223,15 @@ function getTargetInstForInputOrChangeEvent(topLevelType, targetInst) {
 }
 
 function handleControlledInputBlur(inst, node) {
-  if (node.type !== 'number') {
+  // Fiber and ReactDOM keep wrapper state in separate places
+  var state = inst._wrapperState || node._wrapperState;
+
+  if (!state || node.type !== 'number' || !state.controlled) {
     return;
   }
 
-  if (inst._currentElement && inst._currentElement.props.hasOwnProperty('value')) {
-    node.setAttribute('value', '' + node.value);
-  }
+  // If controlled, assign the value attribute to the current value on blur
+  node.setAttribute('value', '' + node.value);
 }
 
 /**
@@ -7044,12 +7046,9 @@ var ReactDOMInput = {
     inst._wrapperState = {
       initialChecked: props.checked != null ? props.checked : props.defaultChecked,
       initialValue: props.value != null ? props.value : defaultValue,
-      listeners: null
+      listeners: null,
+      controlled: isControlled(props)
     };
-
-    if ("development" !== 'production') {
-      inst._wrapperState.controlled = isControlled(props);
-    }
   },
 
   updateWrapper: function (inst) {
