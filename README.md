@@ -1,3 +1,13 @@
+# Check out the new React DOM fixtures!
+
+I've moved a lot of these issues over to the DOM fixtures folder in React:
+
+https://github.com/facebook/react/tree/master/fixtures/dom
+
+All of my future work will be done there. This repo is no longer maintained.
+
+---
+
 # React Issue Reproducer
 
 React tests against JSDOM. That makes it difficult to reproduce
